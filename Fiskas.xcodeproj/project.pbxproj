@@ -8,22 +8,28 @@
 
 /* Begin PBXBuildFile section */
 		C49B5E1F1FC578BE00B9C1C7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49B5E1E1FC578BE00B9C1C7 /* AppDelegate.swift */; };
-		C49B5E211FC578BE00B9C1C7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49B5E201FC578BE00B9C1C7 /* ViewController.swift */; };
+		C49B5E211FC578BE00B9C1C7 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49B5E201FC578BE00B9C1C7 /* LoginVC.swift */; };
 		C49B5E241FC578BE00B9C1C7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C49B5E221FC578BE00B9C1C7 /* Main.storyboard */; };
 		C49B5E271FC578BE00B9C1C7 /* Fiskas.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C49B5E251FC578BE00B9C1C7 /* Fiskas.xcdatamodeld */; };
 		C49B5E291FC578BE00B9C1C7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C49B5E281FC578BE00B9C1C7 /* Assets.xcassets */; };
 		C49B5E2C1FC578BE00B9C1C7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C49B5E2A1FC578BE00B9C1C7 /* LaunchScreen.storyboard */; };
+		C4E310941FC589CB00384B35 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = C4E310931FC589CB00384B35 /* logo.png */; };
+		C4E310961FC5904300384B35 /* UIButton+IBInspectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E310951FC5904300384B35 /* UIButton+IBInspectable.swift */; };
+		C4E310981FC5906700384B35 /* UIView+IBInspectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E310971FC5906700384B35 /* UIView+IBInspectable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		C49B5E1B1FC578BE00B9C1C7 /* Fiskas.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fiskas.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C49B5E1E1FC578BE00B9C1C7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C49B5E201FC578BE00B9C1C7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C49B5E201FC578BE00B9C1C7 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		C49B5E231FC578BE00B9C1C7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C49B5E261FC578BE00B9C1C7 /* Fiskas.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Fiskas.xcdatamodel; sourceTree = "<group>"; };
 		C49B5E281FC578BE00B9C1C7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C49B5E2B1FC578BE00B9C1C7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C49B5E2D1FC578BE00B9C1C7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C4E310931FC589CB00384B35 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
+		C4E310951FC5904300384B35 /* UIButton+IBInspectable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+IBInspectable.swift"; sourceTree = "<group>"; };
+		C4E310971FC5906700384B35 /* UIView+IBInspectable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+IBInspectable.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,7 +93,7 @@
 		C4E3108E1FC583AC00384B35 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				C49B5E201FC578BE00B9C1C7 /* ViewController.swift */,
+				C49B5E201FC578BE00B9C1C7 /* LoginVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -95,6 +101,7 @@
 		C4E3108F1FC583C200384B35 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				C4E310921FC5888700384B35 /* Images */,
 				C49B5E281FC578BE00B9C1C7 /* Assets.xcassets */,
 				C49B5E251FC578BE00B9C1C7 /* Fiskas.xcdatamodeld */,
 			);
@@ -111,8 +118,18 @@
 		C4E310911FC583EF00384B35 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				C4E310951FC5904300384B35 /* UIButton+IBInspectable.swift */,
+				C4E310971FC5906700384B35 /* UIView+IBInspectable.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		C4E310921FC5888700384B35 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				C4E310931FC589CB00384B35 /* logo.png */,
+			);
+			path = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -174,6 +191,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4E310941FC589CB00384B35 /* logo.png in Resources */,
 				C49B5E2C1FC578BE00B9C1C7 /* LaunchScreen.storyboard in Resources */,
 				C49B5E291FC578BE00B9C1C7 /* Assets.xcassets in Resources */,
 				C49B5E241FC578BE00B9C1C7 /* Main.storyboard in Resources */,
@@ -187,7 +205,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C49B5E211FC578BE00B9C1C7 /* ViewController.swift in Sources */,
+				C49B5E211FC578BE00B9C1C7 /* LoginVC.swift in Sources */,
+				C4E310961FC5904300384B35 /* UIButton+IBInspectable.swift in Sources */,
+				C4E310981FC5906700384B35 /* UIView+IBInspectable.swift in Sources */,
 				C49B5E271FC578BE00B9C1C7 /* Fiskas.xcdatamodeld in Sources */,
 				C49B5E1F1FC578BE00B9C1C7 /* AppDelegate.swift in Sources */,
 			);
