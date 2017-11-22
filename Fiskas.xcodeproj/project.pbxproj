@@ -57,14 +57,62 @@
 			isa = PBXGroup;
 			children = (
 				C49B5E1E1FC578BE00B9C1C7 /* AppDelegate.swift */,
-				C49B5E201FC578BE00B9C1C7 /* ViewController.swift */,
-				C49B5E221FC578BE00B9C1C7 /* Main.storyboard */,
-				C49B5E281FC578BE00B9C1C7 /* Assets.xcassets */,
-				C49B5E2A1FC578BE00B9C1C7 /* LaunchScreen.storyboard */,
 				C49B5E2D1FC578BE00B9C1C7 /* Info.plist */,
-				C49B5E251FC578BE00B9C1C7 /* Fiskas.xcdatamodeld */,
+				C4E310911FC583EF00384B35 /* Extensions */,
+				C4E310901FC583E700384B35 /* Protocols */,
+				C4E3108F1FC583C200384B35 /* Resources */,
+				C4E3108C1FC5839D00384B35 /* Model */,
+				C4E3108D1FC583A600384B35 /* View */,
+				C4E3108E1FC583AC00384B35 /* Controller */,
 			);
 			path = Fiskas;
+			sourceTree = "<group>";
+		};
+		C4E3108C1FC5839D00384B35 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C4E3108D1FC583A600384B35 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C49B5E221FC578BE00B9C1C7 /* Main.storyboard */,
+				C49B5E2A1FC578BE00B9C1C7 /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C4E3108E1FC583AC00384B35 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				C49B5E201FC578BE00B9C1C7 /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		C4E3108F1FC583C200384B35 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C49B5E281FC578BE00B9C1C7 /* Assets.xcassets */,
+				C49B5E251FC578BE00B9C1C7 /* Fiskas.xcdatamodeld */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		C4E310901FC583E700384B35 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		C4E310911FC583EF00384B35 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
