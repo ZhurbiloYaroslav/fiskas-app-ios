@@ -13,6 +13,15 @@
 		C49B5E271FC578BE00B9C1C7 /* Fiskas.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C49B5E251FC578BE00B9C1C7 /* Fiskas.xcdatamodeld */; };
 		C49B5E291FC578BE00B9C1C7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C49B5E281FC578BE00B9C1C7 /* Assets.xcassets */; };
 		C49B5E2C1FC578BE00B9C1C7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C49B5E2A1FC578BE00B9C1C7 /* LaunchScreen.storyboard */; };
+		C4B056FF1FC5998800699B6F /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B056FE1FC5998800699B6F /* RegisterVC.swift */; };
+		C4B057011FC5A2B900699B6F /* icon-contacts.png in Resources */ = {isa = PBXBuildFile; fileRef = C4B057001FC5A2B900699B6F /* icon-contacts.png */; };
+		C4B057031FC5A30100699B6F /* ContactsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B057021FC5A30100699B6F /* ContactsVC.swift */; };
+		C4B057051FC5A83600699B6F /* Browser.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B057041FC5A83600699B6F /* Browser.swift */; };
+		C4B057071FC5AC4E00699B6F /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B057061FC5AC4E00699B6F /* ProfileVC.swift */; };
+		C4B057091FC5ACE900699B6F /* icon-profile.png in Resources */ = {isa = PBXBuildFile; fileRef = C4B057081FC5ACE900699B6F /* icon-profile.png */; };
+		C4B0570B1FC5AD1500699B6F /* icon-camera.png in Resources */ = {isa = PBXBuildFile; fileRef = C4B0570A1FC5AD1500699B6F /* icon-camera.png */; };
+		C4B0570D1FC5AD7900699B6F /* PhotoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B0570C1FC5AD7900699B6F /* PhotoVC.swift */; };
+		C4B0570F1FC5BB7600699B6F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B0570E1FC5BB7600699B6F /* Constants.swift */; };
 		C4E310941FC589CB00384B35 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = C4E310931FC589CB00384B35 /* logo.png */; };
 		C4E310961FC5904300384B35 /* UIButton+IBInspectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E310951FC5904300384B35 /* UIButton+IBInspectable.swift */; };
 		C4E310981FC5906700384B35 /* UIView+IBInspectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E310971FC5906700384B35 /* UIView+IBInspectable.swift */; };
@@ -27,6 +36,15 @@
 		C49B5E281FC578BE00B9C1C7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C49B5E2B1FC578BE00B9C1C7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C49B5E2D1FC578BE00B9C1C7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C4B056FE1FC5998800699B6F /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
+		C4B057001FC5A2B900699B6F /* icon-contacts.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-contacts.png"; sourceTree = "<group>"; };
+		C4B057021FC5A30100699B6F /* ContactsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsVC.swift; sourceTree = "<group>"; };
+		C4B057041FC5A83600699B6F /* Browser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Browser.swift; sourceTree = "<group>"; };
+		C4B057061FC5AC4E00699B6F /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
+		C4B057081FC5ACE900699B6F /* icon-profile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-profile.png"; sourceTree = "<group>"; };
+		C4B0570A1FC5AD1500699B6F /* icon-camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-camera.png"; sourceTree = "<group>"; };
+		C4B0570C1FC5AD7900699B6F /* PhotoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoVC.swift; sourceTree = "<group>"; };
+		C4B0570E1FC5BB7600699B6F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		C4E310931FC589CB00384B35 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		C4E310951FC5904300384B35 /* UIButton+IBInspectable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+IBInspectable.swift"; sourceTree = "<group>"; };
 		C4E310971FC5906700384B35 /* UIView+IBInspectable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+IBInspectable.swift"; sourceTree = "<group>"; };
@@ -77,6 +95,8 @@
 		C4E3108C1FC5839D00384B35 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				C4B057041FC5A83600699B6F /* Browser.swift */,
+				C4B0570E1FC5BB7600699B6F /* Constants.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -94,6 +114,10 @@
 			isa = PBXGroup;
 			children = (
 				C49B5E201FC578BE00B9C1C7 /* LoginVC.swift */,
+				C4B056FE1FC5998800699B6F /* RegisterVC.swift */,
+				C4B0570C1FC5AD7900699B6F /* PhotoVC.swift */,
+				C4B057021FC5A30100699B6F /* ContactsVC.swift */,
+				C4B057061FC5AC4E00699B6F /* ProfileVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -127,6 +151,9 @@
 		C4E310921FC5888700384B35 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				C4B0570A1FC5AD1500699B6F /* icon-camera.png */,
+				C4B057081FC5ACE900699B6F /* icon-profile.png */,
+				C4B057001FC5A2B900699B6F /* icon-contacts.png */,
 				C4E310931FC589CB00384B35 /* logo.png */,
 			);
 			path = Images;
@@ -191,7 +218,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4B057011FC5A2B900699B6F /* icon-contacts.png in Resources */,
+				C4B0570B1FC5AD1500699B6F /* icon-camera.png in Resources */,
 				C4E310941FC589CB00384B35 /* logo.png in Resources */,
+				C4B057091FC5ACE900699B6F /* icon-profile.png in Resources */,
 				C49B5E2C1FC578BE00B9C1C7 /* LaunchScreen.storyboard in Resources */,
 				C49B5E291FC578BE00B9C1C7 /* Assets.xcassets in Resources */,
 				C49B5E241FC578BE00B9C1C7 /* Main.storyboard in Resources */,
@@ -206,9 +236,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				C49B5E211FC578BE00B9C1C7 /* LoginVC.swift in Sources */,
+				C4B0570F1FC5BB7600699B6F /* Constants.swift in Sources */,
 				C4E310961FC5904300384B35 /* UIButton+IBInspectable.swift in Sources */,
 				C4E310981FC5906700384B35 /* UIView+IBInspectable.swift in Sources */,
+				C4B0570D1FC5AD7900699B6F /* PhotoVC.swift in Sources */,
+				C4B057071FC5AC4E00699B6F /* ProfileVC.swift in Sources */,
+				C4B056FF1FC5998800699B6F /* RegisterVC.swift in Sources */,
+				C4B057051FC5A83600699B6F /* Browser.swift in Sources */,
 				C49B5E271FC578BE00B9C1C7 /* Fiskas.xcdatamodeld in Sources */,
+				C4B057031FC5A30100699B6F /* ContactsVC.swift in Sources */,
 				C49B5E1F1FC578BE00B9C1C7 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -349,6 +385,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4PM46468DE;
 				INFOPLIST_FILE = Fiskas/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "pl.biuro-fiskas.Fiskas";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -364,6 +401,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4PM46468DE;
 				INFOPLIST_FILE = Fiskas/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "pl.biuro-fiskas.Fiskas";
 				PRODUCT_NAME = "$(TARGET_NAME)";
