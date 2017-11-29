@@ -1009,6 +1009,33 @@ REGON: 363655234</string>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BB1-qZ-hvm">
                                         <rect key="frame" x="0.0" y="454" width="375" height="100"/>
                                         <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Iij-hu-vhR">
+                                                <rect key="frame" x="15" y="12.5" width="75" height="75"/>
+                                                <subviews>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="sY6-Ft-McZ">
+                                                        <rect key="frame" x="0.0" y="-0.5" width="75" height="75"/>
+                                                    </imageView>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rlA-lo-wFi">
+                                                        <rect key="frame" x="0.0" y="0.0" width="75" height="75"/>
+                                                        <connections>
+                                                            <action selector="takePhotoFromLibrary:" destination="ty8-xg-8WI" eventType="touchUpInside" id="pbK-Jg-Z3G"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="75" id="FGO-VU-CUd"/>
+                                                    <constraint firstItem="sY6-Ft-McZ" firstAttribute="top" secondItem="Iij-hu-vhR" secondAttribute="top" id="Ka9-oO-48s"/>
+                                                    <constraint firstAttribute="bottom" secondItem="sY6-Ft-McZ" secondAttribute="bottom" id="PLK-da-VaE"/>
+                                                    <constraint firstAttribute="trailing" secondItem="rlA-lo-wFi" secondAttribute="trailing" id="Tsf-Za-vEn"/>
+                                                    <constraint firstItem="sY6-Ft-McZ" firstAttribute="leading" secondItem="Iij-hu-vhR" secondAttribute="leading" id="WXm-9G-etk"/>
+                                                    <constraint firstAttribute="height" constant="75" id="Wva-Hn-pFJ"/>
+                                                    <constraint firstItem="rlA-lo-wFi" firstAttribute="leading" secondItem="Iij-hu-vhR" secondAttribute="leading" id="ahW-C4-hK3"/>
+                                                    <constraint firstAttribute="trailing" secondItem="sY6-Ft-McZ" secondAttribute="trailing" id="gmc-IF-4TS"/>
+                                                    <constraint firstAttribute="bottom" secondItem="rlA-lo-wFi" secondAttribute="bottom" id="kcq-N1-h77"/>
+                                                    <constraint firstItem="rlA-lo-wFi" firstAttribute="top" secondItem="Iij-hu-vhR" secondAttribute="top" id="mSb-fc-ETV"/>
+                                                </constraints>
+                                            </view>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZAO-6h-AEA">
                                                 <rect key="frame" x="162.5" y="25" width="50" height="50"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1032,21 +1059,14 @@ REGON: 363655234</string>
                                                     <action selector="takePhoto:" destination="ty8-xg-8WI" eventType="touchUpInside" id="kLl-4c-nYA"/>
                                                 </connections>
                                             </button>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="sY6-Ft-McZ">
-                                                <rect key="frame" x="15" y="12.5" width="75" height="75"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="75" id="Ryx-FP-8pn"/>
-                                                    <constraint firstAttribute="height" constant="75" id="TFr-ON-6y8"/>
-                                                </constraints>
-                                            </imageView>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstItem="ZAO-6h-AEA" firstAttribute="centerX" secondItem="BB1-qZ-hvm" secondAttribute="centerX" id="8Ze-EG-NAH"/>
-                                            <constraint firstItem="sY6-Ft-McZ" firstAttribute="centerY" secondItem="BB1-qZ-hvm" secondAttribute="centerY" id="Aht-qm-O68"/>
                                             <constraint firstAttribute="height" constant="100" id="TUS-Hl-bAP"/>
+                                            <constraint firstItem="Iij-hu-vhR" firstAttribute="centerY" secondItem="BB1-qZ-hvm" secondAttribute="centerY" id="WgX-j7-Ydu"/>
                                             <constraint firstItem="ZAO-6h-AEA" firstAttribute="centerY" secondItem="BB1-qZ-hvm" secondAttribute="centerY" id="eTf-hO-zgn"/>
-                                            <constraint firstItem="sY6-Ft-McZ" firstAttribute="leading" secondItem="BB1-qZ-hvm" secondAttribute="leading" constant="15" id="kOt-eO-LqT"/>
+                                            <constraint firstItem="Iij-hu-vhR" firstAttribute="leading" secondItem="BB1-qZ-hvm" secondAttribute="leading" constant="15" id="z4S-hw-JdF"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -1089,14 +1109,52 @@ REGON: 363655234</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gox-3P-DIW">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="503"/>
                             </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SnR-ef-bRu">
+                                <rect key="frame" x="0.0" y="567" width="375" height="100"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d7t-LY-MXx">
+                                        <rect key="frame" x="15" y="32" width="54" height="36"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <state key="normal" title="Cancel">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="cancelButtonPressed:" destination="ydP-sp-K0O" eventType="touchUpInside" id="apB-mg-naP"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7GZ-8E-31A">
+                                        <rect key="frame" x="305" y="32" width="55" height="36"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <state key="normal" title="Accept">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="acceptButtonPressed:" destination="ydP-sp-K0O" eventType="touchUpInside" id="TnY-FP-Lvi"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="7GZ-8E-31A" firstAttribute="centerY" secondItem="SnR-ef-bRu" secondAttribute="centerY" id="5xV-5h-3ES"/>
+                                    <constraint firstItem="d7t-LY-MXx" firstAttribute="leading" secondItem="SnR-ef-bRu" secondAttribute="leading" constant="15" id="PQm-Kd-MKI"/>
+                                    <constraint firstAttribute="height" constant="100" id="RDb-4T-MMC"/>
+                                    <constraint firstItem="d7t-LY-MXx" firstAttribute="centerY" secondItem="SnR-ef-bRu" secondAttribute="centerY" id="Zpy-Of-faJ"/>
+                                    <constraint firstAttribute="trailing" secondItem="7GZ-8E-31A" secondAttribute="trailing" constant="15" id="rWB-jP-yjl"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="SnR-ef-bRu" firstAttribute="top" secondItem="gox-3P-DIW" secondAttribute="bottom" id="A1h-3K-ZC7"/>
                             <constraint firstItem="gox-3P-DIW" firstAttribute="trailing" secondItem="6qO-Lh-sBu" secondAttribute="trailing" id="J30-3F-g33"/>
+                            <constraint firstItem="SnR-ef-bRu" firstAttribute="bottom" secondItem="6qO-Lh-sBu" secondAttribute="bottom" id="JMI-W0-KJk"/>
                             <constraint firstItem="gox-3P-DIW" firstAttribute="top" secondItem="6qO-Lh-sBu" secondAttribute="top" id="PW7-W0-F8J"/>
-                            <constraint firstItem="gox-3P-DIW" firstAttribute="bottom" secondItem="6qO-Lh-sBu" secondAttribute="bottom" id="jWz-iE-t3s"/>
+                            <constraint firstItem="SnR-ef-bRu" firstAttribute="trailing" secondItem="6qO-Lh-sBu" secondAttribute="trailing" id="aVm-mi-rNd"/>
+                            <constraint firstItem="SnR-ef-bRu" firstAttribute="leading" secondItem="6qO-Lh-sBu" secondAttribute="leading" id="bh8-Xl-l5I"/>
                             <constraint firstItem="gox-3P-DIW" firstAttribute="leading" secondItem="6qO-Lh-sBu" secondAttribute="leading" id="oXg-4v-DaX"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6qO-Lh-sBu"/>
@@ -1108,7 +1166,7 @@ REGON: 363655234</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n2E-t3-IK5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4051.875" y="-723.59154929577471"/>
+            <point key="canvasLocation" x="4050.4000000000001" y="-723.68815592203907"/>
         </scene>
         <!--Contacts-->
         <scene sceneID="7YL-i1-3yP">

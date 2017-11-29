@@ -29,13 +29,13 @@ class PhotoVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        prepareCamera()
         
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        prepareCamera()
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -90,9 +90,12 @@ class PhotoVC: UIViewController {
         
     }
     
+    @IBAction func takePhotoFromLibrary(_ sender: UIButton) {
+        openPhotoLibrary()
+    }
+    
     @IBAction func takePhoto(_ sender: Any) {
         takePhoto = true
-        print("pressed")
     }
     
     func getImageFromSampleBuffer (buffer:CMSampleBuffer) -> UIImage? {
@@ -153,14 +156,37 @@ extension PhotoVC: AVCaptureVideoDataOutputSampleBufferDelegate {
 
 extension PhotoVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
-    func openCameraTutorial1() {
-        if UIImagePickerController.isSourceTypeAvailable(.camera) {
+    func openPhotoLibrary() {
+        if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
             let imagePicker = UIImagePickerController()
             imagePicker.delegate = self
-            imagePicker.sourceType = .camera;
             imagePicker.allowsEditing = false
+            imagePicker.sourceType = .photoLibrary
+            imagePicker.mediaTypes = UIImagePickerController.availableMediaTypes(for: .photoLibrary)!
             present(imagePicker, animated: true, completion: nil)
         }
+    }
+    
+    private func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+        let chosenImage = info[UIImagePickerControllerOriginalImage] as! UIImage
+        // myImageView.contentMode = .scaleAspectFit
+        // myImageView.image = chosenImage
+        // dismiss(animated:true, completion: nil)
+        // presentChosenImage(image: chosenImage)
+    }
+    
+    func presentChosenImage(image: UIImage) {
+        let photoVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "PhotoShowVC") as! PhotoShowVC
+        
+        photoVC.takenPhoto = image
+        
+        present(photoVC, animated: true, completion: {
+            self.stopCaptureSession()
+        })
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true, completion: nil)
     }
     
 }

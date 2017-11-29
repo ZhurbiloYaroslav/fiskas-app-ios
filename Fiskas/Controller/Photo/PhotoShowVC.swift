@@ -22,5 +22,45 @@ class PhotoShowVC: UIViewController {
         }
         
     }
-
+    
+    @IBAction func cancelButtonPressed(_ sender: UIButton) {
+        goBackToPhotoVC()
+    }
+    
+    func goBackToPhotoVC() {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func acceptButtonPressed(_ sender: UIButton) {
+        showAlertToAcceptImage()
+    }
+    
+    func showAlertToAcceptImage() {
+        let alertController = UIAlertController(title: "Image status", message: "Current Image accepted", preferredStyle: .alert)
+        alertController.addTextField { (nameTextField) in
+            nameTextField.placeholder = "Image name"
+        }
+        
+        let okAction = UIAlertAction(title: "Send", style: .default) { (action) in
+            self.showAlertThatImageWasSent()
+        }
+        
+        let cancelAction = UIAlertAction(title: "Delete", style: .destructive) { (action) in
+            self.goBackToPhotoVC()
+        }
+        
+        alertController.addAction(cancelAction)
+        alertController.addAction(okAction)
+        present(alertController, animated: true, completion: nil)
+    }
+    
+    func showAlertThatImageWasSent() {
+        let alertController = UIAlertController(title: "Image sent", message: "The image has been sent to the server", preferredStyle: .alert)
+        
+        let okAction = UIAlertAction(title: "OK", style: .default) { (action) in
+            self.goBackToPhotoVC()
+        }
+        alertController.addAction(okAction)
+        present(alertController, animated: true, completion: nil)
+    }
 }
