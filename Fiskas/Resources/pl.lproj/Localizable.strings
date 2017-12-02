@@ -1,0 +1,38 @@
+/* 
+  Localizable.strings
+  Fiskas
+
+  Created by Yaroslav Zhurbilo on 01.12.17.
+  Copyright © 2017 Yaroslav Zhurbilo. All rights reserved.
+*/
+
+
+"contacts" = "Kontakt";
+"profile" = "Mój profil";
+"make photo" = "Zrób zdjęcie";
+"password" = "Hasło";
+"forgot your password?" = "Zapomniałeś hasło?";
+"register" = "Zarejestruj się";
+"have an account?" = "Have an account? Log in";
+"call us" = "Chcesz być naszym klientem? \nZadzwoń do nas \n(warunek do pełnego dostępu do aplikacji i wszystkich danych)";
+"personal info" = "Dane osobowe";
+"first name" = "Imię";
+"last name" = "Nazwisko";
+"company info" = "Dane firmy";
+"company name" = "Nazwa firmy";
+"bank name" = "Nazwa banka";
+"account number" = "Numer konta bankowego";
+"phone" = "Telefon";
+"tax service" = "Urząd skarbowy";
+"options" = "Ustawienia";
+
+/*выбрать - Wybierz*/
+"choose" = "Wybierz";
+
+/*Log in*/
+/*Fuzzy*/
+"log in" = "Log in";
+
+/*Email*/
+/*Fuzzy*/
+"email" = "Email";

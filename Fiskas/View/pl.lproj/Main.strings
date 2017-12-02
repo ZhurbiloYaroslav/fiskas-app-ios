@@ -1,0 +1,192 @@
+
+/* Class = "UILabel"; text = "E-MAIL"; ObjectID = "4D0-nN-WuX"; */
+"4D0-nN-WuX.text" = "E-MAIL";
+
+/* Class = "UILabel"; text = "DELETE ACCOUNT"; ObjectID = "59P-2L-K2c"; */
+"59P-2L-K2c.text" = "DELETE ACCOUNT";
+
+/* Class = "UITextField"; placeholder = "Email"; ObjectID = "5db-2L-8RI"; */
+"5db-2L-8RI.placeholder" = "Email";
+
+/* Class = "UILabel"; text = "Change"; ObjectID = "6Ua-ul-zAo"; */
+"6Ua-ul-zAo.text" = "Change";
+
+/* Class = "UIButton"; normalTitle = "Accept"; ObjectID = "7GZ-8E-31A"; */
+"7GZ-8E-31A.normalTitle" = "Accept";
+
+/* Class = "UITableViewSection"; headerTitle = "Settings"; ObjectID = "80Y-Bf-5en"; */
+"80Y-Bf-5en.headerTitle" = "Settings";
+
+/* Class = "UILabel"; text = "+91 123 456 7890"; ObjectID = "9Ub-xJ-tYr"; */
+"9Ub-xJ-tYr.text" = "+91 123 456 7890";
+
+/* Class = "UILabel"; text = "LAST NAME"; ObjectID = "9yn-fy-Zts"; */
+"9yn-fy-Zts.text" = "LAST NAME";
+
+/* Class = "UITextField"; placeholder = "Password"; ObjectID = "A9M-BJ-5OQ"; */
+"A9M-BJ-5OQ.placeholder" = "Password";
+
+/* Class = "UIButton"; normalTitle = "kancelaria.fiskas@gmail.com"; ObjectID = "Beg-4j-Oi7"; */
+"Beg-4j-Oi7.normalTitle" = "kancelaria.fiskas@gmail.com";
+
+/* Class = "UILabel"; text = "E-MAIL"; ObjectID = "D2g-pz-6jR"; */
+"D2g-pz-6jR.text" = "E-MAIL";
+
+/* Class = "UILabel"; text = "TAX SERVICE"; ObjectID = "Duc-Zw-G73"; */
+"Duc-Zw-G73.text" = "TAX SERVICE";
+
+/* Class = "UILabel"; text = "bankemail@bank.com"; ObjectID = "EWX-Qb-xUL"; */
+"EWX-Qb-xUL.text" = "bankemail@bank.com";
+
+/* Class = "UILabel"; text = "Privacy Policy"; ObjectID = "G88-C6-BAJ"; */
+"G88-C6-BAJ.text" = "Privacy Policy";
+
+/* Class = "UILabel"; text = "NIP"; ObjectID = "Izc-4T-Rke"; */
+"Izc-4T-Rke.text" = "NIP";
+
+/* Class = "UIButton"; normalTitle = "Forgot your password?"; ObjectID = "J9O-bo-2BF"; */
+"J9O-bo-2BF.normalTitle" = "Forgot your password?";
+
+/* Class = "UILabel"; text = "+91 123 456 7890"; ObjectID = "KMD-9I-i56"; */
+"KMD-9I-i56.text" = "+91 123 456 7890";
+
+/* Class = "UILabel"; text = "REGON"; ObjectID = "KR5-ek-AWf"; */
+"KR5-ek-AWf.text" = "REGON";
+
+/* Class = "UILabel"; text = "Push Notifications"; ObjectID = "MWN-ax-V7O"; */
+"MWN-ax-V7O.text" = "Push Notifications";
+
+/* Class = "UITabBarItem"; title = "Contacts"; ObjectID = "O7q-tG-CpT"; */
+"O7q-tG-CpT.title" = "Contacts";
+
+/* Class = "UILabel"; text = "Bank Of America"; ObjectID = "OGt-Px-RG5"; */
+"OGt-Px-RG5.text" = "Bank Of America";
+
+/* Class = "UITableViewSection"; headerTitle = "Personal data"; ObjectID = "OJE-R5-3Z0"; */
+"OJE-R5-3Z0.headerTitle" = "Personal data";
+
+/* Class = "UILabel"; text = "email:"; ObjectID = "QBX-Yw-Cu2"; */
+"QBX-Yw-Cu2.text" = "email:";
+
+/* Class = "UIButton"; normalTitle = "Log in"; ObjectID = "QGV-w5-vUD"; */
+"QGV-w5-vUD.normalTitle" = "Log in";
+
+/* Class = "UILabel"; text = "MOBILE"; ObjectID = "QUV-lP-nZa"; */
+"QUV-lP-nZa.text" = "MOBILE";
+
+/* Class = "UIButton"; normalTitle = "+48 535 555 549"; ObjectID = "RBy-xQ-tf3"; */
+"RBy-xQ-tf3.normalTitle" = "+48 535 555 549";
+
+/* Class = "UILabel"; text = "USD"; ObjectID = "StX-nh-qnF"; */
+"StX-nh-qnF.text" = "USD";
+
+/* Class = "UILabel"; text = "ACCOUNT NUMBER"; ObjectID = "T7p-4Z-cUJ"; */
+"T7p-4Z-cUJ.text" = "ACCOUNT NUMBER";
+
+/* Class = "UILabel"; text = "PASSWORD"; ObjectID = "U6N-PL-h1v"; */
+"U6N-PL-h1v.text" = "PASSWORD";
+
+/* Class = "UITextField"; placeholder = "Email"; ObjectID = "WBq-uc-n2E"; */
+"WBq-uc-n2E.placeholder" = "Email";
+
+/* Class = "UILabel"; text = "EN"; ObjectID = "WHZ-vp-Q9h"; */
+"WHZ-vp-Q9h.text" = "EN";
+
+/* Class = "UILabel"; text = "Kancelaria Księgowa Fiskas Sp z o. o.\nNIP: 8943072632\nREGON: 363655234"; ObjectID = "WVq-oI-2H1"; */
+"WVq-oI-2H1.text" = "Kancelaria Księgowa Fiskas Sp z o. o.\nNIP: 8943072632\nREGON: 363655234";
+
+/* Class = "UILabel"; text = "+91 123 456 7890"; ObjectID = "Yjb-6Z-Rr7"; */
+"Yjb-6Z-Rr7.text" = "+91 123 456 7890";
+
+/* Class = "UITabBarItem"; title = "Make photo"; ObjectID = "a1I-B8-yzK"; */
+"a1I-B8-yzK.title" = "Make photo";
+
+/* Class = "UITabBarItem"; title = "Profile"; ObjectID = "a56-nH-3Cw"; */
+"a56-nH-3Cw.title" = "Profile";
+
+/* Class = "UITextField"; placeholder = "Password"; ObjectID = "aSO-iz-feF"; */
+"aSO-iz-feF.placeholder" = "Password";
+
+/* Class = "UIButton"; normalTitle = "Cancel"; ObjectID = "d7t-LY-MXx"; */
+"d7t-LY-MXx.normalTitle" = "Cancel";
+
+/* Class = "UIButton"; normalTitle = "Zadzwoń do nas"; ObjectID = "dFN-lH-U52"; */
+"dFN-lH-U52.normalTitle" = "Zadzwoń do nas";
+
+/* Class = "UILabel"; text = "LANGUAGE"; ObjectID = "dJI-jL-4Qy"; */
+"dJI-jL-4Qy.text" = "LANGUAGE";
+
+/* Class = "UIButton"; normalTitle = "Register"; ObjectID = "epY-UV-8XE"; */
+"epY-UV-8XE.normalTitle" = "Register";
+
+/* Class = "UIButton"; normalTitle = "Register"; ObjectID = "fg4-R6-qA9"; */
+"fg4-R6-qA9.normalTitle" = "Register";
+
+/* Class = "UINavigationItem"; title = "Profile"; ObjectID = "fhh-YN-JfK"; */
+"fhh-YN-JfK.title" = "Profile";
+
+/* Class = "UIButton"; normalTitle = "Zadzwoń do nas"; ObjectID = "hcv-ug-MSb"; */
+"hcv-ug-MSb.normalTitle" = "Zadzwoń do nas";
+
+/* Class = "UILabel"; text = "Bruno"; ObjectID = "hlc-5m-bwD"; */
+"hlc-5m-bwD.text" = "Bruno";
+
+/* Class = "UILabel"; text = "MOBILE"; ObjectID = "jzd-91-3an"; */
+"jzd-91-3an.text" = "MOBILE";
+
+/* Class = "UILabel"; text = "0123456789"; ObjectID = "kUE-hH-258"; */
+"kUE-hH-258.text" = "0123456789";
+
+/* Class = "UILabel"; text = "CURRENCY"; ObjectID = "knM-mf-86r"; */
+"knM-mf-86r.text" = "CURRENCY";
+
+/* Class = "UILabel"; text = "COMPANY NAME"; ObjectID = "m8o-Zv-sXK"; */
+"m8o-Zv-sXK.text" = "COMPANY NAME";
+
+/* Class = "UILabel"; text = "Microsoft"; ObjectID = "mDo-Hw-ozH"; */
+"mDo-Hw-ozH.text" = "Microsoft";
+
+/* Class = "UIButton"; normalTitle = "Have an account? Log in"; ObjectID = "nA7-3M-6IW"; */
+"nA7-3M-6IW.normalTitle" = "Have an account? Log in";
+
+/* Class = "UILabel"; text = "Kontakt:"; ObjectID = "oO5-da-Ca2"; */
+"oO5-da-Ca2.text" = "Kontakt:";
+
+/* Class = "UILabel"; text = "FIRST NAME"; ObjectID = "oXI-Yt-N6r"; */
+"oXI-Yt-N6r.text" = "FIRST NAME";
+
+/* Class = "UILabel"; text = "christinabruno@gmail.com"; ObjectID = "pb7-0N-xu6"; */
+"pb7-0N-xu6.text" = "christinabruno@gmail.com";
+
+/* Class = "UILabel"; text = "phone:"; ObjectID = "qiQ-pn-tRn"; */
+"qiQ-pn-tRn.text" = "phone:";
+
+/* Class = "UITableViewSection"; headerTitle = "Company info"; ObjectID = "qrn-ED-HPt"; */
+"qrn-ED-HPt.headerTitle" = "Company info";
+
+/* Class = "UINavigationItem"; title = "Make photo"; ObjectID = "rgc-pD-zp6"; */
+"rgc-pD-zp6.title" = "Make photo";
+
+/* Class = "UILabel"; text = "ul. Legnicka 150/2\n54-206 Wrocław"; ObjectID = "rpb-Yr-Ud6"; */
+"rpb-Yr-Ud6.text" = "ul. Legnicka 150/2\n54-206 Wrocław";
+
+/* Class = "UILabel"; text = "Christina"; ObjectID = "rr6-3C-90Z"; */
+"rr6-3C-90Z.text" = "Christina";
+
+/* Class = "UINavigationItem"; title = "Kontakt"; ObjectID = "wrB-qt-moa"; */
+"wrB-qt-moa.title" = "Kontakt";
+
+/* Class = "UILabel"; text = "BANK NAME"; ObjectID = "xoX-sq-LVO"; */
+"xoX-sq-LVO.text" = "BANK NAME";
+
+/* Class = "UILabel"; text = "0123456789"; ObjectID = "xuX-tB-fEC"; */
+"xuX-tB-fEC.text" = "0123456789";
+
+/* Class = "UILabel"; text = "0123456789"; ObjectID = "y48-OF-Z1V"; */
+"y48-OF-Z1V.text" = "0123456789";
+
+/* Class = "UIViewController"; title = "View photo"; ObjectID = "ydP-sp-K0O"; */
+"ydP-sp-K0O.title" = "View photo";
+
+/* Class = "UILabel"; text = "Adres:"; ObjectID = "zyb-k2-US7"; */
+"zyb-k2-US7.text" = "Adres:";

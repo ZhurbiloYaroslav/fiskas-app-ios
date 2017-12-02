@@ -1,0 +1,17 @@
+/* 
+  Localizable.strings
+  Fiskas
+
+  Created by Yaroslav Zhurbilo on 01.12.17.
+  Copyright © 2017 Yaroslav Zhurbilo. All rights reserved.
+*/
+
+"contacts" = "Contacts";
+"profile" = "Profile";
+"make photo" = "Make photo";
+"password" = "Password";
+"forgot your password?" = "Forgot your password?";
+"register" = "Register";
+"call us" = "Call us";
+"personal info" = "Personal info";
+"first name" = "First Name";

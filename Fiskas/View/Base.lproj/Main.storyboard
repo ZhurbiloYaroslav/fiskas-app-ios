@@ -81,13 +81,10 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="KCu-B8-sIV">
-                                <rect key="frame" x="0.0" y="403.5" width="375" height="60"/>
+                                <rect key="frame" x="15" y="403.5" width="345" height="80"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nA7-3M-6IW" userLabel="Have already have account? Log in">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="25"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="25" id="L4J-jR-47S"/>
-                                        </constraints>
+                                        <rect key="frame" x="0.0" y="0.0" width="345" height="36"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
                                         <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <state key="normal" title="Have an account? Log in">
@@ -98,15 +95,12 @@
                                             <action selector="registerButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Nzx-e6-ET8"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dFN-lH-U52">
-                                        <rect key="frame" x="0.0" y="35" width="375" height="25"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="25" id="aKH-zx-2q7"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="dFN-lH-U52">
+                                        <rect key="frame" x="0.0" y="46" width="345" height="34"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="16"/>
                                         <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <state key="normal" title="Zadzwoń do nas">
-                                            <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
                                             <action selector="callButtonPressed:" destination="Bld-bz-pDa" eventType="touchUpInside" id="RsK-5E-34e"/>
@@ -118,21 +112,25 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="KCu-B8-sIV" firstAttribute="leading" secondItem="AUH-G9-hFq" secondAttribute="leading" constant="15" id="DUx-0m-xJN"/>
                             <constraint firstItem="AUH-G9-hFq" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="KCu-B8-sIV" secondAttribute="bottom" constant="10" id="HJm-lz-Cfq"/>
                             <constraint firstItem="s8U-Nh-ZLe" firstAttribute="centerY" secondItem="Vtg-fg-tCN" secondAttribute="centerY" id="NKh-kA-h1M"/>
                             <constraint firstItem="v0S-pE-nfM" firstAttribute="centerY" secondItem="Vtg-fg-tCN" secondAttribute="centerY" constant="-150" id="O5X-HP-JtW"/>
-                            <constraint firstItem="KCu-B8-sIV" firstAttribute="width" secondItem="Vtg-fg-tCN" secondAttribute="width" id="UHx-C3-A2X"/>
                             <constraint firstItem="s8U-Nh-ZLe" firstAttribute="centerX" secondItem="Vtg-fg-tCN" secondAttribute="centerX" id="ZVK-ms-Eeg"/>
                             <constraint firstItem="v0S-pE-nfM" firstAttribute="centerX" secondItem="Vtg-fg-tCN" secondAttribute="centerX" id="a0N-Kd-dr4"/>
                             <constraint firstItem="KCu-B8-sIV" firstAttribute="centerX" secondItem="Vtg-fg-tCN" secondAttribute="centerX" id="mMy-IJ-Li4"/>
+                            <constraint firstItem="AUH-G9-hFq" firstAttribute="trailing" secondItem="KCu-B8-sIV" secondAttribute="trailing" constant="15" id="ra9-l2-XlL"/>
                             <constraint firstItem="KCu-B8-sIV" firstAttribute="top" secondItem="s8U-Nh-ZLe" secondAttribute="bottom" constant="15" id="xLi-U9-tpj"/>
                             <constraint firstItem="s8U-Nh-ZLe" firstAttribute="width" secondItem="v0S-pE-nfM" secondAttribute="width" id="xxt-UQ-y6J"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="AUH-G9-hFq"/>
                     </view>
                     <connections>
+                        <outlet property="callUsButton" destination="dFN-lH-U52" id="Yt5-Vv-27F"/>
                         <outlet property="emailField" destination="WBq-uc-n2E" id="8wS-jR-2em"/>
+                        <outlet property="loginButton" destination="nA7-3M-6IW" id="swH-FB-LXJ"/>
                         <outlet property="passwordField" destination="A9M-BJ-5OQ" id="rce-m0-HU6"/>
+                        <outlet property="registerButton" destination="fg4-R6-qA9" id="2DV-zs-azd"/>
                         <segue destination="nJY-gs-ZqW" kind="show" identifier="LoginFromRegister" id="134-UA-Umf"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="LogInFromRegister" id="OMu-vz-jkL"/>
                     </connections>
@@ -205,13 +203,10 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="DZ9-K1-ecU">
-                                <rect key="frame" x="0.0" y="403.5" width="375" height="95"/>
+                                <rect key="frame" x="15" y="403.5" width="345" height="126"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J9O-bo-2BF">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="25"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="25" id="HhD-NX-P96"/>
-                                        </constraints>
+                                        <rect key="frame" x="0.0" y="0.0" width="345" height="36"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
                                         <state key="normal" title="Forgot your password?">
                                             <color key="titleColor" red="1" green="0.34509803919999998" blue="0.33333333329999998" alpha="1" colorSpace="calibratedRGB"/>
@@ -221,10 +216,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="epY-UV-8XE">
-                                        <rect key="frame" x="0.0" y="35" width="375" height="25"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="25" id="zMW-QM-NUL"/>
-                                        </constraints>
+                                        <rect key="frame" x="0.0" y="46" width="345" height="36"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
                                         <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <state key="normal" title="Register">
@@ -235,15 +227,12 @@
                                             <segue destination="Bld-bz-pDa" kind="show" identifier="RegisterFromLogin" id="4ij-R9-UBB"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hcv-ug-MSb">
-                                        <rect key="frame" x="0.0" y="70" width="375" height="25"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="25" id="dwQ-ry-DTI"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="hcv-ug-MSb">
+                                        <rect key="frame" x="0.0" y="92" width="345" height="34"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="16"/>
                                         <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                        <state key="normal" title="Zadzwoń do nas">
-                                            <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <state key="normal" title="Call us">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
                                             <action selector="callButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PB0-Sg-Q40"/>
@@ -256,19 +245,24 @@
                         <constraints>
                             <constraint firstItem="DZ9-K1-ecU" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="2yx-WH-VKa"/>
                             <constraint firstItem="d2B-2n-bhn" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="3jW-qY-34c"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="DZ9-K1-ecU" secondAttribute="trailing" constant="15" id="5iV-MH-tiJ"/>
                             <constraint firstItem="d2B-2n-bhn" firstAttribute="width" secondItem="yln-lE-HPk" secondAttribute="width" id="EO9-Eu-4ea"/>
                             <constraint firstItem="yln-lE-HPk" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="JI9-0D-aHL"/>
-                            <constraint firstItem="DZ9-K1-ecU" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="Jif-yz-Y4c"/>
                             <constraint firstItem="yln-lE-HPk" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-150" id="MvE-Ps-S0X"/>
                             <constraint firstItem="d2B-2n-bhn" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="QYQ-In-GGP"/>
                             <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="DZ9-K1-ecU" secondAttribute="bottom" constant="10" id="XTv-Zl-xg5"/>
                             <constraint firstItem="DZ9-K1-ecU" firstAttribute="top" secondItem="d2B-2n-bhn" secondAttribute="bottom" constant="15" id="hre-rh-QW3"/>
+                            <constraint firstItem="DZ9-K1-ecU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="pEg-cl-sc4"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="callUsButton" destination="hcv-ug-MSb" id="cdB-7I-rqJ"/>
                         <outlet property="emailField" destination="5db-2L-8RI" id="04E-aD-QgA"/>
+                        <outlet property="forgotPasswordButton" destination="J9O-bo-2BF" id="zJg-TV-HvV"/>
+                        <outlet property="logInButton" destination="QGV-w5-vUD" id="HP1-Au-g7g"/>
                         <outlet property="passwordField" destination="aSO-iz-feF" id="qCa-BN-QVh"/>
+                        <outlet property="registerButton" destination="epY-UV-8XE" id="8e3-N4-vpY"/>
                         <segue destination="nJY-gs-ZqW" kind="show" identifier="LoginFromLogin" id="Z3S-Zx-9BL"/>
                     </connections>
                 </viewController>
@@ -1233,6 +1227,6 @@ REGON: 363655234</string>
         <image name="logo.png" width="180" height="60"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="134-UA-Umf"/>
+        <segue reference="Z3S-Zx-9BL"/>
     </inferredMetricsTieBreakers>
 </document>
