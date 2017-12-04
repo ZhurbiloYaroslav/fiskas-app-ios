@@ -7,15 +7,17 @@
 */
 
 
-"show photo" = "Pokaż zdjęcie";
-"balance" = "Bilansowy";
+/*menu-item*/
 "contacts" = "Kontakt";
+
+/*menu-item*/
 "profile" = "Mój profil";
+
+/*menu-item*/
 "make photo" = "Zrób zdjęcie";
 "password" = "Hasło";
 "forgot your password?" = "Zapomniałeś hasło?";
 "register" = "Zarejestruj się";
-"have an account?" = "Have an account? Log in";
 "call us" = "Chcesz być naszym klientem? \nZadzwoń do nas \n(warunek do pełnego dostępu do aplikacji i wszystkich danych)";
 "personal info" = "Dane osobowe";
 "first name" = "Imię";
@@ -38,3 +40,29 @@
 /*Email*/
 /*Fuzzy*/
 "email" = "Email";
+
+/*Have an account? Log in*/
+"have an account?" = "Have an account? Log in";
+
+/*menu-item*/
+"balance" = "Bilansowy";
+
+/*navigation title,*/
+"show photo" = "Pokaż zdjęcie";
+
+/*Push Notifications*/
+"push notifications" = "Powiadomienia";
+
+/*NIP*/
+"nip" = "NIP";
+
+/*REGON*/
+"regon" = "REGON";
+
+/*Privacy Policy*/
+"privacy policy" = "Polityka ochrony prywatności";
+"delete account" = "DELETE ACCOUNT";
+"full address" = "Kancelaria Księgowa Fiskas Sp z o. o.\nNIP: 8943072632\nREGON: 363655234";
+"address" = "Adres:";
+
+

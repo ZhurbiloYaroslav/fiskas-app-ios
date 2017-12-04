@@ -13,7 +13,6 @@
 		C42C1AAF1FD1BE8F005B7022 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42C1AAE1FD1BE8F005B7022 /* UserDefaultsManager.swift */; };
 		C42C1AB21FD1BF73005B7022 /* Languages.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42C1AB11FD1BF73005B7022 /* Languages.swift */; };
 		C42C1AB41FD2A135005B7022 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42C1AB31FD2A135005B7022 /* AuthManager.swift */; };
-		C42C1AB61FD2F470005B7022 /* TabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42C1AB51FD2F470005B7022 /* TabBarVC.swift */; };
 		C42C1AB81FD2FC0E005B7022 /* BalanceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42C1AB71FD2FC0E005B7022 /* BalanceVC.swift */; };
 		C42C1ABA1FD2FF00005B7022 /* icon-balance.png in Resources */ = {isa = PBXBuildFile; fileRef = C42C1AB91FD2FEFF005B7022 /* icon-balance.png */; };
 		C42C1ABC1FD3BE22005B7022 /* CurrentUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42C1ABB1FD3BE22005B7022 /* CurrentUser.swift */; };
@@ -52,7 +51,6 @@
 		C42C1AAE1FD1BE8F005B7022 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
 		C42C1AB11FD1BF73005B7022 /* Languages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Languages.swift; sourceTree = "<group>"; };
 		C42C1AB31FD2A135005B7022 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
-		C42C1AB51FD2F470005B7022 /* TabBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarVC.swift; sourceTree = "<group>"; };
 		C42C1AB71FD2FC0E005B7022 /* BalanceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceVC.swift; sourceTree = "<group>"; };
 		C42C1AB91FD2FEFF005B7022 /* icon-balance.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-balance.png"; sourceTree = "<group>"; };
 		C42C1ABB1FD3BE22005B7022 /* CurrentUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentUser.swift; sourceTree = "<group>"; };
@@ -197,11 +195,10 @@
 			isa = PBXGroup;
 			children = (
 				C4BF37761FCD63D300BFD881 /* Auth */,
-				C4BF37751FCD63A800BFD881 /* Photo */,
 				C42C1AB71FD2FC0E005B7022 /* BalanceVC.swift */,
+				C4BF37751FCD63A800BFD881 /* Photo */,
 				C4B057021FC5A30100699B6F /* ContactsVC.swift */,
 				C4B057061FC5AC4E00699B6F /* ProfileVC.swift */,
-				C42C1AB51FD2F470005B7022 /* TabBarVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -392,7 +389,6 @@
 				C42C1AAF1FD1BE8F005B7022 /* UserDefaultsManager.swift in Sources */,
 				C42C1AAD1FD1BE4B005B7022 /* String+localized.swift in Sources */,
 				C4B057031FC5A30100699B6F /* ContactsVC.swift in Sources */,
-				C42C1AB61FD2F470005B7022 /* TabBarVC.swift in Sources */,
 				C49B5E1F1FC578BE00B9C1C7 /* AppDelegate.swift in Sources */,
 				C42C1AB21FD1BF73005B7022 /* Languages.swift in Sources */,
 				C42C1AB81FD2FC0E005B7022 /* BalanceVC.swift in Sources */,

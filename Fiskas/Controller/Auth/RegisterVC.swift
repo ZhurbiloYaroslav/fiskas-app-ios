@@ -44,11 +44,11 @@ class RegisterVC: UIViewController {
     }
     
     @IBAction func registerButtonPressed(_ sender: UIButton) {
-        performSegue(withIdentifier: "LoginFromRegister", sender: nil)
+        performSegue(withIdentifier: "EnterFromRegister", sender: nil)
     }
     
     @IBAction func loginButtonPressed(_ sender: UIButton) {
-        performSegue(withIdentifier: "LogInFromRegister", sender: nil)
+        performSegue(withIdentifier: "LoginFromRegister", sender: nil)
     }
     
     @IBAction func callButtonPressed(_ sender: UIButton) {

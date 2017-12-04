@@ -46,7 +46,7 @@ class LoginVC: UIViewController {
     }
     
     @IBAction func loginButtonPressed(_ sender: UIButton) {
-        performSegue(withIdentifier: "LoginFromLogin", sender: nil)
+        performSegue(withIdentifier: "EnterFromLogin", sender: nil)
     }
     
     @IBAction func forgotPasswordButtonPressed(_ sender: UIButton) {

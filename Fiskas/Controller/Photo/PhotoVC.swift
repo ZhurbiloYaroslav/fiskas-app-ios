@@ -8,9 +8,12 @@
 
 import UIKit
 import AVFoundation
+import SWRevealViewController
 
 class PhotoVC: UIViewController {
 
+    @IBOutlet weak var menuButton: UIBarButtonItem!
+    
     //MARK: To delete
     @IBOutlet weak var imagePicked: UIImageView!
     //To delete
@@ -28,12 +31,22 @@ class PhotoVC: UIViewController {
         super.viewDidLoad()
         
         updateUILabelsWithLocalizedText()
+        setupLeftMenu()
     }
     
     func updateUILabelsWithLocalizedText() {
         
         navigationItem.title = "make photo".localized()
         
+    }
+    
+    func setupLeftMenu() {
+        
+        if revealViewController() != nil {
+            menuButton.target = revealViewController()
+            menuButton.action = #selector(SWRevealViewController.revealToggle(_:))
+            view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
