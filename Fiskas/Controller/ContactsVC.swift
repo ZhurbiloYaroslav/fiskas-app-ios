@@ -12,9 +12,17 @@ class ContactsVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        updateUILabelsWithLocalizedText()
 
-        // Do any additional setup after loading the view.
     }
+    
+    func updateUILabelsWithLocalizedText() {
+        
+        navigationItem.title = "contacts".localized()
+        
+    }
+    
     @IBAction func makePhoneCall1(_ sender: UIButton) {
         Browser.openURLWith(.Call_555_549)
     }

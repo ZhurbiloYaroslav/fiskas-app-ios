@@ -10,30 +10,35 @@ import UIKit
 
 class ProfileVC: UITableViewController {
 
+    //MARK: HEADERS of labels
+    @IBOutlet weak var firstNameHeaderLabel: UILabel!
+    @IBOutlet weak var lastNameHeaderLabel: UILabel!
+    @IBOutlet weak var emailHeaderLabel: UILabel!
+    @IBOutlet weak var phoneHeaderLabel: UILabel!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
+        updateUILabelsWithLocalizedText()
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    func updateUILabelsWithLocalizedText() {
+        
+        navigationItem.title = "profile".localized()
+        
+        firstNameHeaderLabel.text = "first name".localized()
+        lastNameHeaderLabel.text = "last name".localized()
+        emailHeaderLabel.text = "email".localized()
+        phoneHeaderLabel.text = "phone".localized()
+        
     }
-
-    // MARK: - Table view data source
-
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 3
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         switch section {
         case 0:
             return 5
@@ -51,7 +56,7 @@ class ProfileVC: UITableViewController {
         
         switch section {
         case 0:
-            headerTitleText = "Personal info"
+            headerTitleText = "personal info".localized()
         case 1:
             headerTitleText = "Personal info"
         case 2:

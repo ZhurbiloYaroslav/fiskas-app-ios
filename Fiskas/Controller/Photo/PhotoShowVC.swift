@@ -17,9 +17,17 @@ class PhotoShowVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        updateUILabelsWithLocalizedText()
+        
         if let availableImage = takenPhoto {
             imageView.image = availableImage
         }
+        
+    }
+    
+    func updateUILabelsWithLocalizedText() {
+        
+        navigationItem.title = "show photo".localized()
         
     }
     

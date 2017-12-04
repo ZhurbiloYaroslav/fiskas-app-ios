@@ -11,11 +11,10 @@ import AVFoundation
 
 class PhotoVC: UIViewController {
 
-    //Tutorial 1
+    //MARK: To delete
     @IBOutlet weak var imagePicked: UIImageView!
-    //Tutorial 1 end
+    //To delete
     
-    //Tutorial 2
     @IBOutlet weak var cameraViewContainer: UIView!
     
     let captureSession = AVCaptureSession()
@@ -24,11 +23,16 @@ class PhotoVC: UIViewController {
     var captureDevice:AVCaptureDevice!
     
     var takePhoto = false
-    //Tutorial 2 end
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        updateUILabelsWithLocalizedText()
+    }
+    
+    func updateUILabelsWithLocalizedText() {
+        
+        navigationItem.title = "make photo".localized()
         
     }
     
@@ -58,7 +62,7 @@ class PhotoVC: UIViewController {
             
             captureSession.addInput(captureDeviceInput)
             
-        }catch {
+        } catch {
             print(error.localizedDescription)
         }
         
