@@ -35,6 +35,8 @@ class ContactsVC: UIViewController {
         
         fullAddressTextLabel.text = "full address".localized()
         addressHeaderLabel.text = "address".localized()
+        phoneHeaderLabel.text = "phone".localized()
+        emailHeaderLabel.text = "email".localized()
         
     }
     
