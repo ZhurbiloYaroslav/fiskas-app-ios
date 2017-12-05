@@ -38,11 +38,13 @@ class ProfileVC: UITableViewController {
         
         updateUILabelsWithLocalizedText()
         setupLeftMenu()
+        
+//        self.automaticallyAdjustsScrollViewInsets = false;
     }
     
     func updateUILabelsWithLocalizedText() {
         
-        navigationItem.title = "profile".localized()
+        navigationItem.title = "personal info".localized()
         
         firstNameHeaderLabel.text = "first name".localized()
         lastNameHeaderLabel.text = "last name".localized()
@@ -96,7 +98,7 @@ class ProfileVC: UITableViewController {
         
         switch section {
         case 0:
-            headerTitleText = "personal info".localized()
+            return UIView()
         case 1:
             headerTitleText = "company info".localized()
         case 2:
@@ -105,15 +107,26 @@ class ProfileVC: UITableViewController {
             break
         }
         
-        let headerTitle = UILabel(frame: CGRect(x: 0, y: 0, width: tableView.bounds.size.width, height: 30))
-        headerTitle.text = headerTitleText
-        
-        let headerView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.bounds.size.width, height: 30))
+        let headerView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.size.width, height: 30))
         headerView.backgroundColor = Constants.Color.red
-        headerView.addSubview(headerTitle)
+        
+        let headerTitleLabel = UILabel(frame: CGRect(x: 15, y: 3, width: tableView.frame.size.width, height: 30))
+        headerTitleLabel.text = headerTitleText
+        headerTitleLabel.font = UIFont(name: "AvenirNext-DemiBold", size: 18)
+        headerTitleLabel.textColor = UIColor.white
+        headerView.addSubview(headerTitleLabel)
         
         return headerView
         
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        switch section {
+        case 0:
+            return CGFloat.leastNormalMagnitude
+        default:
+            return 30
+        }
     }
 
 }
