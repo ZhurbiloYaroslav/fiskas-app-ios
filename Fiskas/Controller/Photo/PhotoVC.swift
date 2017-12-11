@@ -13,6 +13,7 @@ import SWRevealViewController
 class PhotoVC: UIViewController {
 
     @IBOutlet weak var menuButton: UIBarButtonItem!
+    @IBOutlet weak var libraryButton: UIButton!
     
     //MARK: To delete
     @IBOutlet weak var imagePicked: UIImageView!
@@ -37,6 +38,7 @@ class PhotoVC: UIViewController {
     func updateUILabelsWithLocalizedText() {
         
         navigationItem.title = "make photo".localized()
+        libraryButton.setTitle("choose".localized(), for: .normal)
         
     }
     

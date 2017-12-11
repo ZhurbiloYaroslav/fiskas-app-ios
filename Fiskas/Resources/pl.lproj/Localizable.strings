@@ -32,6 +32,7 @@
 
 /*выбрать - Wybierz*/
 "choose" = "Wybierz";
+"repeat_password" = "Repeat password";
 
 /*Log in*/
 /*Fuzzy*/

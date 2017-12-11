@@ -13,6 +13,7 @@ class RegisterVC: UIViewController {
     //TextFields
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
+    @IBOutlet weak var repeatPasswordField: UITextField!
     
     //Buttons
     @IBOutlet weak var registerButton: UIButton!
@@ -31,12 +32,14 @@ class RegisterVC: UIViewController {
     func initializeDelegates() {
         emailField.delegate = self
         passwordField.delegate = self
+        repeatPasswordField.delegate = self
     }
     
     func updateUILabelsWithLocalizedText() {
         
         emailField.placeholder = "email".localized()
         passwordField.placeholder = "password".localized()
+        repeatPasswordField.placeholder = "repeat_password".localized()
         
         registerButton.setTitle("register".localized(), for: .normal)
         loginButton.setTitle("have an account?".localized(), for: .normal)
@@ -72,6 +75,7 @@ extension RegisterVC: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         emailField.resignFirstResponder()
         passwordField.resignFirstResponder()
+        repeatPasswordField.resignFirstResponder()
         return true
     }
     
