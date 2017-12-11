@@ -24,7 +24,6 @@ class UserDefaultsManager {
         
     }
     
-    //TODO: Make comment
     var language: Languages.Language {
         
         get {
