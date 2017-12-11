@@ -44,26 +44,26 @@ class ProfileVC: UITableViewController {
     
     func updateUILabelsWithLocalizedText() {
         
-        navigationItem.title = "personal info".localized()
+        navigationItem.title = "personal_info".localized()
         
-        firstNameHeaderLabel.text = "first name".localized()
-        lastNameHeaderLabel.text = "last name".localized()
+        firstNameHeaderLabel.text = "first_name".localized()
+        lastNameHeaderLabel.text = "last_name".localized()
         emailHeaderLabel.text = "email".localized()
         phoneHeaderLabel.text = "phone".localized()
         
-        companyNameHeaderLabel.text = "company name".localized()
+        companyNameHeaderLabel.text = "company_name".localized()
         nipHeaderLabel.text = "nip".localized()
         regonHeaderLabel.text = "regon".localized()
-        bankNameHeaderLabel.text = "bank name".localized()
-        accountNumberHeaderLabel.text = "account number".localized()
+        bankNameHeaderLabel.text = "bank_name".localized()
+        accountNumberHeaderLabel.text = "account_number".localized()
         companyEmailHeaderLabel.text = "email".localized()
         companyPhoneHeaderLabel.text = "phone".localized()
-        taxServiceHeaderLabel.text = "tax service".localized()
+        taxServiceHeaderLabel.text = "tax_service".localized()
         
         passwordHeaderLabel.text = "password".localized()
-        pushNotificationsHeaderLabel.text = "push notifications".localized()
-        privacyPolicyHeaderLabel.text = "privacy policy".localized()
-        deleteAccountLabel.text = "delete account".localized()
+        pushNotificationsHeaderLabel.text = "push_notifications".localized()
+        privacyPolicyHeaderLabel.text = "privacy_policy".localized()
+        deleteAccountLabel.text = "delete_account".localized()
         
     }
     
@@ -100,7 +100,7 @@ class ProfileVC: UITableViewController {
         case 0:
             return UIView()
         case 1:
-            headerTitleText = "company info".localized()
+            headerTitleText = "company_info".localized()
         case 2:
             headerTitleText = "options".localized()
         default:

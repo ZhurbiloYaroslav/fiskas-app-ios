@@ -24,7 +24,7 @@ class MenuCell: UITableViewCell {
         case [0,0]:
             updateLabelsWith(image: "icon-balance", andTitle: "balance".localized())
         case [0,1]:
-            updateLabelsWith(image: "icon-camera", andTitle: "make photo".localized())
+            updateLabelsWith(image: "icon-camera", andTitle: "make_photo".localized())
         case [0,2]:
             updateLabelsWith(image: "icon-contacts", andTitle: "contacts".localized())
         case [0,3]:

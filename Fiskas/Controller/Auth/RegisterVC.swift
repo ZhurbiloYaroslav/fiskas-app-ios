@@ -42,8 +42,8 @@ class RegisterVC: UIViewController {
         repeatPasswordField.placeholder = "repeat_password".localized()
         
         registerButton.setTitle("register".localized(), for: .normal)
-        loginButton.setTitle("have an account?".localized(), for: .normal)
-        callUsButton.setTitle("call us".localized(), for: .normal)
+        loginButton.setTitle("have_an_account".localized(), for: .normal)
+        callUsButton.setTitle("call_us".localized(), for: .normal)
     }
     
     @IBAction func registerButtonPressed(_ sender: UIButton) {

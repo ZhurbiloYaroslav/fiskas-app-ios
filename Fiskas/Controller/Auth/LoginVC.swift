@@ -20,6 +20,7 @@ class LoginVC: UIViewController {
     @IBOutlet weak var registerButton: UIButton!
     @IBOutlet weak var callUsButton: UIButton!
     
+    private var currentAlertVC: UIAlertController!
     private var activeTextField = UITextField()
     
     override func viewDidLoad() {
@@ -39,10 +40,10 @@ class LoginVC: UIViewController {
         emailField.placeholder = "email".localized()
         passwordField.placeholder = "password".localized()
         
-        logInButton.setTitle("log in".localized(), for: .normal)
-        forgotPasswordButton.setTitle("forgot your password?".localized(), for: .normal)
+        logInButton.setTitle("log_in".localized(), for: .normal)
+        forgotPasswordButton.setTitle("forgot_your_password".localized(), for: .normal)
         registerButton.setTitle("register".localized(), for: .normal)
-        callUsButton.setTitle("call us".localized(), for: .normal)
+        callUsButton.setTitle("call_us".localized(), for: .normal)
     }
     
     @IBAction func loginButtonPressed(_ sender: UIButton) {
@@ -50,12 +51,64 @@ class LoginVC: UIViewController {
     }
     
     @IBAction func forgotPasswordButtonPressed(_ sender: UIButton) {
-        let alertTitle = "Restore password"
-        let alertMessage = "Check your Email to restore password"
+        showAlertToRestorePassword()
+    }
+    
+    func showAlertToRestorePassword() {
+        let alertTitle = "restore_password".localized()
+        let alertMessage = "check_email_restore_password".localized()
+        let cancelButtonText = "cancel".localized()
+        let sendButtonText = "restore".localized()
+        
         let alertController = UIAlertController(title: alertTitle, message: alertMessage, preferredStyle: .alert)
-        let alertActionOk = UIAlertAction(title: "OK", style: .default, handler: nil)
+        currentAlertVC = alertController
+        
+        let alertActionCancel = UIAlertAction(title: cancelButtonText, style: .cancel, handler: nil)
+        let alertActionOk = UIAlertAction(title: sendButtonText, style: .default) { [weak alertController] (_) in
+            self.saveUserInfoFromAlertTextField(alertController)
+        }
+        
+        alertController.addAction(alertActionCancel)
+        
+        makeTextFieldForAlertController(alertVC: alertController)
         alertController.addAction(alertActionOk)
-        present(alertController, animated: true, completion: nil)
+        
+        present(alertController, animated: true)
+    }
+    
+    func makeTextFieldForAlertController(alertVC: UIAlertController) {
+        
+        alertVC.addTextField { (textField) in
+            textField.text = self.emailField.text
+            textField.placeholder = "Email"
+            textField.keyboardType = UIKeyboardType.emailAddress
+            textField.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for: .editingChanged)
+        }
+    }
+    
+    @objc func textFieldDidChange(_ textField: UITextField) {
+        
+        guard let fieldText = textField.text else { return }
+        var newMessage = ""
+        var attributes = [ NSAttributedStringKey.foregroundColor : UIColor.black ]
+        
+        if Validator.isEmailValid(fieldText) {
+            newMessage = "Your email is okay"
+            attributes = [ NSAttributedStringKey.foregroundColor : UIColor.green ]
+        } else {
+            newMessage = "Your email is invalid"
+            attributes = [ NSAttributedStringKey.foregroundColor : UIColor.red ]
+        }
+        
+        let attributedString = NSAttributedString(string: newMessage, attributes: attributes)
+        currentAlertVC.setValue(attributedString, forKey: "attributedMessage")
+        
+    }
+    
+    func saveUserInfoFromAlertTextField(_ alertController: UIAlertController?) {
+        if let alertFieldText = alertController?.textFields?[0].text {
+            print("Was sent...", alertFieldText)
+        }
     }
     
     @IBAction func registerButtonPressed(_ sender: UIButton) {

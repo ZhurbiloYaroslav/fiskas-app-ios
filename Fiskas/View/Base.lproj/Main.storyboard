@@ -26,19 +26,22 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="v0S-pE-nfM">
-                                <rect key="frame" x="97.5" y="153.5" width="180" height="60"/>
+                                <rect key="frame" x="97.5" y="73.5" width="180" height="120"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="180" id="rUb-40-vFf"/>
-                                    <constraint firstAttribute="height" constant="60" id="smK-rH-QzJ"/>
+                                    <constraint firstAttribute="height" constant="120" id="smK-rH-QzJ"/>
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="s8U-Nh-ZLe">
-                                <rect key="frame" x="97.5" y="258.5" width="180" height="150"/>
+                                <rect key="frame" x="62.5" y="238.5" width="250" height="190"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WBq-uc-n2E">
-                                        <rect key="frame" x="0.0" y="0.0" width="180" height="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="250" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="Vt5-g5-tYQ"/>
+                                        </constraints>
                                         <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="20"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" returnKeyType="next" textContentType="email"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -47,9 +50,12 @@
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="A9M-BJ-5OQ">
-                                        <rect key="frame" x="0.0" y="40" width="180" height="30"/>
+                                        <rect key="frame" x="0.0" y="50" width="250" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="uUa-x3-c84"/>
+                                        </constraints>
                                         <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="20"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done" secureTextEntry="YES" textContentType="password"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -58,9 +64,12 @@
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Repeat password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fw9-QI-3qK">
-                                        <rect key="frame" x="0.0" y="80" width="180" height="30"/>
+                                        <rect key="frame" x="0.0" y="100" width="250" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="wa9-iZ-VAk"/>
+                                        </constraints>
                                         <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="20"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done" secureTextEntry="YES" textContentType="password"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -69,12 +78,12 @@
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fg4-R6-qA9" userLabel="Register">
-                                        <rect key="frame" x="0.0" y="120" width="180" height="30"/>
+                                        <rect key="frame" x="0.0" y="150" width="250" height="40"/>
                                         <color key="backgroundColor" red="1" green="0.34509803919999998" blue="0.33333333329999998" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="i4I-qU-pN0"/>
+                                            <constraint firstAttribute="height" constant="40" id="IQ7-zu-dlF"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="20"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <inset key="contentEdgeInsets" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
                                         <state key="normal" title="Register">
@@ -91,13 +100,16 @@
                                         </connections>
                                     </button>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="gzo-6e-FQs"/>
+                                </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="KCu-B8-sIV">
-                                <rect key="frame" x="15" y="423.5" width="345" height="80"/>
+                                <rect key="frame" x="15" y="443.5" width="345" height="90"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nA7-3M-6IW" userLabel="Have already have account? Log in">
-                                        <rect key="frame" x="0.0" y="0.0" width="345" height="36"/>
-                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="345" height="40"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="20"/>
                                         <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <state key="normal" title="Have an account? Log in">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -108,8 +120,8 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="dFN-lH-U52">
-                                        <rect key="frame" x="0.0" y="46" width="345" height="34"/>
-                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="16"/>
+                                        <rect key="frame" x="0.0" y="50" width="345" height="40"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="20"/>
                                         <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <state key="normal" title="Zadzwoń do nas">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -127,13 +139,12 @@
                             <constraint firstItem="KCu-B8-sIV" firstAttribute="leading" secondItem="AUH-G9-hFq" secondAttribute="leading" constant="15" id="DUx-0m-xJN"/>
                             <constraint firstItem="AUH-G9-hFq" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="KCu-B8-sIV" secondAttribute="bottom" constant="10" id="HJm-lz-Cfq"/>
                             <constraint firstItem="s8U-Nh-ZLe" firstAttribute="centerY" secondItem="Vtg-fg-tCN" secondAttribute="centerY" id="NKh-kA-h1M"/>
-                            <constraint firstItem="v0S-pE-nfM" firstAttribute="centerY" secondItem="Vtg-fg-tCN" secondAttribute="centerY" constant="-150" id="O5X-HP-JtW"/>
+                            <constraint firstItem="v0S-pE-nfM" firstAttribute="centerY" secondItem="Vtg-fg-tCN" secondAttribute="centerY" constant="-200" id="O5X-HP-JtW"/>
                             <constraint firstItem="s8U-Nh-ZLe" firstAttribute="centerX" secondItem="Vtg-fg-tCN" secondAttribute="centerX" id="ZVK-ms-Eeg"/>
                             <constraint firstItem="v0S-pE-nfM" firstAttribute="centerX" secondItem="Vtg-fg-tCN" secondAttribute="centerX" id="a0N-Kd-dr4"/>
                             <constraint firstItem="KCu-B8-sIV" firstAttribute="centerX" secondItem="Vtg-fg-tCN" secondAttribute="centerX" id="mMy-IJ-Li4"/>
                             <constraint firstItem="AUH-G9-hFq" firstAttribute="trailing" secondItem="KCu-B8-sIV" secondAttribute="trailing" constant="15" id="ra9-l2-XlL"/>
                             <constraint firstItem="KCu-B8-sIV" firstAttribute="top" secondItem="s8U-Nh-ZLe" secondAttribute="bottom" constant="15" id="xLi-U9-tpj"/>
-                            <constraint firstItem="s8U-Nh-ZLe" firstAttribute="width" secondItem="v0S-pE-nfM" secondAttribute="width" id="xxt-UQ-y6J"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="AUH-G9-hFq"/>
                     </view>
@@ -161,19 +172,22 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="yln-lE-HPk">
-                                <rect key="frame" x="97.5" y="153.5" width="180" height="60"/>
+                                <rect key="frame" x="97.5" y="73.5" width="180" height="120"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="I9f-3a-oua"/>
+                                    <constraint firstAttribute="height" constant="120" id="I9f-3a-oua"/>
                                     <constraint firstAttribute="width" constant="180" id="zhS-l1-4DH"/>
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="d2B-2n-bhn">
-                                <rect key="frame" x="97.5" y="278.5" width="180" height="110"/>
+                                <rect key="frame" x="62.5" y="263.5" width="250" height="140"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5db-2L-8RI">
-                                        <rect key="frame" x="0.0" y="0.0" width="180" height="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="250" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="Wpx-3p-NdT"/>
+                                        </constraints>
                                         <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="20"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" returnKeyType="next" textContentType="email"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -182,9 +196,12 @@
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aSO-iz-feF">
-                                        <rect key="frame" x="0.0" y="40" width="180" height="30"/>
+                                        <rect key="frame" x="0.0" y="50" width="250" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="J4E-5F-Dir"/>
+                                        </constraints>
                                         <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="20"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done" secureTextEntry="YES" textContentType="password"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -193,12 +210,12 @@
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QGV-w5-vUD">
-                                        <rect key="frame" x="0.0" y="80" width="180" height="30"/>
+                                        <rect key="frame" x="0.0" y="100" width="250" height="40"/>
                                         <color key="backgroundColor" red="1" green="0.34509803919999998" blue="0.33333333329999998" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="SYM-iG-e82"/>
+                                            <constraint firstAttribute="height" constant="40" id="FIr-5u-ZgQ"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="20"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <inset key="contentEdgeInsets" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
                                         <state key="normal" title="Log in">
@@ -214,13 +231,16 @@
                                         </connections>
                                     </button>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="C6P-TW-hFr"/>
+                                </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="DZ9-K1-ecU">
-                                <rect key="frame" x="15" y="403.5" width="345" height="126"/>
+                                <rect key="frame" x="15" y="418.5" width="345" height="134"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J9O-bo-2BF">
-                                        <rect key="frame" x="0.0" y="0.0" width="345" height="36"/>
-                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="345" height="40"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="20"/>
                                         <state key="normal" title="Forgot your password?">
                                             <color key="titleColor" red="1" green="0.34509803919999998" blue="0.33333333329999998" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
@@ -229,8 +249,8 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="epY-UV-8XE">
-                                        <rect key="frame" x="0.0" y="46" width="345" height="36"/>
-                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                                        <rect key="frame" x="0.0" y="50" width="345" height="40"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="20"/>
                                         <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <state key="normal" title="Register">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -241,7 +261,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="hcv-ug-MSb">
-                                        <rect key="frame" x="0.0" y="92" width="345" height="34"/>
+                                        <rect key="frame" x="0.0" y="100" width="345" height="34"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="16"/>
                                         <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <state key="normal" title="Call us">
@@ -259,9 +279,8 @@
                             <constraint firstItem="DZ9-K1-ecU" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="2yx-WH-VKa"/>
                             <constraint firstItem="d2B-2n-bhn" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="3jW-qY-34c"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="DZ9-K1-ecU" secondAttribute="trailing" constant="15" id="5iV-MH-tiJ"/>
-                            <constraint firstItem="d2B-2n-bhn" firstAttribute="width" secondItem="yln-lE-HPk" secondAttribute="width" id="EO9-Eu-4ea"/>
                             <constraint firstItem="yln-lE-HPk" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="JI9-0D-aHL"/>
-                            <constraint firstItem="yln-lE-HPk" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-150" id="MvE-Ps-S0X"/>
+                            <constraint firstItem="yln-lE-HPk" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-200" id="MvE-Ps-S0X"/>
                             <constraint firstItem="d2B-2n-bhn" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="QYQ-In-GGP"/>
                             <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="DZ9-K1-ecU" secondAttribute="bottom" constant="10" id="XTv-Zl-xg5"/>
                             <constraint firstItem="DZ9-K1-ecU" firstAttribute="top" secondItem="d2B-2n-bhn" secondAttribute="bottom" constant="15" id="hre-rh-QW3"/>
@@ -1312,6 +1331,6 @@ REGON: 363655234</string>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="aCU-JK-za5"/>
-        <segue reference="mhX-wO-hFU"/>
+        <segue reference="ZXJ-b4-Cwo"/>
     </inferredMetricsTieBreakers>
 </document>

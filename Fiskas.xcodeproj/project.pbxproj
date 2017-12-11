@@ -20,6 +20,8 @@
 		C42F0B751FDDD2BB00C3D619 /* Links.rtf in Resources */ = {isa = PBXBuildFile; fileRef = C42F0B741FDDD2BB00C3D619 /* Links.rtf */; };
 		C467C95D1FD5B4E20077A9FA /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C467C95C1FD5B4E20077A9FA /* MenuCell.swift */; };
 		C467C95F1FD5B97B0077A9FA /* MenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C467C95E1FD5B97B0077A9FA /* MenuVC.swift */; };
+		C49312FF1FDEA2D200FCF54F /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49312FE1FDEA2D200FCF54F /* Validator.swift */; };
+		C49313011FDEA30700FCF54F /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49313001FDEA30700FCF54F /* Alert.swift */; };
 		C49B5E1F1FC578BE00B9C1C7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49B5E1E1FC578BE00B9C1C7 /* AppDelegate.swift */; };
 		C49B5E211FC578BE00B9C1C7 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49B5E201FC578BE00B9C1C7 /* LoginVC.swift */; };
 		C49B5E241FC578BE00B9C1C7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C49B5E221FC578BE00B9C1C7 /* Main.storyboard */; };
@@ -57,6 +59,8 @@
 		C42F0B741FDDD2BB00C3D619 /* Links.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = Links.rtf; sourceTree = "<group>"; };
 		C467C95C1FD5B4E20077A9FA /* MenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
 		C467C95E1FD5B97B0077A9FA /* MenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuVC.swift; sourceTree = "<group>"; };
+		C49312FE1FDEA2D200FCF54F /* Validator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
+		C49313001FDEA30700FCF54F /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		C49B5E1B1FC578BE00B9C1C7 /* Fiskas.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fiskas.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C49B5E1E1FC578BE00B9C1C7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C49B5E201FC578BE00B9C1C7 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
@@ -183,6 +187,8 @@
 				C42C1AB31FD2A135005B7022 /* AuthManager.swift */,
 				C42C1ABB1FD3BE22005B7022 /* CurrentUser.swift */,
 				C42C1ABF1FD3C8CC005B7022 /* CurrentCompany.swift */,
+				C49312FE1FDEA2D200FCF54F /* Validator.swift */,
+				C49313001FDEA30700FCF54F /* Alert.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -379,6 +385,8 @@
 				C4B0570F1FC5BB7600699B6F /* Constants.swift in Sources */,
 				C42C1AC01FD3C8CC005B7022 /* CurrentCompany.swift in Sources */,
 				C4E310961FC5904300384B35 /* UIButton+IBInspectable.swift in Sources */,
+				C49312FF1FDEA2D200FCF54F /* Validator.swift in Sources */,
+				C49313011FDEA30700FCF54F /* Alert.swift in Sources */,
 				C42C1ABC1FD3BE22005B7022 /* CurrentUser.swift in Sources */,
 				C4E310981FC5906700384B35 /* UIView+IBInspectable.swift in Sources */,
 				C4B0570D1FC5AD7900699B6F /* PhotoVC.swift in Sources */,

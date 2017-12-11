@@ -27,7 +27,7 @@ class PhotoShowVC: UIViewController {
     
     func updateUILabelsWithLocalizedText() {
         
-        navigationItem.title = "show photo".localized()
+        navigationItem.title = "show_photo".localized()
         
     }
     

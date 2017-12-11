@@ -33,7 +33,7 @@ class ContactsVC: UIViewController {
         
         navigationItem.title = "contacts".localized()
         
-        fullAddressTextLabel.text = "full address".localized()
+        fullAddressTextLabel.text = "full_address".localized()
         addressHeaderLabel.text = "address".localized()
         phoneHeaderLabel.text = "phone".localized()
         emailHeaderLabel.text = "email".localized()

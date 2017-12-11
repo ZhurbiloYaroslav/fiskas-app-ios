@@ -7,6 +7,7 @@
 */
 
 
+
 /*menu-item*/
 "contacts" = "Kontakt";
 
@@ -14,45 +15,46 @@
 "profile" = "Mój profil";
 
 /*menu-item*/
-"make photo" = "Zrób zdjęcie";
+/*Fuzzy*/
+"make_photo" = "Zrób zdjęcie";
 "password" = "Hasło";
-"forgot your password?" = "Zapomniałeś hasło?";
+
+/*forgot your password?*/
+"forgot_your_password" = "Zapomniałeś hasło?";
 "register" = "Zarejestruj się";
-"call us" = "Chcesz być naszym klientem? \nZadzwoń do nas \n(warunek do pełnego dostępu do aplikacji i wszystkich danych)";
-"personal info" = "Dane osobowe";
-"first name" = "Imię";
-"last name" = "Nazwisko";
-"company info" = "Dane firmy";
-"company name" = "Nazwa firmy";
-"bank name" = "Nazwa banka";
-"account number" = "Numer konta bankowego";
+"call_us" = "Chcesz być naszym klientem? \nZadzwoń do nas \n(warunek do pełnego dostępu do aplikacji i wszystkich danych)";
+"personal_info" = "Dane osobowe";
+"first_name" = "Imię";
+"last_name" = "Nazwisko";
+"company_info" = "Dane firmy";
+"company_name" = "Nazwa firmy";
+"bank_name" = "Nazwa banka";
+"account_number" = "Numer konta bankowego";
 "phone" = "Telefon";
-"tax service" = "Urząd skarbowy";
+"tax_service" = "Urząd skarbowy";
 "options" = "Ustawienia";
 
 /*выбрать - Wybierz*/
 "choose" = "Wybierz";
-"repeat_password" = "Repeat password";
 
 /*Log in*/
-/*Fuzzy*/
-"log in" = "Log in";
+"log_in" = "Zaloguj się";
 
 /*Email*/
-/*Fuzzy*/
 "email" = "Email";
 
 /*Have an account? Log in*/
-"have an account?" = "Have an account? Log in";
+"have_an_account" = "Have an account? Log in";
 
 /*menu-item*/
 "balance" = "Bilansowy";
 
 /*navigation title,*/
-"show photo" = "Pokaż zdjęcie";
+"show_photo" = "Pokaż zdjęcie";
 
 /*Push Notifications*/
-"push notifications" = "Powiadomienia";
+/*Fuzzy*/
+"push_notifications" = "Powiadomienia";
 
 /*NIP*/
 "nip" = "NIP";
@@ -61,9 +63,25 @@
 "regon" = "REGON";
 
 /*Privacy Policy*/
-"privacy policy" = "Polityka ochrony prywatności";
-"delete account" = "DELETE ACCOUNT";
-"full address" = "Kancelaria Księgowa Fiskas Sp z o. o.\nNIP: 8943072632\nREGON: 363655234";
+/*Fuzzy*/
+"privacy_policy" = "Polityka ochrony prywatności";
+
+/*Fuzzy*/
+"delete_account" = "DELETE ACCOUNT";
+"full_address" = "Kancelaria Księgowa Fiskas Sp z o. o.\nNIP: 8943072632\nREGON: 363655234";
 "address" = "Adres:";
 
+/*Repeat password*/
+"repeat_password" = "Repeat password";
 
+/*Message in Alert*/
+"check_email_restore_password" = "Check your Email to restore password";
+
+/*Title in Alert*/
+"restore_password" = "Restore password";
+
+/*Title in Alert*/
+"cancel" = "Cancel";
+
+/*Title in Button*/
+"restore" = "Restore";

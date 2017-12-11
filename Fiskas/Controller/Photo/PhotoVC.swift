@@ -37,7 +37,7 @@ class PhotoVC: UIViewController {
     
     func updateUILabelsWithLocalizedText() {
         
-        navigationItem.title = "make photo".localized()
+        navigationItem.title = "make_photo".localized()
         libraryButton.setTitle("choose".localized(), for: .normal)
         
     }
