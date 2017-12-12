@@ -10,9 +10,11 @@ import UIKit
 
 class PhotoShowVC: UIViewController {
     
+    @IBOutlet weak var imageView: UIImageView!
+    
     var takenPhoto:UIImage?
     
-    @IBOutlet weak var imageView: UIImageView!
+    override var prefersStatusBarHidden: Bool { return true }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +26,18 @@ class PhotoShowVC: UIViewController {
         }
         
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+    
+//    override func viewWillDisappear(_ animated: Bool) {
+//        super.viewWillDisappear(animated)
+//        
+//        self.navigationController?.setNavigationBarHidden(false, animated: animated)
+//    }
     
     func updateUILabelsWithLocalizedText() {
         

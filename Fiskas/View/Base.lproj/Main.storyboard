@@ -123,7 +123,7 @@
                                         <rect key="frame" x="0.0" y="50" width="345" height="40"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="20"/>
                                         <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                        <state key="normal" title="Zadzwoń do nas">
+                                        <state key="normal" title="Call us">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
@@ -403,7 +403,9 @@ REGON: 363655234</string>
                         <viewLayoutGuide key="safeArea" id="Sgi-ea-oHQ"/>
                     </view>
                     <navigationItem key="navigationItem" title="Contacts" id="wrB-qt-moa">
-                        <barButtonItem key="leftBarButtonItem" image="menu" id="rlO-KG-hpd"/>
+                        <barButtonItem key="leftBarButtonItem" image="menu" id="rlO-KG-hpd">
+                            <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="addressHeaderLabel" destination="zyb-k2-US7" id="DJN-zo-0s8"/>
@@ -430,7 +432,7 @@ REGON: 363655234</string>
                             <tableViewSection headerTitle="Personal data" id="OJE-R5-3Z0">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="60" id="5Mi-lP-xeI">
-                                        <rect key="frame" x="0.0" y="56" width="375" height="60"/>
+                                        <rect key="frame" x="0.0" y="55.5" width="375" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="5Mi-lP-xeI" id="PoV-v2-GZk">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="59.5"/>
@@ -485,7 +487,7 @@ REGON: 363655234</string>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="60" id="dHd-GC-ybK">
-                                        <rect key="frame" x="0.0" y="116" width="375" height="60"/>
+                                        <rect key="frame" x="0.0" y="115.5" width="375" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dHd-GC-ybK" id="Qf4-xB-ZpB">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="59.5"/>
@@ -518,7 +520,7 @@ REGON: 363655234</string>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="60" id="rAl-zF-lDW">
-                                        <rect key="frame" x="0.0" y="176" width="375" height="60"/>
+                                        <rect key="frame" x="0.0" y="175.5" width="375" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="rAl-zF-lDW" id="o6H-cm-GYy">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="59.5"/>
@@ -555,7 +557,7 @@ REGON: 363655234</string>
                             <tableViewSection headerTitle="Company info" id="qrn-ED-HPt">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="60" id="tX1-Jw-kdo">
-                                        <rect key="frame" x="0.0" y="292" width="375" height="60"/>
+                                        <rect key="frame" x="0.0" y="291.5" width="375" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tX1-Jw-kdo" id="PWy-Yk-ben">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="59.5"/>
@@ -588,7 +590,7 @@ REGON: 363655234</string>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="90" id="Cqi-wu-jgj">
-                                        <rect key="frame" x="0.0" y="352" width="375" height="90"/>
+                                        <rect key="frame" x="0.0" y="351.5" width="375" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Cqi-wu-jgj" id="3eY-5Q-GZO">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="89.5"/>
@@ -627,7 +629,7 @@ REGON: 363655234</string>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="60" id="guh-jY-eH7">
-                                        <rect key="frame" x="0.0" y="442" width="375" height="60"/>
+                                        <rect key="frame" x="0.0" y="441.5" width="375" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="guh-jY-eH7" id="XKH-ix-Q8s">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="59.5"/>
@@ -642,7 +644,7 @@ REGON: 363655234</string>
                                                             <color key="textColor" red="1" green="0.34509803919999998" blue="0.33333333329999998" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0123456789" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kUE-hH-258">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8943072632" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kUE-hH-258">
                                                             <rect key="frame" x="0.0" y="25" width="345" height="24.5"/>
                                                             <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
                                                             <nil key="textColor"/>
@@ -660,7 +662,7 @@ REGON: 363655234</string>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="60" id="fkN-aP-cQD">
-                                        <rect key="frame" x="0.0" y="502" width="375" height="60"/>
+                                        <rect key="frame" x="0.0" y="501.5" width="375" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fkN-aP-cQD" id="7VS-9X-URr">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="59.5"/>
@@ -675,7 +677,7 @@ REGON: 363655234</string>
                                                             <color key="textColor" red="1" green="0.34509803919999998" blue="0.33333333329999998" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0123456789" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xuX-tB-fEC">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="363655234" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xuX-tB-fEC">
                                                             <rect key="frame" x="0.0" y="25" width="345" height="24.5"/>
                                                             <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
                                                             <nil key="textColor"/>
@@ -693,7 +695,7 @@ REGON: 363655234</string>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="60" id="ttz-G7-Yfw">
-                                        <rect key="frame" x="0.0" y="562" width="375" height="60"/>
+                                        <rect key="frame" x="0.0" y="561.5" width="375" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ttz-G7-Yfw" id="bHp-NL-TkD">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="59.5"/>
@@ -726,7 +728,7 @@ REGON: 363655234</string>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="60" id="g0Z-rm-CZi">
-                                        <rect key="frame" x="0.0" y="622" width="375" height="60"/>
+                                        <rect key="frame" x="0.0" y="621.5" width="375" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="g0Z-rm-CZi" id="gcr-wG-hwa">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="59.5"/>
@@ -759,7 +761,7 @@ REGON: 363655234</string>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="60" id="JPk-nL-W2r">
-                                        <rect key="frame" x="0.0" y="682" width="375" height="60"/>
+                                        <rect key="frame" x="0.0" y="681.5" width="375" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="JPk-nL-W2r" id="J2k-cp-0hc">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="59.5"/>
@@ -796,7 +798,7 @@ REGON: 363655234</string>
                             <tableViewSection headerTitle="Settings" id="80Y-Bf-5en">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="60" id="OeL-gl-lPo">
-                                        <rect key="frame" x="0.0" y="798" width="375" height="60"/>
+                                        <rect key="frame" x="0.0" y="797.5" width="375" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="OeL-gl-lPo" id="ibq-eN-gcA">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="59.5"/>
@@ -829,7 +831,7 @@ REGON: 363655234</string>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="60" id="h2q-LI-Aht">
-                                        <rect key="frame" x="0.0" y="858" width="375" height="60"/>
+                                        <rect key="frame" x="0.0" y="857.5" width="375" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="h2q-LI-Aht" id="LaT-v8-hlx">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="59.5"/>
@@ -862,7 +864,7 @@ REGON: 363655234</string>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="G88-C6-BAJ" rowHeight="60" style="IBUITableViewCellStyleDefault" id="NDA-Qq-wau">
-                                        <rect key="frame" x="0.0" y="918" width="375" height="60"/>
+                                        <rect key="frame" x="0.0" y="917.5" width="375" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="NDA-Qq-wau" id="4OX-Bo-mwR">
                                             <rect key="frame" x="0.0" y="0.0" width="341" height="59.5"/>
@@ -879,7 +881,7 @@ REGON: 363655234</string>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="60" id="V36-P8-CXU">
-                                        <rect key="frame" x="0.0" y="978" width="375" height="60"/>
+                                        <rect key="frame" x="0.0" y="977.5" width="375" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="V36-P8-CXU" id="0as-Ai-7L8">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="59.5"/>
@@ -915,7 +917,9 @@ REGON: 363655234</string>
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Profile" id="fhh-YN-JfK">
-                        <barButtonItem key="leftBarButtonItem" image="menu" id="wct-aj-N4i"/>
+                        <barButtonItem key="leftBarButtonItem" image="menu" id="wct-aj-N4i">
+                            <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        </barButtonItem>
                     </navigationItem>
                     <size key="freeformSize" width="375" height="1200"/>
                     <connections>
@@ -966,7 +970,9 @@ REGON: 363655234</string>
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="jZ7-hU-k5t">
-                        <barButtonItem key="leftBarButtonItem" image="menu" id="0Rn-mt-TV3"/>
+                        <barButtonItem key="leftBarButtonItem" image="menu" id="0Rn-mt-TV3">
+                            <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="menuButton" destination="0Rn-mt-TV3" id="VLW-G2-jK5"/>
@@ -979,7 +985,7 @@ REGON: 363655234</string>
         <!--Make photo-->
         <scene sceneID="1Ds-MI-nNn">
             <objects>
-                <viewController hidesBottomBarWhenPushed="YES" id="ty8-xg-8WI" customClass="PhotoVC" customModule="Fiskas" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController hidesBottomBarWhenPushed="YES" id="ty8-xg-8WI" customClass="CameraVC" customModule="Fiskas" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="UfV-Wb-3qd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -988,10 +994,10 @@ REGON: 363655234</string>
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e5I-wi-scP">
-                                        <rect key="frame" x="0.0" y="-10" width="375" height="657"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     </view>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aRt-t2-Mjp">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="aRt-t2-Mjp">
                                         <rect key="frame" x="30" y="547" width="70" height="70"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="70" id="6Nq-5g-9WM"/>
@@ -1013,7 +1019,7 @@ REGON: 363655234</string>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="takePhotoFromLibrary:" destination="ty8-xg-8WI" eventType="touchUpInside" id="rT7-NY-Ke2"/>
+                                            <action selector="takePhotoFromLibrary:" destination="ty8-xg-8WI" eventType="touchUpInside" id="8IW-bl-pOd"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="97Y-7U-e4A" userLabel="Shot">
@@ -1024,7 +1030,7 @@ REGON: 363655234</string>
                                         </constraints>
                                         <state key="normal" image="camera-button-shot"/>
                                         <connections>
-                                            <action selector="takePhoto:" destination="ty8-xg-8WI" eventType="touchUpInside" id="TJX-6t-4wv"/>
+                                            <action selector="captureImage:" destination="ty8-xg-8WI" eventType="touchUpInside" id="UQj-d1-T6T"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -1036,17 +1042,17 @@ REGON: 363655234</string>
                                     <constraint firstAttribute="trailing" secondItem="e5I-wi-scP" secondAttribute="trailing" id="XDa-NJ-WHd"/>
                                     <constraint firstAttribute="bottom" secondItem="aRt-t2-Mjp" secondAttribute="bottom" constant="30" id="kZ8-s5-Llu"/>
                                     <constraint firstItem="97Y-7U-e4A" firstAttribute="centerX" secondItem="XUJ-lJ-jhJ" secondAttribute="centerX" id="oVy-ZG-o36"/>
-                                    <constraint firstItem="e5I-wi-scP" firstAttribute="top" secondItem="XUJ-lJ-jhJ" secondAttribute="top" constant="-10" id="pDn-JD-gXD"/>
+                                    <constraint firstItem="e5I-wi-scP" firstAttribute="top" secondItem="XUJ-lJ-jhJ" secondAttribute="top" id="pDn-JD-gXD"/>
                                     <constraint firstAttribute="bottom" secondItem="97Y-7U-e4A" secondAttribute="bottom" constant="30" id="qC2-4y-wXl"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1LR-lT-New">
-                                <rect key="frame" x="20" y="25" width="50" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1LR-lT-New">
+                                <rect key="frame" x="20" y="40" width="50" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="prO-nW-dGD"/>
                                     <constraint firstAttribute="height" constant="30" id="qta-JJ-ZbM"/>
                                 </constraints>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" image="menu"/>
                             </button>
                         </subviews>
@@ -1055,7 +1061,7 @@ REGON: 363655234</string>
                             <constraint firstItem="1LR-lT-New" firstAttribute="leading" secondItem="5au-zH-iNP" secondAttribute="leading" constant="20" id="7qr-D3-Trw"/>
                             <constraint firstItem="XUJ-lJ-jhJ" firstAttribute="top" secondItem="5au-zH-iNP" secondAttribute="top" id="dcH-ze-TT3"/>
                             <constraint firstItem="5au-zH-iNP" firstAttribute="trailing" secondItem="XUJ-lJ-jhJ" secondAttribute="trailing" id="dm6-jn-xyo"/>
-                            <constraint firstItem="1LR-lT-New" firstAttribute="top" secondItem="5au-zH-iNP" secondAttribute="top" constant="5" id="haI-0U-hnn"/>
+                            <constraint firstItem="1LR-lT-New" firstAttribute="top" secondItem="5au-zH-iNP" secondAttribute="top" constant="20" id="haI-0U-hnn"/>
                             <constraint firstItem="5au-zH-iNP" firstAttribute="bottom" secondItem="XUJ-lJ-jhJ" secondAttribute="bottom" id="sUb-sK-Phu"/>
                             <constraint firstItem="XUJ-lJ-jhJ" firstAttribute="leading" secondItem="5au-zH-iNP" secondAttribute="leading" id="yh2-Ho-mtV"/>
                         </constraints>
@@ -1068,9 +1074,10 @@ REGON: 363655234</string>
                     </navigationItem>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
-                        <outlet property="cameraViewContainer" destination="e5I-wi-scP" id="IFO-Lh-qHx"/>
-                        <outlet property="libraryButton" destination="aRt-t2-Mjp" id="j4l-HO-rcp"/>
-                        <outlet property="menuButton" destination="5So-ER-igt" id="9Jx-dr-p2D"/>
+                        <outlet property="captureButton" destination="97Y-7U-e4A" id="lGU-eG-18E"/>
+                        <outlet property="capturePreviewView" destination="e5I-wi-scP" id="IWa-Yg-gXv"/>
+                        <outlet property="libraryButton" destination="aRt-t2-Mjp" id="cwc-kJ-If3"/>
+                        <outlet property="menuButton" destination="1LR-lT-New" id="Iv6-BL-MX5"/>
                         <segue destination="ydP-sp-K0O" kind="show" identifier="ShowPhotoFromPhoto" id="jOr-z0-1PX"/>
                     </connections>
                 </viewController>
@@ -1086,54 +1093,72 @@ REGON: 363655234</string>
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gox-3P-DIW">
-                                <rect key="frame" x="0.0" y="20" width="375" height="547"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gox-3P-DIW">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                             </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SnR-ef-bRu">
-                                <rect key="frame" x="0.0" y="567" width="375" height="100"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d7t-LY-MXx">
-                                        <rect key="frame" x="15" y="32" width="54" height="36"/>
-                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
-                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <state key="normal" title="Cancel">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="cancelButtonPressed:" destination="ydP-sp-K0O" eventType="touchUpInside" id="apB-mg-naP"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7GZ-8E-31A">
-                                        <rect key="frame" x="305" y="32" width="55" height="36"/>
-                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
-                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <state key="normal" title="Accept">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="acceptButtonPressed:" destination="ydP-sp-K0O" eventType="touchUpInside" id="TnY-FP-Lvi"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d7t-LY-MXx">
+                                <rect key="frame" x="30" y="567" width="70" height="70"/>
                                 <constraints>
-                                    <constraint firstItem="7GZ-8E-31A" firstAttribute="centerY" secondItem="SnR-ef-bRu" secondAttribute="centerY" id="5xV-5h-3ES"/>
-                                    <constraint firstItem="d7t-LY-MXx" firstAttribute="leading" secondItem="SnR-ef-bRu" secondAttribute="leading" constant="15" id="PQm-Kd-MKI"/>
-                                    <constraint firstAttribute="height" constant="100" id="RDb-4T-MMC"/>
-                                    <constraint firstItem="d7t-LY-MXx" firstAttribute="centerY" secondItem="SnR-ef-bRu" secondAttribute="centerY" id="Zpy-Of-faJ"/>
-                                    <constraint firstAttribute="trailing" secondItem="7GZ-8E-31A" secondAttribute="trailing" constant="15" id="rWB-jP-yjl"/>
+                                    <constraint firstAttribute="width" constant="70" id="fct-I8-A1X"/>
+                                    <constraint firstAttribute="height" constant="70" id="uhQ-w5-hws"/>
                                 </constraints>
-                            </view>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="Cancel">
+                                    <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="cancelButtonPressed:" destination="ydP-sp-K0O" eventType="touchUpInside" id="apB-mg-naP"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7GZ-8E-31A">
+                                <rect key="frame" x="275" y="567" width="70" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="cRL-Tt-KlM"/>
+                                    <constraint firstAttribute="width" constant="70" id="cWQ-c1-CAk"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="Accept">
+                                    <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="acceptButtonPressed:" destination="ydP-sp-K0O" eventType="touchUpInside" id="TnY-FP-Lvi"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="SnR-ef-bRu" firstAttribute="top" secondItem="gox-3P-DIW" secondAttribute="bottom" id="A1h-3K-ZC7"/>
+                            <constraint firstItem="6qO-Lh-sBu" firstAttribute="bottom" secondItem="d7t-LY-MXx" secondAttribute="bottom" constant="30" id="Bp7-Pb-uoE"/>
+                            <constraint firstItem="6qO-Lh-sBu" firstAttribute="bottom" secondItem="gox-3P-DIW" secondAttribute="bottom" id="Cfj-qF-Zmm"/>
                             <constraint firstItem="gox-3P-DIW" firstAttribute="trailing" secondItem="6qO-Lh-sBu" secondAttribute="trailing" id="J30-3F-g33"/>
-                            <constraint firstItem="SnR-ef-bRu" firstAttribute="bottom" secondItem="6qO-Lh-sBu" secondAttribute="bottom" id="JMI-W0-KJk"/>
                             <constraint firstItem="gox-3P-DIW" firstAttribute="top" secondItem="6qO-Lh-sBu" secondAttribute="top" id="PW7-W0-F8J"/>
-                            <constraint firstItem="SnR-ef-bRu" firstAttribute="trailing" secondItem="6qO-Lh-sBu" secondAttribute="trailing" id="aVm-mi-rNd"/>
-                            <constraint firstItem="SnR-ef-bRu" firstAttribute="leading" secondItem="6qO-Lh-sBu" secondAttribute="leading" id="bh8-Xl-l5I"/>
+                            <constraint firstItem="6qO-Lh-sBu" firstAttribute="trailing" secondItem="7GZ-8E-31A" secondAttribute="trailing" constant="30" id="R9K-kZ-ckz"/>
+                            <constraint firstItem="6qO-Lh-sBu" firstAttribute="bottom" secondItem="7GZ-8E-31A" secondAttribute="bottom" constant="30" id="dJm-tb-FSR"/>
                             <constraint firstItem="gox-3P-DIW" firstAttribute="leading" secondItem="6qO-Lh-sBu" secondAttribute="leading" id="oXg-4v-DaX"/>
+                            <constraint firstItem="d7t-LY-MXx" firstAttribute="leading" secondItem="6qO-Lh-sBu" secondAttribute="leading" constant="30" id="pV5-wX-V9K"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6qO-Lh-sBu"/>
                     </view>
@@ -1319,6 +1344,6 @@ REGON: 363655234</string>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="aCU-JK-za5"/>
-        <segue reference="ZXJ-b4-Cwo"/>
+        <segue reference="mhX-wO-hFU"/>
     </inferredMetricsTieBreakers>
 </document>

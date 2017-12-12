@@ -27,7 +27,7 @@
 "options" = "Ustawienia";
 
 /*выбрать - Wybierz*/
-"choose" = "Wybierz";
+"choose_photo" = "Wybierz zdjęcie";
 
 /*Log in*/
 "log_in" = "Zaloguj się";
