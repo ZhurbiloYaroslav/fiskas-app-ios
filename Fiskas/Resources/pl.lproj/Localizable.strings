@@ -1,6 +1,8 @@
 
+"company_address" = "Adres Firmy";
 /*menu-item*/
 "contacts" = "Kontakt";
+"change_password" = "Zmień hasło";
 
 /*menu-item*/
 "profile" = "Mój profil";

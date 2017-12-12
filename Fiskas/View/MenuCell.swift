@@ -41,7 +41,7 @@ class MenuCell: UITableViewCell {
     
     private func updateLabelsWith(image: String, andTitle title: String) {
         menuItemIconImage.image = UIImage(named: image)?.withRenderingMode(.alwaysTemplate)
-        menuItemIconImage.tintColor = Constants.Color.red
+        menuItemIconImage.tintColor = Constants.Color.redDevslopes
         menuItemNameLabel.text = title
     }
 
