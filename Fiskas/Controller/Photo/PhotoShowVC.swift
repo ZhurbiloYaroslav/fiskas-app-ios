@@ -50,6 +50,7 @@ class PhotoShowVC: UIViewController {
         }
         
         let okAction = UIAlertAction(title: "Send", style: .default) { (action) in
+            
             self.showAlertThatImageWasSent()
         }
         

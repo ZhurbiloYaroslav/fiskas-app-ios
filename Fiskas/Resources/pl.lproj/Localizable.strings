@@ -1,12 +1,3 @@
-/* 
-  Localizable.strings
-  Fiskas
-
-  Created by Yaroslav Zhurbilo on 01.12.17.
-  Copyright © 2017 Yaroslav Zhurbilo. All rights reserved.
-*/
-
-
 
 /*menu-item*/
 "contacts" = "Kontakt";
@@ -15,7 +6,6 @@
 "profile" = "Mój profil";
 
 /*menu-item*/
-/*Fuzzy*/
 "make_photo" = "Zrób zdjęcie";
 "password" = "Hasło";
 
@@ -72,12 +62,15 @@
 "address" = "Adres:";
 
 /*Repeat password*/
+/*Fuzzy*/
 "repeat_password" = "Repeat password";
 
 /*Message in Alert*/
+/*Fuzzy*/
 "check_email_restore_password" = "Check your Email to restore password";
 
 /*Title in Alert*/
+/*Fuzzy*/
 "restore_password" = "Restore password";
 
 /*Title in Alert*/
@@ -85,3 +78,27 @@
 
 /*Title in Button*/
 "restore" = "Restore";
+
+/*Button title: Wyloguj się*/
+"log_out" = "Wyloguj się";
+
+/*Title in menu: Zgłoś problem* - расскажи о проблеме приложения*/
+/*Fuzzy*/
+"report_a_problem" = "Zgłoś problem";
+
+/*Fuzzy*/
+"could_not_send_email" = "Could not send email";
+
+/*Message in Alert*/
+"\"Your device could not send e-mail. Please check e-mail configuration and try again\"" = "Your device could not send e-mail. \nPlease check e-mail configuration and try again";
+
+/*Subject of an email message*/
+/*Fuzzy*/
+"report_a_problem_subject" = "Report a problem";
+
+/*Default text of an email message*/
+/*Fuzzy*/
+"report_a_problem_message" = "What problem do you have?";
+
+/*Message in Alert*/
+"restore_password_alert_message" = "Write your Email to restore your password";

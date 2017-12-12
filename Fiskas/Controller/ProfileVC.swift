@@ -44,7 +44,7 @@ class ProfileVC: UITableViewController {
     
     func updateUILabelsWithLocalizedText() {
         
-        navigationItem.title = "personal_info".localized()
+        navigationItem.title = "profile".localized()
         
         firstNameHeaderLabel.text = "first_name".localized()
         lastNameHeaderLabel.text = "last_name".localized()
@@ -98,7 +98,7 @@ class ProfileVC: UITableViewController {
         
         switch section {
         case 0:
-            return UIView()
+            headerTitleText = "personal_info".localized()
         case 1:
             headerTitleText = "company_info".localized()
         case 2:
@@ -121,12 +121,13 @@ class ProfileVC: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        switch section {
-        case 0:
-            return CGFloat.leastNormalMagnitude
-        default:
-            return 30
-        }
+        return 30
+//        switch section {
+//        case 0:
+//            return CGFloat.leastNormalMagnitude
+//        default:
+//            return 30
+//        }
     }
 
 }

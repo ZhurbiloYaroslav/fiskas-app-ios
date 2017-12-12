@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MessageUI
 
 class MenuVC: UITableViewController {
 
@@ -17,7 +18,7 @@ class MenuVC: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        return 6
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -38,10 +39,69 @@ class MenuVC: UITableViewController {
             performSegue(withIdentifier: "ShowContactsFromMenu", sender: nil)
         case [0,3]:
             performSegue(withIdentifier: "ShowProfileFromMenu", sender: nil)
+        case [0,4]:
+            sendReportAboutProblem()
+        case [0,5]:
+            logOutFromAccount()
         default:
             print("selected undefined cell in menu")
             break
         }
     }
+    
+    func logOutFromAccount() {
+        
+    }
+    
+    func sendReportAboutProblem() {
+        let mailComposeViewController = configuredMailComposeViewController()
+        
+        if MFMailComposeViewController.canSendMail() {
+            self.present(mailComposeViewController, animated: true, completion: nil)
+        } else {
+            self.showSendMailErrorAlert()
+        }
+    }
 
+}
+
+
+extension MenuVC: MFMailComposeViewControllerDelegate {
+    
+    func configuredMailComposeViewController() -> MFMailComposeViewController {
+        
+        let mailComposerVC = MFMailComposeViewController()
+        mailComposerVC.mailComposeDelegate = self
+        
+        let recipients = ["kancelaria.fiskas@gmail.com"]
+        mailComposerVC.setToRecipients(recipients)
+        let emailSubject = "report_a_problem_subject".localized()
+        mailComposerVC.setSubject(emailSubject)
+        
+        let emailMessage = "report_a_problem_message".localized()
+        mailComposerVC.setMessageBody(emailMessage, isHTML: false)
+        
+        return mailComposerVC
+        
+    }
+    
+    
+    func showSendMailErrorAlert() {
+        
+        let alertTitle = "could_not_send_email".localized()
+        let alertMessage = "Your device could not send e-mail. Please check e-mail configuration and try again".localized()
+        let alertController = UIAlertController(title: alertTitle, message: alertMessage, preferredStyle: .alert)
+        
+        let okActionTitle = "OK".localized()
+        let okAction = UIAlertAction(title: okActionTitle, style: .default, handler: nil)
+        alertController.addAction(okAction)
+        
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        controller.dismiss(animated: true, completion: nil)
+        
+    }
+    
 }

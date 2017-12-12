@@ -29,6 +29,10 @@ class MenuCell: UITableViewCell {
             updateLabelsWith(image: "icon-contacts", andTitle: "contacts".localized())
         case [0,3]:
             updateLabelsWith(image: "icon-profile", andTitle: "profile".localized())
+        case [0,4]:
+            updateLabelsWith(image: "icon-message", andTitle: "report_a_problem".localized())
+        case [0,5]:
+            updateLabelsWith(image: "icon-logout", andTitle: "log_out".localized())
         default:
             break
         }
@@ -37,6 +41,7 @@ class MenuCell: UITableViewCell {
     
     private func updateLabelsWith(image: String, andTitle title: String) {
         menuItemIconImage.image = UIImage(named: image)?.withRenderingMode(.alwaysTemplate)
+        menuItemIconImage.tintColor = Constants.Color.red
         menuItemNameLabel.text = title
     }
 
