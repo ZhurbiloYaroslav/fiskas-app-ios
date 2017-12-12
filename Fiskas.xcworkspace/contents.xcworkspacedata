@@ -2,9 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:CameraController.swift">
-   </FileRef>
-   <FileRef
       location = "group:Fiskas.xcodeproj">
    </FileRef>
    <FileRef
