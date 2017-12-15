@@ -155,7 +155,6 @@
 				C49B5E1E1FC578BE00B9C1C7 /* AppDelegate.swift */,
 				C49B5E2D1FC578BE00B9C1C7 /* Info.plist */,
 				C4E310911FC583EF00384B35 /* Extensions */,
-				C4E310901FC583E700384B35 /* Protocols */,
 				C4E3108F1FC583C200384B35 /* Resources */,
 				C4E3108C1FC5839D00384B35 /* Model */,
 				C4E3108D1FC583A600384B35 /* View */,
@@ -233,13 +232,6 @@
 				C42F0B741FDDD2BB00C3D619 /* Links.rtf */,
 			);
 			path = Resources;
-			sourceTree = "<group>";
-		};
-		C4E310901FC583E700384B35 /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Protocols;
 			sourceTree = "<group>";
 		};
 		C4E310911FC583EF00384B35 /* Extensions */ = {
