@@ -7,60 +7,154 @@
 //
 
 import Foundation
+import Alamofire
 
 class AuthManager {
     
-    func perform(_ action: AuthAction, completionHandler: @escaping SuccessBehaviour) {
-        switch action {
-        case .RegisterWith(let regUserData):
-            performRequestTo(.registerPage, completionHandler: {
-                <#code#>
-            })
-        case .LoginWith(let logUserData):
-            performRequestTo(.registerPage, completionHandler: {
-                <#code#>
-            })
+    func registerWith(_ userData: RegisterUserData, completionHandler: @escaping (_ errorMessages: [String]?)->()) {
+        
+        guard let url = userData.getURL() else { return }
+        print(url)
+        
+        Alamofire.request(url).responseJSON { (response) in
+            if let errorMessages = self.parseRegistrationResultDataWith(response) {
+                completionHandler(errorMessages)
+            } else {
+                CurrentUser.password = userData.password
+                completionHandler(nil)
+            }
         }
     }
     
-    func performRequestTo(_ address: ActionAddress, completionHandler: @escaping ()->(result: ResultData, error: AuthError) ) {
+    func parseRegistrationResultDataWith(_ response: DataResponse<Any>) -> [String]? {
+        
+        var errorMessages = [String]()
+        let dictWithRegResult = makeDictionaryFrom(response)
+        
+        guard let error = dictWithRegResult["res"] as? Int else {
+            errorMessages.append(AuthError().noConnection)
+            return errorMessages
+        }
+        
+        switch error {
+        case 0:
+            guard let userDataDict = dictWithRegResult["user"] as? Dictionary<String, String> else {
+                errorMessages.append(AuthError().noConnection)
+                return errorMessages
+            }
+            
+            CurrentUser.id = userDataDict["id"] ?? ""
+            CurrentUser.getFirstAndLastNameFromString(userDataDict["name"] ?? "")
+            CurrentUser.phone = userDataDict["phone"] ?? ""
+            CurrentUser.email = userDataDict["email"] ?? ""
+            CurrentUser.authToken = userDataDict["pass"] ?? ""
+            CurrentUser.isUserActive = userDataDict["active"] == "1" ? true : false
+            CurrentUser.isLoggedIn = true
+            
+            return nil
+            
+        case 1:
+            errorMessages.append(AuthError().wrongEmailOrPassword)
+            return errorMessages
+        default:
+            errorMessages.append(AuthError().undefined)
+            return errorMessages
+        }
+    }
+    
+    func loginWith(_ userData: LoginUserData, completionHandler: @escaping (_ errorMessages: [String]?)->()) {
+        
+        guard let url = userData.getURL() else { return }
+        
+        Alamofire.request(url).responseJSON { (response) in
+
+            if let errorMessages = self.parseLoginResultDataWith(response) {
+                completionHandler(errorMessages)
+            } else {
+                CurrentUser.password = userData.password
+                completionHandler(nil)
+            }
+        }
         
     }
     
-    enum AuthError {
+    func parseLoginResultDataWith(_ response: DataResponse<Any>) -> [String]? {
         
+        var errorMessages = [String]()
+        let dictWithLogResult = makeDictionaryFrom(response)
+
+        guard let error = dictWithLogResult["res"] as? Int else {
+            errorMessages.append(AuthError().noConnection)
+            return errorMessages
+        }
+        
+        switch error {
+        case 0:
+            guard let userDataDict = dictWithLogResult["user"] as? Dictionary<String, String> else {
+                errorMessages.append(AuthError().invalidResultData)
+                return errorMessages
+            }
+            CurrentUser.id = userDataDict["id"] ?? ""
+            CurrentUser.getFirstAndLastNameFromString(userDataDict["name"] ?? "")
+            CurrentUser.phone = userDataDict["phone"] ?? ""
+            CurrentUser.email = userDataDict["email"] ?? ""
+            CurrentUser.authToken = userDataDict["pass"] ?? ""
+            CurrentUser.isUserActive = userDataDict["active"] == "1" ? true : false
+            CurrentUser.isLoggedIn = true
+            
+            return nil
+        case 1:
+            errorMessages.append(AuthError().wrongEmailOrPassword)
+            return errorMessages
+        default:
+            errorMessages.append(AuthError().undefined)
+            return errorMessages
+        }
     }
     
-    enum AuthAction {
-        case RegisterWith(userData: RegisterUserData)
-        case LoginWith(userData: LoginUserData)
+    func makeDictionaryFrom(_ response: DataResponse<Any>) -> Dictionary<String, Any> {
+        guard let resourcesArray = response.result.value as? Dictionary<String, Any> else {
+            return Dictionary<String, Any>()
+        }
+        return resourcesArray
     }
     
     struct RegisterUserData {
-        let email: String
-        let password: String
-        let phone: String?
-        let name: String?
-    }
-    
-    struct LoginUserData {
-        let email: String
-        let password: String
-    }
-    
-    struct ResultData {
-        let id: String
+        let pageAddress: String = "https://serwer1651270.home.pl/admin/api/register"
         let name: String
         let phone: String
         let email: String
-        let pass: String
-        let rest: String
-        let ball: String
-        let active: String
+        let password: String
+        
+        func getURL() -> URL? {
+            var result = "\(pageAddress)"
+            result += "?name=\(name)"
+            result += "&phone=\(phone)"
+            result += "&email=\(email)"
+            result += "&pass=\(password)"
+            result = result.replacingOccurrences(of: " ", with: "%20")
+            return URL(string: result)
+        }
     }
     
-    enum ActionAddress: String {
-        case loginPage = "https://serwer1651270.home.pl/admin/api/login"
-        case registerPage = "https://serwer1651270.home.pl/admin/api/register"
+    struct LoginUserData {
+        let pageAddress: String = "https://serwer1651270.home.pl/admin/api/login"
+        let email: String
+        let password: String
+        
+        func getURL() -> URL? {
+            var result = "\(pageAddress)"
+            result += "?email=\(email)"
+            result += "&pass=\(password)"
+            result = result.replacingOccurrences(of: " ", with: "%20")
+            return URL(string: result)
+        }
+    }
+    
+    struct AuthError {
+        let noConnection = "Network Error, check your connection"
+        let invalidResultData = "Data Error, check your data"
+        let undefined = "Undefined Error"
+        let wrongEmailOrPassword = "Email or password are wrong"
     }
 }

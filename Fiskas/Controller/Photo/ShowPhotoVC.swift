@@ -1,5 +1,5 @@
 //
-//  PhotoShowVC.swift
+//  ShowPhotoVC.swift
 //  Fiskas
 //
 //  Created by Yaroslav Zhurbilo on 28.11.17.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PhotoShowVC: UIViewController {
+class ShowPhotoVC: UIViewController {
     
     @IBOutlet weak var imageView: UIImageView!
     

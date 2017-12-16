@@ -17,6 +17,16 @@ class Validator {
         return result.trimmingCharacters(in: CharacterSet.whitespaces).isEmpty
     }
     
+    static func isNameValid(_ name: String?) -> Bool {
+        let simpleNameRegEx = "\\A\\w{7,18}\\z"
+        // or "^[0-9a-zA-Z\\_]{7,18}$"
+        // or ^[a-zA-Z\s]+$
+        // or ^[a-zA-Z][a-zA-Z\\s]+$
+        
+        let simpleName = NSPredicate(format: "SELF MATCHES %@", simpleNameRegEx)
+        return simpleName.evaluate(with: name)
+    }
+    
     static func isEmailValid(_ email: String?) -> Bool {
         let simpleEmailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
         

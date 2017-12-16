@@ -11,38 +11,45 @@ import Foundation
 
 class CurrentUser {
     
-    var firstName: String!
-    var lastName: String!
-    var email: String!
-    var password: String!
-    var phone: String!
-    
     private static let defaults = UserDefaults.standard
-//    private static let keychainManager = KeychainSwift()
-    
-//    static func getAccountName() -> String {
-//        if name != "" {
-//            return name
-//        } else if email != "" {
-//            return email
-//        } else {
-//            return "Anonymous"
-//        }
-//    }
     
     static func logOut(completionHandler: @escaping SuccessBehaviour) {
-
+        resetUserDataWhenLogOut()
+        completionHandler()
     }
     
-    static func removeUserDataWhenLogOut() {
-
+    static func getFirstAndLastNameFromString(_ name: String) {
+        firstName = ""
+        lastName = ""
+        
+        let arrayFromName = name.components(separatedBy: CharacterSet.whitespaces)
+        if arrayFromName.count == 1 {
+            firstName = arrayFromName[0]
+        } else if arrayFromName.count > 1 {
+            firstName = arrayFromName[0]
+            for partOfName in arrayFromName[1...(arrayFromName.count - 1)] {
+                lastName += partOfName + " "
+            }
+        }
+    }
+    
+    static func resetUserDataWhenLogOut() {
+        isLoggedIn = false
+        isUserActive = false
+        id = ""
+        firstName = ""
+        lastName = ""
+        email = ""
+        password = ""
+        phone = ""
+        authToken = ""
     }
 }
 
+//MARK: Current User Variables
 extension CurrentUser {
     
     static var isLoggedIn: Bool {
-        
         get {
             return defaults.object(forKey: "currentUserIsLoggedIn") as? Bool ?? false
         }
@@ -52,57 +59,83 @@ extension CurrentUser {
         }
     }
     
-//    static var id: String {
-//        get {
-//            return self.keychainManager.get("currentUserID") ?? ""
-//        }
-//        set {
-//            self.keychainManager.set(newValue, forKey: "currentUserID")
-//        }
-//    }
-    
-    static var name: String {
+    static var isUserActive: Bool {
         get {
-            return defaults.object(forKey: "currentUserName") as? String ?? ""
+            return defaults.object(forKey: "currentUserIsActive") as? Bool ?? false
         }
         set {
-            defaults.set(newValue, forKey: "currentUserName")
+            defaults.set(newValue, forKey: "currentUserIsActive")
             defaults.synchronize()
         }
     }
     
-//    static var email: String {
-//        get {
-//            if let currentUserEmail = defaults.object(forKey: "currentUserEmail") as? String, currentUserEmail != "" {
-//                return currentUserEmail
-//            } else if let currentUserEmail = keychainManager.get("currentUserEmail"), currentUserEmail != "" {
-//                return currentUserEmail
-//            } else {
-//                return ""
-//            }
-//        }
-//        set {
-//            defaults.set(newValue, forKey: "currentUserEmail")
-//            defaults.synchronize()
-//            keychainManager.set(newValue, forKey: "currentUserEmail")
-//        }
-//    }
+    static var id: String {
+        get {
+            return defaults.object(forKey: "currentUserID") as? String ?? ""
+        }
+        set {
+            defaults.set(newValue, forKey: "currentUserID")
+            defaults.synchronize()
+        }
+    }
     
-//    static var phone: String {
-//        get {
-//            return self.keychainManager.get("currentUserPhone") ?? "Set the Phone number"
-//        }
-//        set {
-//            keychainManager.set(newValue, forKey: "currentUserPhone")
-//        }
-//    }
+    static var firstName: String {
+        get {
+            return defaults.object(forKey: "currentUserFirstName") as? String ?? ""
+        }
+        set {
+            defaults.set(newValue, forKey: "currentUserFirstName")
+            defaults.synchronize()
+        }
+    }
     
-//    static var authToken: String {
-//        get {
-//            return self.keychainManager.get("currentUserAuthenticationToken") ?? ""
-//        }
-//        set {
-//            keychainManager.set(newValue, forKey: "currentUserAuthenticationToken")
-//        }
-//    }
+    static var lastName: String {
+        get {
+            return defaults.object(forKey: "currentUserLastName") as? String ?? ""
+        }
+        set {
+            defaults.set(newValue, forKey: "currentUserLastName")
+            defaults.synchronize()
+        }
+    }
+    
+    static var email: String {
+        get {
+            return defaults.object(forKey: "currentUserEmail") as? String ?? ""
+        }
+        set {
+            defaults.set(newValue, forKey: "currentUserEmail")
+            defaults.synchronize()
+        }
+    }
+    
+    static var password: String {
+        get {
+            return defaults.object(forKey: "currentUserPassword") as? String ?? ""
+        }
+        set {
+            defaults.set(newValue, forKey: "currentUserPassword")
+            defaults.synchronize()
+        }
+    }
+    
+    static var phone: String {
+        get {
+            return defaults.object(forKey: "currentUserPhone") as? String ?? ""
+        }
+        set {
+            defaults.set(newValue, forKey: "currentUserPhone")
+            defaults.synchronize()
+        }
+    }
+    
+    static var authToken: String {
+        get {
+            return defaults.object(forKey: "currentUserAuthenticationToken") as? String ?? ""
+        }
+        set {
+            defaults.set(newValue, forKey: "currentUserAuthenticationToken")
+            defaults.synchronize()
+        }
+    }
 }

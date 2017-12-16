@@ -10,6 +10,8 @@ import UIKit
 import MessageUI
 
 class MenuVC: UITableViewController {
+    
+    var emailForLoginVC: String?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,7 +52,24 @@ class MenuVC: UITableViewController {
     }
     
     func logOutFromAccount() {
+        emailForLoginVC = CurrentUser.email
+
+        CurrentUser.logOut(completionHandler: {
+            self.performSegue(withIdentifier: "ShowLoginVC", sender: nil)
+        })
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let segueID = segue.identifier else { return }
         
+        switch segueID {
+        case "ShowLoginVC":
+            if let destination = segue.destination as? LoginVC {
+                destination.emailFromRegistration = emailForLoginVC
+            }
+        default:
+            print("Was performed Undefined segue")
+        }
     }
     
     func sendReportAboutProblem() {

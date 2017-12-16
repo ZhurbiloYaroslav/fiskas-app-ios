@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cts-6j-wH2">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Reveal View Controller-->
+        <scene sceneID="S20-fc-eb9">
+            <objects>
+                <viewController storyboardIdentifier="SWRevealViewController" id="cts-6j-wH2" customClass="SWRevealViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dnW-AM-sEr">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="UOS-CH-7To"/>
+                    </view>
+                    <connections>
+                        <segue destination="SHn-65-Iu0" kind="custom" identifier="sw_rear" customClass="SWRevealViewControllerSegueSetController" id="UJP-O6-Ziu"/>
+                        <segue destination="nH1-Sq-wZ7" kind="custom" identifier="sw_front" customClass="SWRevealViewControllerSegueSetController" id="jMM-4u-chr"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xu9-Vo-4Jw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1169" y="-1451"/>
+        </scene>
+        <!--MenuVC-->
+        <scene sceneID="9hI-mQ-70H">
+            <objects>
+                <tableViewController storyboardIdentifier="MenuVC" id="SHn-65-Iu0" customClass="MenuVC" customModule="Fiskas" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="F8v-Ns-cfl">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.94901960784313721" alpha="1" colorSpace="calibratedRGB"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MenuCell" id="iHP-mT-4dc" customClass="MenuCell" customModule="Fiskas" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="iHP-mT-4dc" id="Zlk-0m-bcf">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-contacts" translatesAutoresizingMaskIntoConstraints="NO" id="cjz-dq-T15">
+                                            <rect key="frame" x="15" y="9.5" width="25" height="25"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="25" id="h0D-lZ-mdY"/>
+                                                <constraint firstAttribute="height" constant="25" id="wVg-Hm-JZr"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Menu item" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gQC-kd-JSV">
+                                            <rect key="frame" x="50" y="11" width="299" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailingMargin" secondItem="gQC-kd-JSV" secondAttribute="trailing" constant="10" id="cLN-PN-DEG"/>
+                                        <constraint firstItem="cjz-dq-T15" firstAttribute="leading" secondItem="Zlk-0m-bcf" secondAttribute="leading" constant="15" id="hbu-26-j5G"/>
+                                        <constraint firstItem="gQC-kd-JSV" firstAttribute="centerY" secondItem="Zlk-0m-bcf" secondAttribute="centerY" id="rrV-MW-P4F"/>
+                                        <constraint firstItem="gQC-kd-JSV" firstAttribute="leading" secondItem="cjz-dq-T15" secondAttribute="trailing" constant="10" id="u9k-TJ-DE0"/>
+                                        <constraint firstItem="cjz-dq-T15" firstAttribute="centerY" secondItem="Zlk-0m-bcf" secondAttribute="centerY" id="xaL-CV-M24"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.94901960784313721" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <outlet property="menuItemIconImage" destination="cjz-dq-T15" id="a2H-wc-9dc"/>
+                                    <outlet property="menuItemNameLabel" destination="gQC-kd-JSV" id="0RI-15-awJ"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <sections/>
+                        <connections>
+                            <outlet property="dataSource" destination="SHn-65-Iu0" id="smQ-2g-2pZ"/>
+                            <outlet property="delegate" destination="SHn-65-Iu0" id="gA6-G6-Gdt"/>
+                        </connections>
+                    </tableView>
+                    <connections>
+                        <segue destination="nH1-Sq-wZ7" kind="custom" identifier="ShowBalanceFromMenu" customClass="SWRevealViewControllerSeguePushController" id="aCU-JK-za5"/>
+                        <segue destination="zDV-XN-ewm" kind="custom" identifier="ShowCameraFromMenu" customClass="SWRevealViewControllerSeguePushController" id="Q7O-d4-Mvc"/>
+                        <segue destination="1tf-ge-Bq6" kind="custom" identifier="ShowContactsFromMenu" customClass="SWRevealViewControllerSeguePushController" id="28x-JG-muP"/>
+                        <segue destination="bmL-rY-ggd" kind="custom" identifier="ShowProfileFromMenu" customClass="SWRevealViewControllerSeguePushController" id="azz-7u-w72"/>
+                        <segue destination="NRr-8e-ssx" kind="presentation" identifier="ShowLoginVC" id="PZv-KZ-JPQ"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iAe-6B-l3O" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1169" y="-575"/>
+        </scene>
+        <!--ProfileNavBar-->
+        <scene sceneID="CqF-lo-Yvq">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="ProfileNavBar" storyboardName="Profile" referencedIdentifier="ProfileNavBar" id="bmL-rY-ggd" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lbW-hG-ISy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2102" y="-399"/>
+        </scene>
+        <!--LoginVC-->
+        <scene sceneID="JHt-kc-rNF">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Auth" referencedIdentifier="LoginVC" id="NRr-8e-ssx" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UV4-Bh-9LU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2086" y="-313"/>
+        </scene>
+        <!--BalanceNavBar-->
+        <scene sceneID="e6R-hw-PJT">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="BalanceNavBar" storyboardName="Balance" referencedIdentifier="BalanceNavBar" id="nH1-Sq-wZ7" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FG3-wH-L2r" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2109" y="-832"/>
+        </scene>
+        <!--ContactsNavBar-->
+        <scene sceneID="Hwo-TB-2sb">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="ContactsNavBar" storyboardName="Contacts" referencedIdentifier="ContactsNavBar" id="1tf-ge-Bq6" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nim-79-hnY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2114" y="-542"/>
+        </scene>
+        <!--MakePhotoNavBar-->
+        <scene sceneID="t6a-0X-hi9">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="MakePhotoNavBar" storyboardName="Photo" referencedIdentifier="MakePhotoNavBar" id="zDV-XN-ewm" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OFO-0l-IBg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2126" y="-723"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="icon-contacts" width="21" height="22"/>
+    </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="aCU-JK-za5"/>
+    </inferredMetricsTieBreakers>
+</document>

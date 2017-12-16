@@ -14,6 +14,8 @@ class RegisterVC: UIViewController {
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var repeatPasswordField: UITextField!
+    @IBOutlet weak var nameField: UITextField!
+    @IBOutlet weak var phoneField: UITextField!
     
     //Buttons
     @IBOutlet weak var registerButton: UIButton!
@@ -27,12 +29,16 @@ class RegisterVC: UIViewController {
         
         initializeDelegates()
         updateUILabelsWithLocalizedText()
+        hideKeyboardWhenTappedAround()
+        registerForKeyboardNotifications()
     }
     
     func initializeDelegates() {
         emailField.delegate = self
         passwordField.delegate = self
         repeatPasswordField.delegate = self
+        nameField.delegate = self
+        phoneField.delegate = self
     }
     
     func updateUILabelsWithLocalizedText() {
@@ -40,6 +46,8 @@ class RegisterVC: UIViewController {
         emailField.placeholder = "email".localized()
         passwordField.placeholder = "password".localized()
         repeatPasswordField.placeholder = "repeat_password".localized()
+        nameField.placeholder = "name".localized()
+        phoneField.placeholder = "phone".localized()
         
         registerButton.setTitle("register".localized(), for: .normal)
         loginButton.setTitle("have_an_account".localized(), for: .normal)
@@ -47,11 +55,70 @@ class RegisterVC: UIViewController {
     }
     
     @IBAction func registerButtonPressed(_ sender: UIButton) {
-        performSegue(withIdentifier: "EnterFromRegister", sender: nil)
-    }
-    
-    @IBAction func loginButtonPressed(_ sender: UIButton) {
-        performSegue(withIdentifier: "LoginFromRegister", sender: nil)
+        var errorMessages = [String]()
+        var email = ""
+        var password = ""
+        var name = ""
+        var phone = ""
+                
+        if let unwrappedEmail = emailField.text, Validator.isEmailValid(unwrappedEmail) {
+            email = unwrappedEmail
+        } else {
+            errorMessages.append("Email is not valid")
+        }
+        
+        if let unwrappedPassword = passwordField.text, Validator.isPasswordValid(unwrappedPassword) {
+            password = unwrappedPassword
+        } else {
+            errorMessages.append("Password is not valid")
+            errorMessages.append("Password should be...")
+        }
+        
+        if passwordField.text!.elementsEqual(repeatPasswordField.text!) == false {
+            errorMessages.append("Passwords are not equal")
+        }
+        
+        if let unwrappedName = nameField.text, Validator.isEmpty(unwrappedName) == false {
+            name = unwrappedName
+        } else {
+            if Validator.isEmpty(nameField.text!) {
+                errorMessages.append("Name shouldn't be empty")
+            } else if Validator.isNameValid(nameField.text!) {
+                errorMessages.append("Name is not valid")
+            }
+            errorMessages.append("Name should be...")
+        }
+        
+        if let unwrappedPhone = phoneField.text, Validator.isPasswordValid(unwrappedPhone) {
+            phone = unwrappedPhone
+        } else {
+            errorMessages.append("Phone is not valid")
+            errorMessages.append("Phone should be...")
+        }
+        
+        if errorMessages.count > 0 {
+            Alert().presentAlertWith(title: "Registration Error", andMessages: errorMessages, completionHandler: { (alertContoller) in
+                self.present(alertContoller, animated: true, completion: nil)
+            })
+            return
+        }
+        
+        let registerData = AuthManager.RegisterUserData(
+            name: name,
+            phone: phone,
+            email: email,
+            password: password
+        )
+        
+        AuthManager().registerWith(registerData) { errorMessages in
+            if let errorMessages = errorMessages {
+                Alert().presentAlertWith(messages: errorMessages, completionHandler: { alertController in
+                    self.present(alertController, animated: true, completion: nil)
+                })
+            } else {
+                self.performSegue(withIdentifier: "BackToLoginWithEmail", sender: nil)
+            }
+        }
     }
     
     @IBAction func callButtonPressed(_ sender: UIButton) {
@@ -60,6 +127,14 @@ class RegisterVC: UIViewController {
     
     deinit {
         removeKeyboardNotifications()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        //guard let segueID = segue.identifier else { return }
+
+        if let destination = segue.destination as? LoginVC, let email = emailField.text  {
+            destination.emailFromRegistration = email
+        }
     }
     
 }
@@ -76,6 +151,8 @@ extension RegisterVC: UITextFieldDelegate {
         emailField.resignFirstResponder()
         passwordField.resignFirstResponder()
         repeatPasswordField.resignFirstResponder()
+        nameField.resignFirstResponder()
+        phoneField.resignFirstResponder()
         return true
     }
     

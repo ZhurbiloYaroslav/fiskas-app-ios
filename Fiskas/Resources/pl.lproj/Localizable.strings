@@ -25,6 +25,7 @@
 "phone" = "Telefon";
 "tax_service" = "Urząd skarbowy";
 "options" = "Ustawienia";
+"name" = "Name";
 
 /*выбрать - Wybierz*/
 "choose_photo" = "Wybierz zdjęcie";

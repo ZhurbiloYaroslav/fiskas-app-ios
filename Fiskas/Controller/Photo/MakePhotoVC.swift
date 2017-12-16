@@ -1,5 +1,5 @@
 //
-//  CameraVC.swift
+//  MakePhotoVC.swift
 //  Fiskas
 //
 //  Created by Yaroslav Zhurbilo on 12.12.17.
@@ -10,7 +10,7 @@ import UIKit
 import Photos
 import SWRevealViewController
 
-class CameraVC: UIViewController {
+class MakePhotoVC: UIViewController {
     
     @IBOutlet weak var menuButton: UIButton!
     @IBOutlet weak var libraryButton: UIButton!
@@ -60,7 +60,7 @@ class CameraVC: UIViewController {
 //    }
 }
 
-extension CameraVC {
+extension MakePhotoVC {
     
     @IBAction func takePhotoFromLibrary(_ sender: UIButton) {
         openPhotoLibrary()
@@ -84,7 +84,7 @@ extension CameraVC {
     }
 }
 
-extension CameraVC {
+extension MakePhotoVC {
     
     @IBAction func captureImage(_ sender: UIButton) {
         cameraController.captureImage {(image, error) in
@@ -99,7 +99,7 @@ extension CameraVC {
     
 }
 
-extension CameraVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+extension MakePhotoVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     func openPhotoLibrary() {
         if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
@@ -121,7 +121,7 @@ extension CameraVC: UIImagePickerControllerDelegate, UINavigationControllerDeleg
     }
     
     func presentChosenImage(image: UIImage) {
-        let photoVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "PhotoShowVC") as! PhotoShowVC
+        let photoVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ShowPhotoVC") as! ShowPhotoVC
         
         photoVC.takenPhoto = image
         

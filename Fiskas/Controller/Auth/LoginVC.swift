@@ -23,11 +23,15 @@ class LoginVC: UIViewController {
     private var currentAlertVC: UIAlertController!
     private var activeTextField = UITextField()
     
+    var emailFromRegistration: String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         initializeDelegates()
         updateUILabelsWithLocalizedText()
+        hideKeyboardWhenTappedAround()
+        registerForKeyboardNotifications()
     }
     
     func initializeDelegates() {
@@ -44,10 +48,50 @@ class LoginVC: UIViewController {
         forgotPasswordButton.setTitle("forgot_your_password".localized(), for: .normal)
         registerButton.setTitle("register".localized(), for: .normal)
         callUsButton.setTitle("call_us".localized(), for: .normal)
+        
+        if let email = emailFromRegistration {
+            emailField.text = email
+        }
     }
     
     @IBAction func loginButtonPressed(_ sender: UIButton) {
-        performSegue(withIdentifier: "EnterFromLogin", sender: nil)
+        var errorMessages = [String]()
+        var email = ""
+        var password = ""
+        
+        if let unwrappedEmail = emailField.text, Validator.isEmailValid(unwrappedEmail) {
+            email = unwrappedEmail
+        } else {
+            errorMessages.append("Email is invalid")
+        }
+        
+        if let unwrappedPassword = passwordField.text, Validator.isPasswordValid(unwrappedPassword) {
+            password = unwrappedPassword
+        } else {
+            errorMessages.append("Password is invalid")
+        }
+        
+        if errorMessages.count > 0 {
+            Alert().presentAlertWith(title: "Login Error", andMessages: errorMessages, completionHandler: { (alertContoller) in
+                self.present(alertContoller, animated: true, completion: nil)
+            })
+            return
+        }
+        
+        let loginData = AuthManager.LoginUserData(
+            email: email,
+            password: password
+        )
+        
+        AuthManager().loginWith(loginData) { errorMessages in
+            if let errorMessages = errorMessages {
+                Alert().presentAlertWith(messages: errorMessages, completionHandler: { alertController in
+                    self.present(alertController, animated: true, completion: nil)
+                })
+            } else {
+                self.performSegue(withIdentifier: "EnterFromLogin", sender: nil)
+            }
+        }
     }
     
     @IBAction func forgotPasswordButtonPressed(_ sender: UIButton) {
@@ -125,6 +169,9 @@ class LoginVC: UIViewController {
         removeKeyboardNotifications()
     }
     
+    @IBAction func unwindToLogin(segue: UIStoryboardSegue) {
+        
+    }
 }
 
 // Methods, that helps hide Keyboard
