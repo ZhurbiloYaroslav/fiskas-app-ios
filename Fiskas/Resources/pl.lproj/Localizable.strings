@@ -1,8 +1,6 @@
 
-"company_address" = "Adres Firmy";
 /*menu-item*/
 "contacts" = "Kontakt";
-"change_password" = "Zmień hasło";
 
 /*menu-item*/
 "profile" = "Mój profil";
@@ -25,9 +23,10 @@
 "phone" = "Telefon";
 "tax_service" = "Urząd skarbowy";
 "options" = "Ustawienia";
-"name" = "Name";
 
+/*Поменял с choose на choose_photo*/
 /*выбрать - Wybierz*/
+/*Fuzzy*/
 "choose_photo" = "Wybierz zdjęcie";
 
 /*Log in*/
@@ -105,3 +104,36 @@
 
 /*Message in Alert*/
 "restore_password_alert_message" = "Write your Email to restore your password";
+
+/*Title in cell*/
+"change_password" = "Zmień hasło";
+
+/*Title in cell*/
+"adres_firmy" = "Adres Firmy";
+
+/*Title in cell*/
+"company_address" = "Adres Firmy";
+
+/*TextField in Register*/
+"name" = "Name";
+"balance_name_of_user" = "Nazwa podmiotu";
+"balance_my_tax_form" = "Moja forma opodatkowania";
+"balance_last_actual_time" = "Data ostatniej aktualizacji";
+"balance_period" = "Okres (do wyboru)";
+"kvartal_1" = "Kwartał  I";
+"kvartal_2" = "Kwartał  II";
+"kvartal_3" = "Kwartał  III";
+"kvartal_4" = "Kwartał  IV";
+"balance_total" = "Razem";
+"balance_cash" = "Gotówka";
+"balance_state_bank" = "Stan konta bankowego";
+"balance_debts" = "Należności";
+"balance_liability" = "Zobowiązania, podatki ";
+"balance_sell" = "Sprzedaż ";
+"balance_buy" = "Zakup";
+"balance_income" = "Zysk";
+"balance_add_scan" = "PRZYCISK *DODAJ FAKTURĘ ZDJĘCIE/SKAN*";
+"balance_invoice_name" = "Nazwa faktury";
+"balance_date_time" = "Data i czas";
+"balance_download" = "Pobierz";
+"balance_invoice_history" = "Historia faktur";

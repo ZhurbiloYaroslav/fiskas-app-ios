@@ -26,16 +26,29 @@ class ProfileVC: UITableViewController {
     @IBOutlet weak var phoneHeaderLabel: UILabel!
     @IBOutlet weak var userPhoneTextLabel: UILabel!
     
+    
     // Company Info
     @IBOutlet weak var companyNameHeaderLabel: UILabel!
+    @IBOutlet weak var companyName_ValueLabel: UILabel!
     
     @IBOutlet weak var companyAddressHeaderLabel: UILabel!
+    @IBOutlet weak var companyAddress_ValueLabel: UILabel!
     
     @IBOutlet weak var nipHeaderLabel: UILabel!
+    @IBOutlet weak var nip_ValueLabel: UILabel!
+    
     @IBOutlet weak var regonHeaderLabel: UILabel!
+    @IBOutlet weak var regon_ValueLabel: UILabel!
+    
     @IBOutlet weak var companyEmailHeaderLabel: UILabel!
+    @IBOutlet weak var companyEmail_ValueLabel: UILabel!
+    
     @IBOutlet weak var companyPhoneHeaderLabel: UILabel!
+    @IBOutlet weak var companyPhone_ValueLabel: UILabel!
+    
     @IBOutlet weak var taxServiceHeaderLabel: UILabel!
+    @IBOutlet weak var taxService_ValueLabel: UILabel!
+    
     
     // Settings
     @IBOutlet weak var passwordHeaderLabel: UILabel!
@@ -71,9 +84,7 @@ class ProfileVC: UITableViewController {
         
         // Company Info
         companyNameHeaderLabel.text = "company_name".localized()
-        
         companyAddressHeaderLabel.text = "company_address".localized()
-        
         nipHeaderLabel.text = "nip".localized()
         regonHeaderLabel.text = "regon".localized()
         companyEmailHeaderLabel.text = "email".localized()
@@ -95,6 +106,14 @@ class ProfileVC: UITableViewController {
         lastNameTextButton.setTitle(CurrentUser.lastName, for: .normal)
         userEmailTextLabel.text = CurrentUser.email
         userPhoneTextLabel.text = CurrentUser.phone
+        
+        companyName_ValueLabel.text = CurrentCompany.name
+        companyAddress_ValueLabel.text = CurrentCompany.address
+        nip_ValueLabel.text = CurrentCompany.nip
+        regon_ValueLabel.text = CurrentCompany.regon
+        companyEmail_ValueLabel.text = CurrentCompany.email
+        companyPhone_ValueLabel.text = CurrentCompany.phone
+        taxService_ValueLabel.text = CurrentCompany.taxService
     }
     
     func setupLeftMenu() {

@@ -79,6 +79,20 @@ extension CurrentUser {
         }
     }
     
+    static var fullName: String {
+        var fullName = ""
+        if firstName != "" {
+            fullName = firstName
+        }
+        if firstName != "" && lastName != "" {
+            fullName = fullName + " "
+        }
+        if lastName != "" {
+            fullName = fullName + lastName
+        }
+        return fullName
+    }
+    
     static var firstName: String {
         get {
             return defaults.object(forKey: "currentUserFirstName") as? String ?? ""

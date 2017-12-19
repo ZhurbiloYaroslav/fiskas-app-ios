@@ -24,6 +24,12 @@
 		C44A116B1FE5713F000384B8 /* Photo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C44A116A1FE5713F000384B8 /* Photo.storyboard */; };
 		C44A116D1FE571C1000384B8 /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C44A116C1FE571C1000384B8 /* Auth.storyboard */; };
 		C44A116F1FE58992000384B8 /* UIViewController+hideKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44A116E1FE58992000384B8 /* UIViewController+hideKeyboard.swift */; };
+		C4662AAA1FE953ED001848C8 /* POEditorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4662AA91FE953ED001848C8 /* POEditorManager.swift */; };
+		C4662AAC1FE96275001848C8 /* BalanceInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4662AAB1FE96275001848C8 /* BalanceInfoCell.swift */; };
+		C4662AAE1FE96580001848C8 /* BalanceSheetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4662AAD1FE96580001848C8 /* BalanceSheetCell.swift */; };
+		C4662AB01FE96592001848C8 /* BalanceInvoiceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4662AAF1FE96592001848C8 /* BalanceInvoiceCell.swift */; };
+		C4662AB31FE989A2001848C8 /* BalancePeriodVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4662AB21FE989A2001848C8 /* BalancePeriodVC.swift */; };
+		C4662AB51FE9B4B8001848C8 /* Balance.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4662AB41FE9B4B8001848C8 /* Balance.swift */; };
 		C467C95D1FD5B4E20077A9FA /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C467C95C1FD5B4E20077A9FA /* MenuCell.swift */; };
 		C467C95F1FD5B97B0077A9FA /* MenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C467C95E1FD5B97B0077A9FA /* MenuVC.swift */; };
 		C49312FF1FDEA2D200FCF54F /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49312FE1FDEA2D200FCF54F /* Validator.swift */; };
@@ -71,6 +77,12 @@
 		C44A116A1FE5713F000384B8 /* Photo.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Photo.storyboard; sourceTree = "<group>"; };
 		C44A116C1FE571C1000384B8 /* Auth.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Auth.storyboard; sourceTree = "<group>"; };
 		C44A116E1FE58992000384B8 /* UIViewController+hideKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+hideKeyboard.swift"; sourceTree = "<group>"; };
+		C4662AA91FE953ED001848C8 /* POEditorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = POEditorManager.swift; sourceTree = "<group>"; };
+		C4662AAB1FE96275001848C8 /* BalanceInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceInfoCell.swift; sourceTree = "<group>"; };
+		C4662AAD1FE96580001848C8 /* BalanceSheetCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceSheetCell.swift; sourceTree = "<group>"; };
+		C4662AAF1FE96592001848C8 /* BalanceInvoiceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceInvoiceCell.swift; sourceTree = "<group>"; };
+		C4662AB21FE989A2001848C8 /* BalancePeriodVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalancePeriodVC.swift; sourceTree = "<group>"; };
+		C4662AB41FE9B4B8001848C8 /* Balance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Balance.swift; sourceTree = "<group>"; };
 		C467C95C1FD5B4E20077A9FA /* MenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
 		C467C95E1FD5B97B0077A9FA /* MenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuVC.swift; sourceTree = "<group>"; };
 		C49312FE1FDEA2D200FCF54F /* Validator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
@@ -150,6 +162,9 @@
 			children = (
 				C44A11651FE56F92000384B8 /* Balance.storyboard */,
 				C42C1AB71FD2FC0E005B7022 /* BalanceVC.swift */,
+				C4662AB21FE989A2001848C8 /* BalancePeriodVC.swift */,
+				C4662AB41FE9B4B8001848C8 /* Balance.swift */,
+				C4662AB11FE96597001848C8 /* BalanceCell */,
 			);
 			path = Balance;
 			sourceTree = "<group>";
@@ -171,6 +186,16 @@
 				C4B057021FC5A30100699B6F /* ContactsVC.swift */,
 			);
 			path = Contacts;
+			sourceTree = "<group>";
+		};
+		C4662AB11FE96597001848C8 /* BalanceCell */ = {
+			isa = PBXGroup;
+			children = (
+				C4662AAB1FE96275001848C8 /* BalanceInfoCell.swift */,
+				C4662AAD1FE96580001848C8 /* BalanceSheetCell.swift */,
+				C4662AAF1FE96592001848C8 /* BalanceInvoiceCell.swift */,
+			);
+			path = BalanceCell;
 			sourceTree = "<group>";
 		};
 		C49312FB1FDE4A1800FCF54F /* Common */ = {
@@ -245,6 +270,7 @@
 				C49312FE1FDEA2D200FCF54F /* Validator.swift */,
 				C49313001FDEA30700FCF54F /* Alert.swift */,
 				C4D4A2461FE05BAB00523B30 /* NetworkManager.swift */,
+				C4662AA91FE953ED001848C8 /* POEditorManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -434,21 +460,27 @@
 			buildActionMask = 2147483647;
 			files = (
 				C4D4A24D1FE0825600523B30 /* CameraController.swift in Sources */,
+				C4662AAA1FE953ED001848C8 /* POEditorManager.swift in Sources */,
 				C4BF37741FCD63A000BFD881 /* ShowPhotoVC.swift in Sources */,
 				C49B5E211FC578BE00B9C1C7 /* LoginVC.swift in Sources */,
 				C4B0570F1FC5BB7600699B6F /* Constants.swift in Sources */,
 				C42C1AC01FD3C8CC005B7022 /* CurrentCompany.swift in Sources */,
 				C4E310961FC5904300384B35 /* UIButton+IBInspectable.swift in Sources */,
+				C4662AB51FE9B4B8001848C8 /* Balance.swift in Sources */,
 				C49312FF1FDEA2D200FCF54F /* Validator.swift in Sources */,
 				C49313011FDEA30700FCF54F /* Alert.swift in Sources */,
 				C42C1ABC1FD3BE22005B7022 /* CurrentUser.swift in Sources */,
 				C4E310981FC5906700384B35 /* UIView+IBInspectable.swift in Sources */,
 				C4B057071FC5AC4E00699B6F /* ProfileVC.swift in Sources */,
+				C4662AAC1FE96275001848C8 /* BalanceInfoCell.swift in Sources */,
 				C4B056FF1FC5998800699B6F /* RegisterVC.swift in Sources */,
+				C4662AAE1FE96580001848C8 /* BalanceSheetCell.swift in Sources */,
 				C4B057051FC5A83600699B6F /* Browser.swift in Sources */,
 				C42C1AB41FD2A135005B7022 /* AuthManager.swift in Sources */,
 				C49B5E271FC578BE00B9C1C7 /* Fiskas.xcdatamodeld in Sources */,
+				C4662AB31FE989A2001848C8 /* BalancePeriodVC.swift in Sources */,
 				C42C1ABE1FD3C16B005B7022 /* Typealiases.swift in Sources */,
+				C4662AB01FE96592001848C8 /* BalanceInvoiceCell.swift in Sources */,
 				C467C95D1FD5B4E20077A9FA /* MenuCell.swift in Sources */,
 				C42C1AAF1FD1BE8F005B7022 /* UserDefaultsManager.swift in Sources */,
 				C42C1AAD1FD1BE4B005B7022 /* String+localized.swift in Sources */,
