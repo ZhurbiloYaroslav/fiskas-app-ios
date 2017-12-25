@@ -87,6 +87,7 @@
                         <segue destination="1tf-ge-Bq6" kind="custom" identifier="ShowContactsFromMenu" customClass="SWRevealViewControllerSeguePushController" id="28x-JG-muP"/>
                         <segue destination="bmL-rY-ggd" kind="custom" identifier="ShowProfileFromMenu" customClass="SWRevealViewControllerSeguePushController" id="azz-7u-w72"/>
                         <segue destination="NRr-8e-ssx" kind="presentation" identifier="ShowLoginVC" id="PZv-KZ-JPQ"/>
+                        <segue destination="aV0-vT-FD5" kind="custom" identifier="ShowInvoiceFromMenu" customClass="SWRevealViewControllerSeguePushController" id="eRd-eA-h7d"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iAe-6B-l3O" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -132,6 +133,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OFO-0l-IBg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2126" y="-723"/>
+        </scene>
+        <!--InvoiceNavBar-->
+        <scene sceneID="4p0-kI-Fd7">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Invoice" referencedIdentifier="InvoiceNavBar" id="aV0-vT-FD5" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KfB-XT-TNO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2111" y="-638"/>
         </scene>
     </scenes>
     <resources>

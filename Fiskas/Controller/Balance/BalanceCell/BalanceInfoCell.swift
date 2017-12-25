@@ -28,12 +28,7 @@ class BalanceInfoCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        setDelegates()
         updateUILabelsWithLocalizedText()
-    }
-    
-    func setDelegates() {
-        
     }
     
     func updateUILabelsWithLocalizedText() {

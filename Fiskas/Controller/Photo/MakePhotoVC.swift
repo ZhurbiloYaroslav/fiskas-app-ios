@@ -121,7 +121,7 @@ extension MakePhotoVC: UIImagePickerControllerDelegate, UINavigationControllerDe
     }
     
     func presentChosenImage(image: UIImage) {
-        let photoVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ShowPhotoVC") as! ShowPhotoVC
+        let photoVC = UIStoryboard(name: "Photo", bundle: nil).instantiateViewController(withIdentifier: "ShowPhotoVC") as! ShowPhotoVC
         
         photoVC.takenPhoto = image
         

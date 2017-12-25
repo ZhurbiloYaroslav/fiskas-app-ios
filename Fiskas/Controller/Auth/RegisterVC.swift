@@ -105,6 +105,7 @@ class RegisterVC: UIViewController {
         
         let registerData = AuthManager.RegisterUserData(
             name: name,
+            surname: "Surname",
             phone: phone,
             email: email,
             password: password

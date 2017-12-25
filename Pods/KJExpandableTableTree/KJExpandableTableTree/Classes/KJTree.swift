@@ -439,7 +439,7 @@ public class KJTree{
             if updateStateOfRow == -1{
                 updateStateOfRow = row-1
             }
-            let indexpath: IndexPath = IndexPath(row: row, section: 0)
+            let indexpath: IndexPath = IndexPath(row: row, section: indexPath.section)
             indexpathsInserted.append(indexpath)
         }
         if expansion == .expand {
@@ -451,7 +451,7 @@ public class KJTree{
         }
         // indicates there is some expansion or shrinking by updating previous cell with plus, minus or none.
         if updateStateOfRow != -1 {
-            let indexpath: IndexPath = IndexPath(row: updateStateOfRow, section: 0)
+            let indexpath: IndexPath = IndexPath(row: updateStateOfRow, section: indexPath.section)
             tableView.reloadRows(at: [indexpath], with: .none)
         }
         

@@ -26,12 +26,14 @@ class MenuCell: UITableViewCell {
         case [0,1]:
             updateLabelsWith(image: "icon-camera", andTitle: "make_photo".localized())
         case [0,2]:
-            updateLabelsWith(image: "icon-contacts", andTitle: "contacts".localized())
+            updateLabelsWith(image: "icon-balance", andTitle: "invoices".localized())
         case [0,3]:
-            updateLabelsWith(image: "icon-profile", andTitle: "profile".localized())
+            updateLabelsWith(image: "icon-contacts", andTitle: "contacts".localized())
         case [0,4]:
-            updateLabelsWith(image: "icon-message", andTitle: "report_a_problem".localized())
+            updateLabelsWith(image: "icon-profile", andTitle: "profile".localized())
         case [0,5]:
+            updateLabelsWith(image: "icon-message", andTitle: "report_a_problem".localized())
+        case [0,6]:
             updateLabelsWith(image: "icon-logout", andTitle: "log_out".localized())
         default:
             break

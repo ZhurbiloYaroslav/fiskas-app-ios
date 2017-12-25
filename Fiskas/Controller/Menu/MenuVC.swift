@@ -38,12 +38,14 @@ class MenuVC: UITableViewController {
         case [0,1]:
             performSegue(withIdentifier: "ShowCameraFromMenu", sender: nil)
         case [0,2]:
-            performSegue(withIdentifier: "ShowContactsFromMenu", sender: nil)
+            performSegue(withIdentifier: "ShowInvoiceFromMenu", sender: nil)
         case [0,3]:
-            performSegue(withIdentifier: "ShowProfileFromMenu", sender: nil)
+            performSegue(withIdentifier: "ShowContactsFromMenu", sender: nil)
         case [0,4]:
-            sendReportAboutProblem()
+            performSegue(withIdentifier: "ShowProfileFromMenu", sender: nil)
         case [0,5]:
+            sendReportAboutProblem()
+        case [0,6]:
             logOutFromAccount()
         default:
             print("selected undefined cell in menu")
