@@ -6,11 +6,12 @@ target 'Fiskas' do
     
     pod 'Alamofire', '~> 4.5'
     pod ‘SWRevealViewController’
+    pod 'KJExpandableTableTree'
     
 end
 
 post_install do |installer|
-    myTargets = ['Alamofire']
+    myTargets = ['Alamofire', 'KJExpandableTableTree']
     
     installer.pods_project.targets.each do |target|
         if myTargets.include? target.name

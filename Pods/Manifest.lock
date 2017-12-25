@@ -1,15 +1,18 @@
 PODS:
   - Alamofire (4.5.1)
+  - KJExpandableTableTree (1.1.2)
   - SWRevealViewController (2.3.0)
 
 DEPENDENCIES:
   - Alamofire (~> 4.5)
+  - KJExpandableTableTree
   - SWRevealViewController
 
 SPEC CHECKSUMS:
   Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
+  KJExpandableTableTree: b6b20b330e1067a63efec2d4eca69faba64676ca
   SWRevealViewController: 6d3fd97f70112fd7cef9de14df4260eacce4c63a
 
-PODFILE CHECKSUM: 7a7305dfb586f331e35a0b4d0f3715f643b6c863
+PODFILE CHECKSUM: 140fe6ec72ef6c2fc8f43d86813285033d06b321
 
 COCOAPODS: 1.2.1
