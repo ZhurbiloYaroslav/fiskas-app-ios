@@ -188,7 +188,7 @@ class ProfileVC: UITableViewController {
         case [0,2]:
             showAlertToChange(field: .Phone)
         case [2,3]:
-            logOutFromAccount()
+            showAlertToChange(field: .LogOut)
         default:
             break
         }
