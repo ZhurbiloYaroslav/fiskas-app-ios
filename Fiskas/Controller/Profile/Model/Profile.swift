@@ -6,6 +6,7 @@
 //  Copyright © 2017 Yaroslav Zhurbilo. All rights reserved.
 //
 
+import UIKit
 import Foundation
 
 struct Profile {
@@ -25,7 +26,7 @@ struct Profile {
         Item(title: "Settings", segue: "ShowSettings", section: 1, iconName: nil),
         ]
     
-    class ProfileCell {
+    struct Item {
         let title: String
         let segue: String
         let cellID: String = "MenuCell"

@@ -228,9 +228,9 @@
 		C463F8601FF3ABE8001FBBC1 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				C463F8611FF3AC7D001FBBC1 /* TextFieldCell.xib */,
 				C463F8571FF3A78A001FBBC1 /* ButtonCell.xib */,
 				C463F8591FF3A7C2001FBBC1 /* LabeledCell.xib */,
-				C463F8611FF3AC7D001FBBC1 /* TextFieldCell.xib */,
 				C463F8631FF3AF5E001FBBC1 /* SwitchCell.xib */,
 			);
 			path = View;

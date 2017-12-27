@@ -8,10 +8,6 @@
 
 import Foundation
 
-struct <#name#> {
-    <#fields#>
-}
-
 enum CellType {
     case FirstName
     case LastName
