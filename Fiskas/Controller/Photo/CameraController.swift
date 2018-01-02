@@ -9,6 +9,14 @@
 import AVFoundation
 import UIKit
 
+//TODO: Implement this
+//if #available(iOS 10, *) {
+//    // use AVCapturePhotoOutput
+//}
+//else {
+//    // use AVCaptureStillImageOutput
+//}
+
 class CameraController: NSObject {
     var captureSession: AVCaptureSession?
     

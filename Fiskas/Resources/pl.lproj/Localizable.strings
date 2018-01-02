@@ -137,3 +137,16 @@
 "balance_date_time" = "Data i czas";
 "balance_download" = "Pobierz";
 "balance_invoice_history" = "Historia faktur";
+
+/*menu item*/
+"invoices" = "Invoices";
+
+/*alert button,*/
+"ok" = "Ok";
+
+/*title in alert*/
+"log_out_title" = "Log out";
+
+/*Message in Alert*/
+/*Fuzzy*/
+"log_out_message" = "Are you sure you want to log out";

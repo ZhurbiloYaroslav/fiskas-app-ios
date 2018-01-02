@@ -20,7 +20,7 @@ class MenuVC: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 6
+        return 7
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -46,11 +46,30 @@ class MenuVC: UITableViewController {
         case [0,5]:
             sendReportAboutProblem()
         case [0,6]:
-            logOutFromAccount()
+            showAlertWithLogOutConfirmation()
+            
         default:
             print("selected undefined cell in menu")
             break
         }
+    }
+    
+    func showAlertWithLogOutConfirmation() {
+        let alertVcTitle = "log_out_title".localized()
+        let alertVcMessage = "log_out_message".localized()
+        let alertVC = UIAlertController(title: alertVcTitle, message: alertVcMessage, preferredStyle: .alert)
+        
+        let cancelActionTitle = "cancel".localized()
+        let cancelAction = UIAlertAction(title: cancelActionTitle, style: .cancel, handler: nil)
+        alertVC.addAction(cancelAction)
+        
+        let okActionTitle = "ok".localized()
+        let okAction = UIAlertAction(title: okActionTitle, style: .destructive, handler: { alertAction in
+            self.logOutFromAccount()
+        })
+        alertVC.addAction(okAction)
+        
+        present(alertVC, animated: true, completion: nil)
     }
     
     func logOutFromAccount() {
