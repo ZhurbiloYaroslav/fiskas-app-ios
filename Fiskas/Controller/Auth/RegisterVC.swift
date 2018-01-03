@@ -103,7 +103,7 @@ class RegisterVC: UIViewController {
             return
         }
         
-        let registerData = AuthManager.RegisterUserData(
+        let registerData = NetworkManager.RegisterUserData(
             name: name,
             surname: "Surname",
             phone: phone,
@@ -111,7 +111,7 @@ class RegisterVC: UIViewController {
             password: password
         )
         
-        AuthManager().registerWith(registerData) { errorMessages in
+        NetworkManager().registerWith(registerData) { errorMessages in
             if let errorMessages = errorMessages {
                 Alert().presentAlertWith(messages: errorMessages, completionHandler: { alertController in
                     self.present(alertController, animated: true, completion: nil)

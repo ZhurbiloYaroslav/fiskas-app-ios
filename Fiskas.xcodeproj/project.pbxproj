@@ -12,7 +12,7 @@
 		C42C1AAD1FD1BE4B005B7022 /* String+localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42C1AAC1FD1BE4B005B7022 /* String+localized.swift */; };
 		C42C1AAF1FD1BE8F005B7022 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42C1AAE1FD1BE8F005B7022 /* UserDefaultsManager.swift */; };
 		C42C1AB21FD1BF73005B7022 /* Languages.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42C1AB11FD1BF73005B7022 /* Languages.swift */; };
-		C42C1AB41FD2A135005B7022 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42C1AB31FD2A135005B7022 /* AuthManager.swift */; };
+		C42C1AB41FD2A135005B7022 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42C1AB31FD2A135005B7022 /* NetworkManager.swift */; };
 		C42C1AB81FD2FC0E005B7022 /* BalanceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42C1AB71FD2FC0E005B7022 /* BalanceVC.swift */; };
 		C42C1ABC1FD3BE22005B7022 /* CurrentUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42C1ABB1FD3BE22005B7022 /* CurrentUser.swift */; };
 		C42C1ABE1FD3C16B005B7022 /* Typealiases.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42C1ABD1FD3C16B005B7022 /* Typealiases.swift */; };
@@ -58,7 +58,6 @@
 		C4B057071FC5AC4E00699B6F /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B057061FC5AC4E00699B6F /* ProfileVC.swift */; };
 		C4B0570F1FC5BB7600699B6F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B0570E1FC5BB7600699B6F /* Constants.swift */; };
 		C4BF37741FCD63A000BFD881 /* ShowPhotoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4BF37731FCD63A000BFD881 /* ShowPhotoVC.swift */; };
-		C4D4A2471FE05BAB00523B30 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D4A2461FE05BAB00523B30 /* NetworkManager.swift */; };
 		C4D4A24B1FE081C100523B30 /* MakePhotoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D4A24A1FE081C100523B30 /* MakePhotoVC.swift */; };
 		C4D4A24D1FE0825600523B30 /* CameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D4A24C1FE0825600523B30 /* CameraController.swift */; };
 		C4E310941FC589CB00384B35 /* logo1.png in Resources */ = {isa = PBXBuildFile; fileRef = C4E310931FC589CB00384B35 /* logo1.png */; };
@@ -80,7 +79,7 @@
 		C42C1AAC1FD1BE4B005B7022 /* String+localized.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+localized.swift"; sourceTree = "<group>"; };
 		C42C1AAE1FD1BE8F005B7022 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
 		C42C1AB11FD1BF73005B7022 /* Languages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Languages.swift; sourceTree = "<group>"; };
-		C42C1AB31FD2A135005B7022 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
+		C42C1AB31FD2A135005B7022 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		C42C1AB71FD2FC0E005B7022 /* BalanceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceVC.swift; sourceTree = "<group>"; };
 		C42C1ABB1FD3BE22005B7022 /* CurrentUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentUser.swift; sourceTree = "<group>"; };
 		C42C1ABD1FD3C16B005B7022 /* Typealiases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Typealiases.swift; sourceTree = "<group>"; };
@@ -128,7 +127,6 @@
 		C4B057061FC5AC4E00699B6F /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		C4B0570E1FC5BB7600699B6F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		C4BF37731FCD63A000BFD881 /* ShowPhotoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowPhotoVC.swift; sourceTree = "<group>"; };
-		C4D4A2461FE05BAB00523B30 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		C4D4A24A1FE081C100523B30 /* MakePhotoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakePhotoVC.swift; sourceTree = "<group>"; };
 		C4D4A24C1FE0825600523B30 /* CameraController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraController.swift; sourceTree = "<group>"; };
 		C4E310931FC589CB00384B35 /* logo1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo1.png; sourceTree = "<group>"; };
@@ -327,12 +325,11 @@
 				C42C1AB01FD1BF60005B7022 /* Constants */,
 				C4B057041FC5A83600699B6F /* Browser.swift */,
 				C42C1AAE1FD1BE8F005B7022 /* UserDefaultsManager.swift */,
-				C42C1AB31FD2A135005B7022 /* AuthManager.swift */,
+				C42C1AB31FD2A135005B7022 /* NetworkManager.swift */,
 				C42C1ABB1FD3BE22005B7022 /* CurrentUser.swift */,
 				C42C1ABF1FD3C8CC005B7022 /* CurrentCompany.swift */,
 				C49312FE1FDEA2D200FCF54F /* Validator.swift */,
 				C49313001FDEA30700FCF54F /* Alert.swift */,
-				C4D4A2461FE05BAB00523B30 /* NetworkManager.swift */,
 				C4662AA91FE953ED001848C8 /* POEditorManager.swift */,
 			);
 			path = Model;
@@ -589,7 +586,7 @@
 				C4662AAC1FE96275001848C8 /* BalanceInfoCell.swift in Sources */,
 				C4B056FF1FC5998800699B6F /* RegisterVC.swift in Sources */,
 				C4B057051FC5A83600699B6F /* Browser.swift in Sources */,
-				C42C1AB41FD2A135005B7022 /* AuthManager.swift in Sources */,
+				C42C1AB41FD2A135005B7022 /* NetworkManager.swift in Sources */,
 				C49B5E271FC578BE00B9C1C7 /* Fiskas.xcdatamodeld in Sources */,
 				C4662AB31FE989A2001848C8 /* BalancePeriodVC.swift in Sources */,
 				C42C1ABE1FD3C16B005B7022 /* Typealiases.swift in Sources */,
@@ -603,7 +600,6 @@
 				C49B5E1F1FC578BE00B9C1C7 /* AppDelegate.swift in Sources */,
 				C4E561231FF15C6900A90DED /* InvoiceVC.swift in Sources */,
 				C47016DA1FF0EF4B00B3A3B3 /* BalanceQuarterCell.swift in Sources */,
-				C4D4A2471FE05BAB00523B30 /* NetworkManager.swift in Sources */,
 				C4D4A24B1FE081C100523B30 /* MakePhotoVC.swift in Sources */,
 				C463F85F1FF3AB90001FBBC1 /* Profile.swift in Sources */,
 				C42C1AB21FD1BF73005B7022 /* Languages.swift in Sources */,

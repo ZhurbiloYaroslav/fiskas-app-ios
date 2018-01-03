@@ -78,12 +78,12 @@ class LoginVC: UIViewController {
             return
         }
         
-        let loginData = AuthManager.LoginUserData(
+        let loginData = NetworkManager.LoginUserData(
             email: email,
             password: password
         )
         
-        AuthManager().loginWith(loginData) { errorMessages in
+        NetworkManager().loginWith(loginData) { errorMessages in
             if let errorMessages = errorMessages {
                 Alert().presentAlertWith(messages: errorMessages, completionHandler: { alertController in
                     self.present(alertController, animated: true, completion: nil)

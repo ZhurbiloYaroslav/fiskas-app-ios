@@ -65,7 +65,26 @@ class ShowPhotoVC: UIViewController {
         
         let okAction = UIAlertAction(title: "Send", style: .default) { (action) in
             
-            self.showAlertThatImageWasSent()
+            uploadPhoto()
+            
+        }
+        
+        func uploadPhoto() {
+            
+            guard let photo = self.takenPhoto else { return }
+            guard let stringBase64WithPhoto = photo.base64(format: .png) else { return }
+            print(stringBase64WithPhoto)
+            
+            let uploadData = NetworkManager.UploadPhotoData(
+                email: CurrentUser.email,
+                password: CurrentUser.password,
+                photoTitle: "TestImage",
+                photoBody: stringBase64WithPhoto
+            )
+            
+            NetworkManager().uploadPhoto(uploadData, completionHandler: { (arrayWithErrorMessages) in
+                self.showAlertThatImageWasSent(arrayWithErrorMessages)
+            })
         }
         
         let cancelAction = UIAlertAction(title: "Delete", style: .destructive) { (action) in
@@ -77,8 +96,14 @@ class ShowPhotoVC: UIViewController {
         present(alertController, animated: true, completion: nil)
     }
     
-    func showAlertThatImageWasSent() {
-        let alertController = UIAlertController(title: "Image sent", message: "The image has been sent to the server", preferredStyle: .alert)
+    func showAlertThatImageWasSent(_ arrayWithErrorMessages: [String]?) {
+        var alertMessage = ""
+        if let arrayWithErrorMessages = arrayWithErrorMessages, arrayWithErrorMessages.isEmpty {
+            alertMessage = "The image has been sent to the server"
+        } else {
+            alertMessage = "Error!"
+        }
+        let alertController = UIAlertController(title: "Image sent status", message: alertMessage, preferredStyle: .alert)
         
         let okAction = UIAlertAction(title: "OK", style: .default) { (action) in
             self.goBackToPhotoVC()
