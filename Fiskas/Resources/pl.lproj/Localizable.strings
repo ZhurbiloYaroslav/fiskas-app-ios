@@ -39,7 +39,7 @@
 "have_an_account" = "Have an account? Log in";
 
 /*menu-item*/
-"balance" = "Bilansowy";
+"balance" = "Bilans";
 
 /*navigation title,*/
 "show_photo" = "Pokaż zdjęcie";
@@ -139,7 +139,7 @@
 "balance_invoice_history" = "Historia faktur";
 
 /*menu item*/
-"invoices" = "Invoices";
+"invoices" = "Moje faktury";
 
 /*alert button,*/
 "ok" = "Ok";
@@ -150,3 +150,8 @@
 /*Message in Alert*/
 /*Fuzzy*/
 "log_out_message" = "Are you sure you want to log out";
+
+/*Fuzzy*/
+"balance_balance_section" = "Mój bilans";
+"balance_info_section" = "Dane podmiotu";
+"balance_total_section" = "<Total>";

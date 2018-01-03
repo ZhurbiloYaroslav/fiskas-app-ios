@@ -112,7 +112,7 @@ class BalanceVC: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-
+        
         switch (indexPath.section, indexPath.row) {
         case (0,0): // InfoCell
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "InfoCell", for: indexPath) as? BalanceInfoCell
@@ -147,10 +147,13 @@ class BalanceVC: UITableViewController {
         var headerTitleText = ""
         
         switch section {
+            
         case 0:
-            headerTitleText = "balance_info_section_title"
+            headerTitleText = "balance_info_section".localized()
+            
         case 1:
-            headerTitleText = "balance_sheet_section_title"
+            headerTitleText = "balance_balance_section".localized()
+            
         default:
             break
         }
@@ -169,7 +172,12 @@ class BalanceVC: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 30
+        switch section {
+        case 2:
+            return 1
+        default:
+            return 30
+        }
     }
     
 }
@@ -180,7 +188,7 @@ extension BalanceVC {
         
         let node = kjtreeInstance.cellIdentifierUsingTableView(tableView, cellForRowAt: indexPath)
         let indexTuples = node.index.components(separatedBy: ".")
-
+        
         if indexTuples.count == 1 {
             
             // Parents

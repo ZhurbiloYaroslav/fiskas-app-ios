@@ -15,10 +15,10 @@ class ProfileVC: UITableViewController {
     
     // Personal Data
     @IBOutlet weak var firstNameHeaderLabel: UILabel!
-    @IBOutlet weak var firstNameTextButton: UIButton!
+    @IBOutlet weak var firstNameTextLabel: UILabel!
     
     @IBOutlet weak var lastNameHeaderLabel: UILabel!
-    @IBOutlet weak var lastNameTextButton: UIButton!
+    @IBOutlet weak var lastNameTextLabel: UILabel!
     
     @IBOutlet weak var emailHeaderLabel: UILabel!
     @IBOutlet weak var userEmailTextLabel: UILabel!
@@ -51,7 +51,6 @@ class ProfileVC: UITableViewController {
     
     
     // Settings
-    @IBOutlet weak var passwordHeaderLabel: UILabel!
     @IBOutlet weak var passwordTextLabel: UILabel!
     
     @IBOutlet weak var pushNotificationsHeaderLabel: UILabel!
@@ -92,7 +91,6 @@ class ProfileVC: UITableViewController {
         taxServiceHeaderLabel.text = "tax_service".localized()
         
         // Settings
-        passwordHeaderLabel.text = "password".localized()
         passwordTextLabel.text = "change_password".localized()
         
         pushNotificationsHeaderLabel.text = "push_notifications".localized()
@@ -102,8 +100,8 @@ class ProfileVC: UITableViewController {
     }
     
     func updateLabelsWithUserInfo() {
-        firstNameTextButton.setTitle(CurrentUser.firstName, for: .normal)
-        lastNameTextButton.setTitle(CurrentUser.lastName, for: .normal)
+        firstNameTextLabel.text = CurrentUser.firstName
+        lastNameTextLabel.text = CurrentUser.lastName
         userEmailTextLabel.text = CurrentUser.email
         userPhoneTextLabel.text = CurrentUser.phone
         
@@ -132,7 +130,7 @@ class ProfileVC: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
         case 0:
-            return 3
+            return 4
         case 1:
             return 7
         case 2:
@@ -174,19 +172,25 @@ class ProfileVC: UITableViewController {
     }
     
     @IBAction func firstNameButtonPressed(_ sender: UIButton) {
-        showAlertToChange(field: .FirstName)
+        
     }
     
     @IBAction func lastNameButtonPressed(_ sender: UIButton) {
-        showAlertToChange(field: .LastName)
+        
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath {
+        case [0,0]:
+            showAlertToChange(field: .FirstName)
         case [0,1]:
-            showAlertToChange(field: .Email)
+            showAlertToChange(field: .LastName)
         case [0,2]:
+            showAlertToChange(field: .Email)
+        case [0,3]:
             showAlertToChange(field: .Phone)
+        case [2,2]:
+            performSegue(withIdentifier: "ShowPrivacyPolicyVC", sender: nil)
         case [2,3]:
             showAlertToChange(field: .LogOut)
         default:
