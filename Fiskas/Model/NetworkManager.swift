@@ -226,7 +226,7 @@ class NetworkManager {
         let email: String
         let password: String
         let photoTitle: String
-        let photoBody: String
+        let photoBody: UIImage
         
         func getParams() -> Parameters {
             return [
