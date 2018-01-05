@@ -514,7 +514,7 @@
                         <outlet property="phoneHeaderLabel" destination="QUV-lP-nZa" id="of0-9T-cfG"/>
                         <outlet property="privacyPolicyHeaderLabel" destination="G88-C6-BAJ" id="g2G-jd-G4s"/>
                         <outlet property="regonHeaderLabel" destination="KR5-ek-AWf" id="cup-tQ-PW2"/>
-                        <outlet property="regon_ValueLabel" destination="kUE-hH-258" id="jeK-lG-XRY"/>
+                        <outlet property="regon_ValueLabel" destination="xuX-tB-fEC" id="7oQ-Ad-xjl"/>
                         <outlet property="taxServiceHeaderLabel" destination="Duc-Zw-G73" id="nGU-sA-CPK"/>
                         <outlet property="taxService_ValueLabel" destination="9Ub-xJ-tYr" id="EyY-S1-9UI"/>
                         <outlet property="userEmailTextLabel" destination="pb7-0N-xu6" id="YLb-P4-qqh"/>
