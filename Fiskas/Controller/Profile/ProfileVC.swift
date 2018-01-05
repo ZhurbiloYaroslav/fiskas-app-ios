@@ -53,7 +53,6 @@ class ProfileVC: UITableViewController {
     // Settings
     @IBOutlet weak var passwordTextLabel: UILabel!
     
-    @IBOutlet weak var pushNotificationsHeaderLabel: UILabel!
     @IBOutlet weak var privacyPolicyHeaderLabel: UILabel!
     @IBOutlet weak var deleteAccountLabel: UILabel!
     
@@ -92,8 +91,6 @@ class ProfileVC: UITableViewController {
         
         // Settings
         passwordTextLabel.text = "change_password".localized()
-        
-        pushNotificationsHeaderLabel.text = "push_notifications".localized()
         privacyPolicyHeaderLabel.text = "privacy_policy".localized()
         deleteAccountLabel.text = "delete_account".localized()
         
@@ -134,7 +131,7 @@ class ProfileVC: UITableViewController {
         case 1:
             return 7
         case 2:
-            return 4
+            return 3
         default:
             return 0
         }
@@ -170,14 +167,6 @@ class ProfileVC: UITableViewController {
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 30
     }
-    
-    @IBAction func firstNameButtonPressed(_ sender: UIButton) {
-        
-    }
-    
-    @IBAction func lastNameButtonPressed(_ sender: UIButton) {
-        
-    }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath {
@@ -189,9 +178,25 @@ class ProfileVC: UITableViewController {
             showAlertToChange(field: .Email)
         case [0,3]:
             showAlertToChange(field: .Phone)
-        case [2,2]:
+        case [1,0]:
+            showAlertToChange(field: .CompanyName)
+        case [1,1]:
+            showAlertToChange(field: .CompanyAddress)
+        case [1,2]:
+            showAlertToChange(field: .NIP)
+        case [1,3]:
+            showAlertToChange(field: .REGON)
+        case [1,4]:
+            showAlertToChange(field: .CompanyEmail)
+        case [1,5]:
+            showAlertToChange(field: .CompanyPhone)
+        case [1,6]:
+            showAlertToChange(field: .TaxService)
+        case [2,0]:
+            showAlertToChange(field: .Password)
+        case [2,1]:
             performSegue(withIdentifier: "ShowPrivacyPolicyVC", sender: nil)
-        case [2,3]:
+        case [2,2]:
             showAlertToChange(field: .LogOut)
         default:
             break
@@ -224,8 +229,15 @@ class ProfileVC: UITableViewController {
         case FirstName
         case LastName
         case Email
-        case Password
         case Phone
+        case CompanyName
+        case CompanyAddress
+        case NIP
+        case REGON
+        case CompanyEmail
+        case CompanyPhone
+        case TaxService
+        case Password
         case LogOut
     }
 
@@ -234,7 +246,7 @@ class ProfileVC: UITableViewController {
 extension ProfileVC {
     
     func showAlertToChange(field: ProfileField) {
-        
+        print("it should show alert!!!")
         let alertTitle = "Change profile"
         let alertMessage = "Change field"
         
@@ -250,36 +262,52 @@ extension ProfileVC {
         switch field {
         case .FirstName:
             alertController.title = "Change First name"
-            alertController.message = "\(alertMessage): First name" + ""
-            makeFirstTextFieldForAlertController(alertVC: alertController, field: .FirstName)
-            alertController.addAction(alertActionOk)
+            alertController.message = "\(alertMessage): First name"
         case .LastName:
             alertController.title = "Change Last name"
-            alertController.message = "\(alertMessage): Last name" + ""
-            makeFirstTextFieldForAlertController(alertVC: alertController, field: .LastName)
-            alertController.addAction(alertActionOk)
+            alertController.message = "\(alertMessage): Last name"
         case .Email:
             alertController.title = "Change Email"
-            alertController.message = "\(alertMessage): Email" + ""
-            makeFirstTextFieldForAlertController(alertVC: alertController, field: .Email)
-            alertController.addAction(alertActionOk)
-        case .Password:
-            alertController.title = "Change Password"
-            alertController.message = "\(alertMessage): Password" + ""
-            makeFirstTextFieldForAlertController(alertVC: alertController, field: .Password)
-            alertController.addAction(alertActionOk)
+            alertController.message = "\(alertMessage): Email"
         case .Phone:
             alertController.title = "Change Phone"
-            alertController.message = "\(alertMessage): Phone" + ""
-            makeFirstTextFieldForAlertController(alertVC: alertController, field: .Phone)
-            alertController.addAction(alertActionOk)
+            alertController.message = "\(alertMessage): Phone"
+        case .CompanyName:
+            alertController.title = "Change Company name"
+            alertController.message = "\(alertMessage): Company name"
+        case .CompanyAddress:
+            alertController.title = "Change Company address"
+            alertController.message = "\(alertMessage): Company address"
+        case .NIP:
+            alertController.title = "Change Company NIP"
+            alertController.message = "\(alertMessage): Company NIP"
+        case .REGON:
+            alertController.title = "Change Company REGON"
+            alertController.message = "\(alertMessage): Company REGON"
+        case .CompanyEmail:
+            alertController.title = "Change Company email"
+            alertController.message = "\(alertMessage): Company email"
+        case .CompanyPhone:
+            alertController.title = "Change Company phone"
+            alertController.message = "\(alertMessage): Company phone"
+        case .TaxService:
+            alertController.title = "Change Company tax service"
+            alertController.message = "\(alertMessage): Company tax service"
+        case .Password:
+            alertController.title = "Change Password"
+            alertController.message = "\(alertMessage): Password"
         case .LogOut:
             alertController.title = "Log out"
             alertController.message = "Do you really want log out?"
             alertController.addAction(UIAlertAction(title: "Log out", style: .destructive, handler: { (alertAction) in
                 self.logOutFromAccount()
             }))
+            present(alertController, animated: true)
+            return
         }
+        
+        makeTextFieldsForAlertController(alertVC: alertController, field: field)
+        alertController.addAction(alertActionOk)
         
         present(alertController, animated: true)
     }
@@ -295,20 +323,36 @@ extension ProfileVC {
                 CurrentUser.email = alertFieldText
             case .Phone:
                 CurrentUser.phone = alertFieldText
-            default:
-                print("Undefined 456")
+            case .CompanyName:
+                CurrentCompany.name = alertFieldText
+            case .CompanyAddress:
+                CurrentCompany.address = alertFieldText
+            case .NIP:
+                CurrentCompany.nip = alertFieldText
+            case .REGON:
+                CurrentCompany.regon = alertFieldText
+            case .CompanyEmail:
+                CurrentCompany.email = alertFieldText
+            case .CompanyPhone:
+                CurrentCompany.phone = alertFieldText
+            case .TaxService:
+                CurrentCompany.taxService = alertFieldText
+            case .Password:
+                CurrentUser.password = alertFieldText
+            case .LogOut:
+                return
             }
         }
         self.updateLabelsWithUserInfo()
         self.tableView.reloadData()
     }
     
-    func makeFirstTextFieldForAlertController(alertVC: UIAlertController, field: ProfileField) {
+    func makeTextFieldsForAlertController(alertVC: UIAlertController, field: ProfileField) {
         
         currentAlertVC = alertVC
         textFieldTypeInCurrentAlertVC = field
         
-        alertVC.addTextField { (textField) in
+        alertVC.addTextField { textField in
             switch field {
             case .FirstName:
                 textField.text = CurrentUser.firstName
@@ -323,17 +367,57 @@ extension ProfileVC {
                 textField.placeholder = "Email"
                 textField.keyboardType = UIKeyboardType.emailAddress
                 textField.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for: .editingChanged)
-            case .Password:
-                textField.text = ""
-                textField.placeholder = "Password"
-                textField.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for: .editingChanged)
             case .Phone:
                 textField.placeholder = "Phone"
                 textField.text = CurrentUser.phone
                 textField.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for: .editingChanged)
+            case .CompanyName:
+                textField.placeholder = "Company name"
+                textField.text = CurrentCompany.name
+                textField.autocapitalizationType = UITextAutocapitalizationType.sentences
+            case .CompanyAddress:
+                textField.placeholder = "Company address"
+                textField.text = CurrentCompany.address
+                textField.autocapitalizationType = UITextAutocapitalizationType.sentences
+            case .NIP:
+                textField.placeholder = "Company NIP"
+                textField.text = CurrentCompany.nip
+                textField.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for: .editingChanged)
+            case .REGON:
+                textField.placeholder = "Company REGON"
+                textField.text = CurrentCompany.regon
+                textField.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for: .editingChanged)
+            case .CompanyEmail:
+                textField.placeholder = "Company Email"
+                textField.text = CurrentCompany.email
+                textField.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for: .editingChanged)
+            case .CompanyPhone:
+                textField.placeholder = "Company Phone"
+                textField.text = CurrentCompany.phone
+                textField.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for: .editingChanged)
+            case .TaxService:
+                textField.placeholder = "Company Tax service"
+                textField.text = CurrentCompany.taxService
+                textField.autocapitalizationType = UITextAutocapitalizationType.sentences
+            case .Password:
+                textField.text = ""
+                textField.placeholder = "Current password"
+                textField.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for: .editingChanged)
             case .LogOut:
                 return
             }
+        }
+        if field == .Password {
+            alertVC.addTextField(configurationHandler: { textField in
+                textField.text = ""
+                textField.placeholder = "New password"
+                textField.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for: .editingChanged)
+            })
+            alertVC.addTextField(configurationHandler: { textField in
+                textField.text = ""
+                textField.placeholder = "Repeat new password"
+                textField.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for: .editingChanged)
+            })
         }
     }
     
@@ -344,8 +428,7 @@ extension ProfileVC {
         var attributes = [ NSAttributedStringKey.foregroundColor : UIColor.black ]
         
         switch textFieldTypeInCurrentAlertVC {
-            
-        case .Email:
+        case .Email, .CompanyEmail:
             if Validator.isEmailValid(fieldText) {
                 currentAlertVC.actions[1].isEnabled = true
                 newMessage = "Your email is okay"
@@ -355,7 +438,16 @@ extension ProfileVC {
                 newMessage = "Your email is invalid"
                 attributes = [ NSAttributedStringKey.foregroundColor : UIColor.red ]
             }
-            
+        case .Phone, .CompanyPhone:
+            if Validator.isPhoneValid(fieldText) {
+                currentAlertVC.actions[1].isEnabled = true
+                newMessage = "Your phone is okay"
+                attributes = [ NSAttributedStringKey.foregroundColor : UIColor.green ]
+            } else {
+                currentAlertVC.actions[1].isEnabled = false
+                newMessage = "Your phone is invalid"
+                attributes = [ NSAttributedStringKey.foregroundColor : UIColor.red ]
+            }
         case .Password:
             if Validator.isPasswordValid(fieldText) {
                 currentAlertVC.actions[1].isEnabled = true
@@ -366,18 +458,6 @@ extension ProfileVC {
                 newMessage = "Your password is invalid"
                 attributes = [ NSAttributedStringKey.foregroundColor : UIColor.red ]
             }
-            
-        case .Phone:
-            if Validator.isPhoneValid(fieldText) {
-                currentAlertVC.actions[1].isEnabled = true
-                newMessage = "Your phone is okay"
-                attributes = [ NSAttributedStringKey.foregroundColor : UIColor.green ]
-            } else {
-                currentAlertVC.actions[1].isEnabled = false
-                newMessage = "Your phone is invalid"
-                attributes = [ NSAttributedStringKey.foregroundColor : UIColor.red ]
-            }
-            
         default:
             break
         }

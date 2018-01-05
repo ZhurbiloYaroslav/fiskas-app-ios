@@ -10,37 +10,92 @@ import Foundation
 
 class CurrentCompany {
     
+    private static let defaults = UserDefaults.standard
+    
 }
 
 //MARK: Variables
 extension CurrentCompany {
     
     static var name: String {
-        return "Kancelaria Księgowa Fiskas Sp z o. o."
+        get {
+            let defaultValue = "Kancelaria Księgowa Fiskas Sp z o. o."
+            return defaults.object(forKey: "currentCompanyName") as? String ?? defaultValue
+        }
+        set {
+            defaults.set(newValue, forKey: "currentCompanyName")
+            defaults.synchronize()
+        }
     }
     static var address: String {
-        return """
-        ul. Legnicka 150/2
-        54-206 Wrocław
-        """
+        get {
+            let defaultValue = "ul. Legnicka 150/2\n54-206 Wrocław"
+            return defaults.object(forKey: "currentCompanyAddress") as? String ?? defaultValue
+        }
+        set {
+            defaults.set(newValue, forKey: "currentCompanyAddress")
+            defaults.synchronize()
+        }
     }
     static var nip: String {
-        return "8943072632"
+        get {
+            let defaultValue = "8943072632"
+            return defaults.object(forKey: "currentCompanyNIP") as? String ?? defaultValue
+        }
+        set {
+            defaults.set(newValue, forKey: "currentCompanyNIP")
+            defaults.synchronize()
+        }
     }
     static var regon: String {
-        return "363655234"
+        get {
+            let defaultValue = "363655234"
+            return defaults.object(forKey: "currentCompanyRegon") as? String ?? defaultValue
+        }
+        set {
+            defaults.set(newValue, forKey: "currentCompanyRegon")
+            defaults.synchronize()
+        }
     }
     static var actualization: String {
-        return "6.12.2017 17:44"
+        get {
+            let defaultValue = "6.12.2017 17:44"
+            return defaults.object(forKey: "currentCompanyActualization") as? String ?? defaultValue
+        }
+        set {
+            defaults.set(newValue, forKey: "currentCompanyActualization")
+            defaults.synchronize()
+        }
     }
     static var email: String {
-        return "kancelaria.fiskas@gmail.com"
+        get {
+            let defaultValue = "kancelaria.fiskas@gmail.com"
+            return defaults.object(forKey: "currentCompanyEmail") as? String ?? defaultValue
+        }
+        set {
+            defaults.set(newValue, forKey: "currentCompanyEmail")
+            defaults.synchronize()
+        }
     }
     static var phone: String {
-        return "+48 535 555 549"
+        get {
+            let defaultValue = "+48 535 555 549"
+            return defaults.object(forKey: "currentCompanyPhone") as? String ?? defaultValue
+        }
+        set {
+            defaults.set(newValue, forKey: "currentCompanyPhone")
+            defaults.synchronize()
+        }
     }
     static var taxService: String {
-        return "VAT"
+        get {
+            let defaultValue = "VAT"
+            return defaults.object(forKey: "currentCompanyTax") as? String ?? defaultValue
+        }
+        set {
+            defaults.set(newValue, forKey: "currentCompanyTax")
+            defaults.synchronize()
+        }
     }
     
 }
