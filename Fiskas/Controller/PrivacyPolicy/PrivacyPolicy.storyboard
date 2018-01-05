@@ -1,41 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Fbg-CX-wiN">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="evW-Qo-Y2u">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Privacy PolicyVC-->
-        <scene sceneID="TSn-7k-7n2">
+        <!--Privacy Policy-->
+        <scene sceneID="SZV-gU-aT4">
             <objects>
-                <tableViewController storyboardIdentifier="PrivacyPolicyVC" id="Fbg-CX-wiN" customClass="PrivacyPolicyVC" customModule="Fiskas" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="foJ-jM-6ir">
+                <viewController storyboardIdentifier="PrivacyPolicyVC" title="Privacy Policy" id="evW-Qo-Y2u" customClass="PrivacyPolicyVC" customModule="Fiskas" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="TeX-pp-2j7">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" scalesPageToFit="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0wy-sD-md6">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES"/>
+                            </webView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="e3e-w0-9py">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="e3e-w0-9py" id="yC1-8H-LVq">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="Fbg-CX-wiN" id="t0N-4i-fhn"/>
-                            <outlet property="delegate" destination="Fbg-CX-wiN" id="3CH-wi-Bs4"/>
-                        </connections>
-                    </tableView>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="r4O-ia-ngk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <constraints>
+                            <constraint firstItem="0wy-sD-md6" firstAttribute="top" secondItem="mbP-0q-XMn" secondAttribute="top" id="LYC-dl-2Hh"/>
+                            <constraint firstItem="0wy-sD-md6" firstAttribute="leading" secondItem="mbP-0q-XMn" secondAttribute="leading" id="MXv-Cc-kYB"/>
+                            <constraint firstItem="0wy-sD-md6" firstAttribute="bottom" secondItem="mbP-0q-XMn" secondAttribute="bottom" id="ONf-LI-5A4"/>
+                            <constraint firstItem="0wy-sD-md6" firstAttribute="trailing" secondItem="mbP-0q-XMn" secondAttribute="trailing" id="bAd-Aa-uhQ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="mbP-0q-XMn"/>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="0wy-sD-md6" id="8vh-an-ImZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9Fs-QL-8Yw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-246" y="251"/>
+            <point key="canvasLocation" x="-248.80000000000001" y="264.91754122938534"/>
         </scene>
     </scenes>
 </document>

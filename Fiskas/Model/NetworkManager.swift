@@ -20,7 +20,7 @@ class NetworkManager {
         let parameters = userData.getParams()
         
         Alamofire.request(url, method:.post, parameters:parameters, headers:headers).responseJSON { (response) in
-
+            
             if let errorMessages = self.parseRegistrationResultDataWith(response) {
                 completionHandler(errorMessages)
             } else {
@@ -73,7 +73,7 @@ class NetworkManager {
         let parameters = userData.getParams()
         
         Alamofire.request(url, method:.post, parameters:parameters, headers:headers).responseJSON { (response) in
-
+            
             if let errorMessages = self.parseLoginResultDataWith(response) {
                 completionHandler(errorMessages)
             } else {
@@ -88,7 +88,7 @@ class NetworkManager {
         
         var errorMessages = [String]()
         let dictWithLogResult = makeDictionaryFrom(response)
-
+        
         guard let error = dictWithLogResult["res"] as? Int else {
             errorMessages.append(AuthError().noConnection)
             return errorMessages
@@ -120,53 +120,31 @@ class NetworkManager {
     
     func uploadPhoto(_ userData: UploadPhotoData, completionHandler: @escaping (_ errorMessages: [String]?)->()) {
         
-        guard let url = userData.getURL() else { return }
+        let image = userData.photoBody
+        guard let imgData = UIImageJPEGRepresentation(image, 1) else { return }
         
         let parameters = userData.getParams()
         
-        Alamofire.request(url, method:.post, parameters:parameters, headers:headers).responseJSON { (response) in
-            print("---response", response)
-            if let errorMessages = self.parseUploadPhotoResultDataWith(response) {
-                completionHandler(errorMessages)
-            } else {
+        Alamofire.upload(multipartFormData: { multipartFormData in
+            multipartFormData.append(imgData, withName: "image",fileName: "\(userData.photoTitle).jpg", mimeType: "image/jpg")
+            for (key, value) in parameters {
+                multipartFormData.append((value as AnyObject).data(using: String.Encoding.utf8.rawValue)!, withName: key)
+            }
+        }, to: userData.pageAddress) { result in
+            switch result {
+            
+            case .success(_, _, _): // case .success(let upload, _, _):
                 completionHandler(nil)
+                // upload.responseJSON { response in
+                //     if let errorMessages = self.parseUploadPhotoResultDataWith(response) {
+                //         completionHandler(errorMessages)
+                //     } else {
+                //         completionHandler(nil)
+                //     }
+                // }
+            case .failure(let encodingError):
+                completionHandler([encodingError.localizedDescription])
             }
-        }
-        
-    }
-    
-    func parseUploadPhotoResultDataWith(_ response: DataResponse<Any>) -> [String]? {
-        
-        var errorMessages = [String]()
-        let dictWithLogResult = makeDictionaryFrom(response)
-        
-        guard let error = dictWithLogResult["res"] as? Int else {
-            errorMessages.append(AuthError().noConnection)
-            return errorMessages
-        }
-        
-        switch error {
-        case 0:
-            guard let userDataDict = dictWithLogResult["user"] as? Dictionary<String, String> else {
-                errorMessages.append(AuthError().invalidResultData)
-                return errorMessages
-            }
-            
-//            CurrentUser.id = userDataDict["id"] ?? ""
-//            CurrentUser.getFirstAndLastNameFromString(userDataDict["name"] ?? "")
-//            CurrentUser.phone = userDataDict["phone"] ?? ""
-//            CurrentUser.email = userDataDict["email"] ?? ""
-//            CurrentUser.authToken = userDataDict["pass"] ?? ""
-//            CurrentUser.isUserActive = userDataDict["active"] == "1" ? true : false
-//            CurrentUser.isLoggedIn = true
-            
-            return nil
-        case 1:
-            errorMessages.append(AuthError().wrongEmailOrPassword)
-            return errorMessages
-        default:
-            errorMessages.append(AuthError().undefined)
-            return errorMessages
         }
     }
     
@@ -232,8 +210,7 @@ class NetworkManager {
             return [
                 "email": email,
                 "pass": password,
-                "photo": photoTitle,
-                "body": photoBody
+                "name": photoTitle
             ]
         }
         

@@ -65,7 +65,9 @@ class ShowPhotoVC: UIViewController {
         
         let okAction = UIAlertAction(title: "Send", style: .default) { (action) in
             
-            self.showAlertThatImageWasSent()
+            guard let photo = self.takenPhoto else { return }
+            guard let imageName = alertController.textFields?[0].text else { return }
+            self.uploadPhoto(photo, withName: imageName)
             
         }
         
@@ -78,19 +80,17 @@ class ShowPhotoVC: UIViewController {
         present(alertController, animated: true, completion: nil)
     }
     
-    func uploadPhoto() {
-        
-        guard let photo = self.takenPhoto else { return }
+    func uploadPhoto(_ photo: UIImage, withName imageName: String) {
         
         let uploadData = NetworkManager.UploadPhotoData(
             email: CurrentUser.email,
             password: CurrentUser.password,
-            photoTitle: "TestImage",
+            photoTitle: imageName,
             photoBody: photo
         )
         
         NetworkManager().uploadPhoto(uploadData, completionHandler: { (arrayWithErrorMessages) in
-            
+            self.showAlertThatImageWasSent()
         })
     }
     
