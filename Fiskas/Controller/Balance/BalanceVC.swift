@@ -24,19 +24,7 @@ class BalanceVC: UITableViewController {
     
     var arrayTree:[Parent] = []
     var kjtreeInstance: KJTree = KJTree()
-    
-    @IBAction func expandCollapseButtonPressed(_ sender: UIBarButtonItem) {
-        if kjtreeInstance.isInitiallyExpanded {
-            kjtreeInstance.isInitiallyExpanded = false
-        } else {
-            kjtreeInstance.isInitiallyExpanded = true
-        }
-        tableView.reloadData()
-    }
-    
-    @IBAction func makePhotoButtonPressed(_ sender: UIButton) {
-        performSegue(withIdentifier: "ShowMakePhoto", sender: nil)
-    }
+    var isKjTreeInitiallyExpanded = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,6 +33,26 @@ class BalanceVC: UITableViewController {
         
         setupLeftMenu()
         updateUILabelsWithLocalizedText()
+        getBalanceData()
+    }
+    
+    func getBalanceData() {
+        var errorMessages = [String]()
+        
+        let requestBalanceData = NetworkManager.RequestBalanceData(
+            email: CurrentUser.email,
+            password: CurrentUser.password
+        )
+        
+        NetworkManager().getBalanceFor(requestBalanceData) { errorMessages in
+            if let errorMessages = errorMessages {
+                Alert().presentAlertWith(messages: errorMessages, completionHandler: { alertController in
+                    self.present(alertController, animated: true, completion: nil)
+                })
+            } else {
+                print("---received data!!!")
+            }
+        }
     }
     
     func setupLeftMenu() {
@@ -68,17 +76,29 @@ class BalanceVC: UITableViewController {
         
         kjtreeInstance = Balance().getKJTree()
         
-        kjtreeInstance.isInitiallyExpanded = false
+        kjtreeInstance.isInitiallyExpanded = isKjTreeInitiallyExpanded
         kjtreeInstance.animation = .fade
         
         tableView.delegate = self
         tableView.dataSource = self
         
-        //        tableview.rowHeight = UITableViewAutomaticDimension
-        //        tableview.estimatedRowHeight = 44
         tableView.estimatedRowHeight = 170
         tableView.rowHeight = UITableViewAutomaticDimension
         
+    }
+    
+    @IBAction func expandCollapseButtonPressed(_ sender: UIBarButtonItem) {
+        if kjtreeInstance.isInitiallyExpanded {
+            isKjTreeInitiallyExpanded = false
+        } else {
+            isKjTreeInitiallyExpanded = true
+        }
+        setupBalanceSheet()
+        tableView.reloadData()
+    }
+    
+    @IBAction func makePhotoButtonPressed(_ sender: UIButton) {
+        performSegue(withIdentifier: "ShowMakePhoto", sender: nil)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -92,6 +112,10 @@ class BalanceVC: UITableViewController {
             
         }
     }
+    
+}
+
+extension BalanceVC {
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 3
@@ -179,7 +203,6 @@ class BalanceVC: UITableViewController {
             return 30
         }
     }
-    
 }
 
 extension BalanceVC {

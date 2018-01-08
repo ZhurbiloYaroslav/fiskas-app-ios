@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		9E4AD41A35377C6F7C81F359 /* Pods_Fiskas.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5CA4D3B92FBCC4EBBCBB297 /* Pods_Fiskas.framework */; };
+		C40C849D20037B0A0011AF01 /* BalanceReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40C849C20037B0A0011AF01 /* BalanceReport.swift */; };
+		C40C849F200380340011AF01 /* ResponseExample.json in Resources */ = {isa = PBXBuildFile; fileRef = C40C849E200380340011AF01 /* ResponseExample.json */; };
 		C42C1AA81FD1BC11005B7022 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C42C1AAA1FD1BC11005B7022 /* Localizable.strings */; };
 		C42C1AAD1FD1BE4B005B7022 /* String+localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42C1AAC1FD1BE4B005B7022 /* String+localized.swift */; };
 		C42C1AAF1FD1BE8F005B7022 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42C1AAE1FD1BE8F005B7022 /* UserDefaultsManager.swift */; };
@@ -73,6 +75,8 @@
 		3711743386CFB2BF65ABC58C /* Pods-Fiskas.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fiskas.release.xcconfig"; path = "Pods/Target Support Files/Pods-Fiskas/Pods-Fiskas.release.xcconfig"; sourceTree = "<group>"; };
 		73479D34CDF7C55D9A14C5C3 /* Pods-Fiskas.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fiskas.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Fiskas/Pods-Fiskas.debug.xcconfig"; sourceTree = "<group>"; };
 		A5CA4D3B92FBCC4EBBCBB297 /* Pods_Fiskas.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fiskas.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C40C849C20037B0A0011AF01 /* BalanceReport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceReport.swift; sourceTree = "<group>"; };
+		C40C849E200380340011AF01 /* ResponseExample.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ResponseExample.json; sourceTree = "<group>"; };
 		C42C1AA41FD1BBC4005B7022 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/Menu.strings; sourceTree = "<group>"; };
 		C42C1AA51FD1BBC4005B7022 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		C42C1AA91FD1BC11005B7022 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -168,6 +172,24 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		C40C849A20037AD50011AF01 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C4662AB11FE96597001848C8 /* BalanceCell */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C40C849B20037ADF0011AF01 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C4662AB41FE9B4B8001848C8 /* Balance.swift */,
+				C40C849C20037B0A0011AF01 /* BalanceReport.swift */,
+				C40C849E200380340011AF01 /* ResponseExample.json */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		C42C1AB01FD1BF60005B7022 /* Constants */ = {
 			isa = PBXGroup;
 			children = (
@@ -204,8 +226,8 @@
 				C44A11651FE56F92000384B8 /* Balance.storyboard */,
 				C42C1AB71FD2FC0E005B7022 /* BalanceVC.swift */,
 				C4662AB21FE989A2001848C8 /* BalancePeriodVC.swift */,
-				C4662AB41FE9B4B8001848C8 /* Balance.swift */,
-				C4662AB11FE96597001848C8 /* BalanceCell */,
+				C40C849A20037AD50011AF01 /* View */,
+				C40C849B20037ADF0011AF01 /* Model */,
 			);
 			path = Balance;
 			sourceTree = "<group>";
@@ -493,6 +515,7 @@
 			files = (
 				C463F8581FF3A78A001FBBC1 /* ButtonCell.xib in Resources */,
 				C44A11681FE57041000384B8 /* Contacts.storyboard in Resources */,
+				C40C849F200380340011AF01 /* ResponseExample.json in Resources */,
 				C47016DF1FF0EF4B00B3A3B3 /* BalanceCategoryCell.xib in Resources */,
 				C42F0B751FDDD2BB00C3D619 /* Links.rtf in Resources */,
 				C4E310941FC589CB00384B35 /* logo1.png in Resources */,
@@ -595,6 +618,7 @@
 				C42C1ABE1FD3C16B005B7022 /* Typealiases.swift in Sources */,
 				C467C95D1FD5B4E20077A9FA /* MenuCell.swift in Sources */,
 				C42C1AAF1FD1BE8F005B7022 /* UserDefaultsManager.swift in Sources */,
+				C40C849D20037B0A0011AF01 /* BalanceReport.swift in Sources */,
 				C42C1AAD1FD1BE4B005B7022 /* String+localized.swift in Sources */,
 				C47016DC1FF0EF4B00B3A3B3 /* BalanceMonthCell.swift in Sources */,
 				C467C95F1FD5B97B0077A9FA /* MenuVC.swift in Sources */,
