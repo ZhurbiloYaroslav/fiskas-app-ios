@@ -9,7 +9,15 @@
 import Foundation
 import Alamofire
 
-class NetworkManager {
+@objc protocol NetworkManagerDelegate {
+    @objc optional func didLoad(arrayWithInvoices:[Invoice])
+}
+
+class NetworkManager: NSObject {
+    
+    weak var delegate: NetworkManagerDelegate?
+    
+    private var arrayWithInvoices: [Invoice]!
     
     let headers: HTTPHeaders = HTTPHeaders()
     static let baseURL = "https://serwer1651270.home.pl/admin/api/"
@@ -256,7 +264,7 @@ extension NetworkManager {
     
 }
 
-//MARK: Balance
+//MARK: Invoices
 extension NetworkManager {
     
     func getInvoicesFor(_ invoiceData: RequestInvoiceData, completionHandler: @escaping (_ errorMessages: [String]?)->()) {
@@ -266,8 +274,8 @@ extension NetworkManager {
         let parameters = invoiceData.getParams()
         
         Alamofire.request(url, method:.post, parameters:parameters, headers:headers).responseJSON { (response) in
-            print("---invoice response: ", response)
-            if let errorMessages = self.parseBalanceResultDataWith(response) {
+
+            if let errorMessages = self.parseInvoicesWith(response) {
                 completionHandler(errorMessages)
             } else {
                 completionHandler(nil)
@@ -276,9 +284,10 @@ extension NetworkManager {
         
     }
     
-    func parseInvoiceResultDataWith(_ response: DataResponse<Any>) -> [String]? {
+    private func parseInvoicesWith(_ response: DataResponse<Any>) -> [String]? {
         
         var errorMessages = [String]()
+        arrayWithInvoices = [Invoice]()
         let dictWithLogResult = makeDictionaryFrom(response)
         
         guard let error = dictWithLogResult["res"] as? Int else {
@@ -288,19 +297,19 @@ extension NetworkManager {
         
         switch error {
         case 0:
-            guard let userDataDict = dictWithLogResult["report"] as? Dictionary<String, String> else {
+            guard let arrayWithInvoicesResult = dictWithLogResult["factures"] as? [Dictionary<String, String>] else {
                 errorMessages.append(AuthError().invalidResultData)
                 return errorMessages
             }
-            CurrentUser.id = userDataDict["id"] ?? ""
-            CurrentUser.getFirstAndLastNameFromString(userDataDict["name"] ?? "")
-            CurrentUser.phone = userDataDict["phone"] ?? ""
-            CurrentUser.email = userDataDict["email"] ?? ""
-            CurrentUser.authToken = userDataDict["pass"] ?? ""
-            CurrentUser.isUserActive = userDataDict["active"] == "1" ? true : false
-            CurrentUser.isLoggedIn = true
             
+            for dictWithResult in arrayWithInvoicesResult {
+                let invoice = Invoice(withResult: dictWithResult)
+                arrayWithInvoices.append(invoice)
+            }
+
+            delegate?.didLoad?(arrayWithInvoices: arrayWithInvoices)
             return nil
+            
         case 1:
             errorMessages.append(AuthError().wrongEmailOrPassword)
             return errorMessages
@@ -338,11 +347,13 @@ extension NetworkManager {
         
         let image = userData.photoBody
         guard let imgData = UIImageJPEGRepresentation(image, 1) else { return }
-        
+
         let parameters = userData.getParams()
+        //let fileName = "\(userData.photoTitle).jpg"
+        let fileName = "\(userData.photoTitle).jpg"
         
         Alamofire.upload(multipartFormData: { multipartFormData in
-            multipartFormData.append(imgData, withName: "image",fileName: "\(userData.photoTitle).jpg", mimeType: "image/jpg")
+            multipartFormData.append(imgData, withName: "image",fileName: fileName, mimeType: "image/jpg")
             for (key, value) in parameters {
                 multipartFormData.append((value as AnyObject).data(using: String.Encoding.utf8.rawValue)!, withName: key)
             }

@@ -10,25 +10,33 @@ import Foundation
 import UIKit
 import Alamofire
 
-class Invoice {
+class Invoice: NSObject {
     
+    let baseURL = "https://serwer1651270.home.pl"
+    
+    var id: String!
     var name: String!
     var date: String!
     var image: UIImage?
-    var imageAddress: String!
+    private var imageAddress: String!
+    func getImageURL() -> URL? {
+        return URL(string: baseURL + imageAddress)
+    }
     
-    init(name: String, date: String, imageAddress: String) {
+    init(id: String, name: String, date: String, imageAddress: String) {
+        self.id = id
         self.name = name
         self.date = date
         self.imageAddress = imageAddress
     }
     
-    convenience init(withResponse response: DataResponse<Any>) {
-        guard let invoiceArray = response.result.value as? (Dictionary<String, Any>)  else {
-            self.init(name: "Error", date: "Error", imageAddress: "Error")
-            return
-        }
+    convenience init(withResult resultDictionary: [String: Any]) {
         
-        self.init(name: "", date: "", imageAddress: "")
+        let id = resultDictionary["id"] as? String ?? ""
+        let name = resultDictionary["name"] as? String ?? ""
+        let date = resultDictionary["date"] as? String ?? ""
+        let imageAddress = resultDictionary["image"] as? String ?? ""
+        
+        self.init(id: id, name: name, date: date, imageAddress: imageAddress)
     }
 }
