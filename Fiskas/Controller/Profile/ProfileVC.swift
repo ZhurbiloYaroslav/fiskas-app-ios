@@ -191,7 +191,7 @@ class ProfileVC: UITableViewController {
         case [1,5]:
             showAlertToChange(field: .CompanyPhone)
         case [1,6]:
-            showAlertToChange(field: .TaxService)
+            break
         case [2,0]:
             showAlertToChange(field: .Password)
         case [2,1]:
@@ -338,9 +338,16 @@ extension ProfileVC {
             case .TaxService:
                 CurrentCompany.taxService = alertFieldText
             case .Password:
-                CurrentUser.password = alertFieldText
+                guard let newUserPassword = currentAlertVC?.textFields?[1].text else { return }
+                CurrentUser.password = newUserPassword
             case .LogOut:
                 return
+            }
+        }
+        NetworkManager().updateValues { (arrayWithMessages) in
+            guard let unwrappedArrayWithMessages = arrayWithMessages else { return }
+            Alert().presentAlertWith(title: "Update server data", andMessages: unwrappedArrayWithMessages) { alertVC in
+                self.present(alertVC, animated: true, completion: nil)
             }
         }
         self.updateLabelsWithUserInfo()
@@ -400,6 +407,7 @@ extension ProfileVC {
                 textField.text = CurrentCompany.taxService
                 textField.autocapitalizationType = UITextAutocapitalizationType.sentences
             case .Password:
+                textField.tag = 0
                 textField.text = ""
                 textField.placeholder = "Current password"
                 textField.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for: .editingChanged)
@@ -409,11 +417,13 @@ extension ProfileVC {
         }
         if field == .Password {
             alertVC.addTextField(configurationHandler: { textField in
+                textField.tag = 1
                 textField.text = ""
                 textField.placeholder = "New password"
                 textField.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for: .editingChanged)
             })
             alertVC.addTextField(configurationHandler: { textField in
+                textField.tag = 2
                 textField.text = ""
                 textField.placeholder = "Repeat new password"
                 textField.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for: .editingChanged)
@@ -449,15 +459,55 @@ extension ProfileVC {
                 attributes = [ NSAttributedStringKey.foregroundColor : UIColor.red ]
             }
         case .Password:
-            if Validator.isPasswordValid(fieldText) {
-                currentAlertVC.actions[1].isEnabled = true
-                newMessage = "Your password is okay"
-                attributes = [ NSAttributedStringKey.foregroundColor : UIColor.green ]
-            } else {
+            
+            guard let passwordFieldCurrent = currentAlertVC?.textFields?[0] else { return }
+            guard let passwordFieldNew = currentAlertVC?.textFields?[1] else { return }
+            guard let passwordFieldRepeat = currentAlertVC?.textFields?[2] else { return }
+            
+            // Chenk whetger passwords are valid
+            if Validator.isPasswordValid(passwordFieldCurrent.text) == false {
                 currentAlertVC.actions[1].isEnabled = false
-                newMessage = "Your password is invalid"
+                newMessage += "Your current password is invalid \n"
                 attributes = [ NSAttributedStringKey.foregroundColor : UIColor.red ]
             }
+            if passwordFieldCurrent.text != CurrentUser.password {
+                currentAlertVC.actions[1].isEnabled = false
+                newMessage += "Your current password is not match to your password \n"
+                attributes = [ NSAttributedStringKey.foregroundColor : UIColor.red ]
+            }
+            
+            if Validator.isPasswordValid(passwordFieldNew.text) == false
+                && passwordFieldNew.text != "" {
+                currentAlertVC.actions[1].isEnabled = false
+                newMessage += "Your new password is invalid \n"
+                attributes = [ NSAttributedStringKey.foregroundColor : UIColor.red ]
+            }
+            
+            if Validator.isPasswordValid(passwordFieldRepeat.text) == false
+                && passwordFieldRepeat.text != "" {
+                currentAlertVC.actions[1].isEnabled = false
+                newMessage += "Your repeated password is invalid \n"
+                attributes = [ NSAttributedStringKey.foregroundColor : UIColor.red ]
+            }
+            
+            if passwordFieldNew.text != passwordFieldRepeat.text
+                && passwordFieldRepeat.text != "" {
+                currentAlertVC.actions[1].isEnabled = false
+                newMessage += "Your passwords are not equal \n"
+                attributes = [ NSAttributedStringKey.foregroundColor : UIColor.red ]
+            }
+            
+            if Validator.isPasswordValid(passwordFieldCurrent.text)
+                && Validator.isPasswordValid(passwordFieldNew.text)
+                && Validator.isPasswordValid(passwordFieldRepeat.text)
+                && passwordFieldCurrent.text == CurrentUser.password
+                && passwordFieldNew.text == passwordFieldRepeat.text {
+                
+                currentAlertVC.actions[1].isEnabled = true
+                newMessage += "Your passwords are validated"
+                attributes = [ NSAttributedStringKey.foregroundColor : UIColor.green ]
+            }
+            
         default:
             break
         }

@@ -28,6 +28,7 @@ class NetworkManager: NSObject {
         let undefined = "Undefined Error"
         let wrongEmailOrPassword = "Email or password are wrong"
         let recoveryOK = "Password was sent to your Email"
+        let updateOK = "Values have been updated on server"
     }
 }
 
@@ -69,12 +70,20 @@ extension NetworkManager {
                 return errorMessages
             }
             CurrentUser.id = userDataDict["id"] ?? ""
-            CurrentUser.getFirstAndLastNameFromString(userDataDict["name"] ?? "")
+            CurrentUser.firstName = userDataDict["name"] ?? ""
+            CurrentUser.lastName = userDataDict["surname"] ?? ""
             CurrentUser.phone = userDataDict["phone"] ?? ""
             CurrentUser.email = userDataDict["email"] ?? ""
-            CurrentUser.authToken = userDataDict["pass"] ?? ""
             CurrentUser.isUserActive = userDataDict["active"] == "1" ? true : false
             CurrentUser.isLoggedIn = true
+            
+            CurrentCompany.name = userDataDict["company_name"] ?? ""
+            CurrentCompany.address = userDataDict["address"] ?? ""
+            CurrentCompany.nip = userDataDict["tax_code"] ?? ""
+            CurrentCompany.regon = userDataDict["company_tax_code"] ?? ""
+            CurrentCompany.taxService = userDataDict["tax_type"] ?? ""
+            CurrentCompany.phone = userDataDict["company_phone"] ?? ""
+            CurrentCompany.email = userDataDict["company_email"] ?? ""
             
             return nil
         case 1:
@@ -189,6 +198,80 @@ extension NetworkManager {
     }
 }
 
+//MARK: Update values
+extension NetworkManager {
+    
+    func updateValues(completionHandler: @escaping (_ errorMessages: [String]?)->()) {
+        
+        let userData = UpdateUserData()
+        guard let url = userData.getURL() else { return }
+        
+        let parameters = userData.getParams()
+        
+        Alamofire.request(url, method:.post, parameters:parameters, headers:headers).responseJSON { (response) in
+            
+            if let errorMessages = self.parseUpdateResultDataWith(response) {
+                completionHandler(errorMessages)
+            } else {
+                completionHandler(nil)
+            }
+        }
+        
+    }
+    
+    func parseUpdateResultDataWith(_ response: DataResponse<Any>) -> [String]? {
+        
+        var errorMessages = [String]()
+        let dictWithLogResult = makeDictionaryFrom(response)
+        
+        guard let error = dictWithLogResult["res"] as? Int else {
+            errorMessages.append(AuthError().noConnection)
+            return errorMessages
+        }
+        
+        switch error {
+        case 0:
+            errorMessages.append(AuthError().updateOK)
+            return errorMessages
+        case 1:
+            errorMessages.append(AuthError().wrongEmailOrPassword)
+            return errorMessages
+        default:
+            errorMessages.append(AuthError().undefined)
+            return errorMessages
+        }
+    }
+    
+    struct UpdateUserData {
+        let pageAddress: String = NetworkManager.baseURL + "update"
+        
+        func getParams() -> Parameters {
+            return [
+                "id": CurrentUser.id,
+                "email": CurrentUser.email,
+                "pass": CurrentUser.password,
+                "name": CurrentUser.firstName,
+                "surname": CurrentUser.lastName,
+                "phone": CurrentUser.phone,
+                "company_name": CurrentCompany.name,
+                "address": CurrentCompany.address,
+                "taxcode": CurrentCompany.nip,
+                "company_tax_code": CurrentCompany.regon,
+                "tax_type": CurrentCompany.taxService,
+                "company_phone": CurrentCompany.phone,
+                "company_email": CurrentCompany.email
+            ]
+        }
+        
+        func getURL() -> URL? {
+            var result = "\(pageAddress)"
+            result = result.replacingOccurrences(of: " ", with: "%20")
+            return URL(string: result)
+        }
+    }
+    
+}
+
 //MARK: Balance
 extension NetworkManager {
     
@@ -221,22 +304,13 @@ extension NetworkManager {
         
         switch error {
         case 0:
-            guard let userDataDict = dictWithLogResult["report"] as? Dictionary<String, String> else {
+            guard let userDataDict = dictWithLogResult["report"] as? Dictionary<String, Any> else {
                 errorMessages.append(AuthError().invalidResultData)
                 return errorMessages
             }
-            CurrentUser.id = userDataDict["id"] ?? ""
-            CurrentUser.getFirstAndLastNameFromString(userDataDict["name"] ?? "")
-            CurrentUser.phone = userDataDict["phone"] ?? ""
-            CurrentUser.email = userDataDict["email"] ?? ""
-            CurrentUser.authToken = userDataDict["pass"] ?? ""
-            CurrentUser.isUserActive = userDataDict["active"] == "1" ? true : false
-            CurrentUser.isLoggedIn = true
-            
             return nil
         case 1:
-            errorMessages.append(AuthError().wrongEmailOrPassword)
-            return errorMessages
+            return nil
         default:
             errorMessages.append(AuthError().undefined)
             return errorMessages
@@ -251,7 +325,9 @@ extension NetworkManager {
         func getParams() -> Parameters {
             return [
                 "email": email,
-                "pass": password
+                "pass": password,
+                "startDate": "01.01.2018",
+                "endDate": "01.01.2018"
             ]
         }
         
