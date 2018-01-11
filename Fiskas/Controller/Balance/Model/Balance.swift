@@ -23,7 +23,7 @@ struct Balance {
     struct Category {
         let name: String
         func getStringWithTotalValue() -> String {
-            return "100$"
+            return "0"
         }
     }
     
@@ -73,6 +73,8 @@ struct Balance {
         
         var arrayWithParents = [Parent]()
         
+        arrayWithParents.append(Parent())
+        
         for _ in arrayWithCategories {
             let parent = Parent() { () -> [Child] in
                 var arrayWithChildrens = [Child]()
@@ -108,6 +110,8 @@ struct Balance {
             }
             arrayWithParents.append(parent)
         }
+        
+        arrayWithParents.append(Parent())
         
         return KJTree(Parents: arrayWithParents)
     }

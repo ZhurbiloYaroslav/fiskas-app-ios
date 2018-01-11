@@ -36,7 +36,7 @@
 "email" = "Email";
 
 /*Have an account? Log in*/
-"have_an_account" = "Have an account? Log in";
+"have_an_account" = "Masz konto ? Zaloguj się \n";
 
 /*menu-item*/
 "balance" = "Bilans";
@@ -59,27 +59,27 @@
 "privacy_policy" = "Polityka ochrony prywatności";
 
 /*Fuzzy*/
-"delete_account" = "DELETE ACCOUNT";
+"delete_account" = "Usuń konto";
 "full_address" = "Kancelaria Księgowa Fiskas Sp z o. o.\nNIP: 8943072632\nREGON: 363655234";
 "address" = "Adres:";
 
 /*Repeat password*/
 /*Fuzzy*/
-"repeat_password" = "Repeat password";
+"repeat_password" = "Powtórz hasło";
 
 /*Message in Alert*/
 /*Fuzzy*/
-"check_email_restore_password" = "Check your Email to restore password";
+"check_email_restore_password" = "Sprawdź email, do którego chcesz odzyskać hasło";
 
 /*Title in Alert*/
 /*Fuzzy*/
-"restore_password" = "Restore password";
+"restore_password" = "Odzyskaj hasło\n";
 
 /*Title in Alert*/
-"cancel" = "Cancel";
+"cancel" = "Wyjdź";
 
 /*Title in Button*/
-"restore" = "Restore";
+"restore" = "Odzyskaj\n";
 
 /*Button title: Wyloguj się*/
 "log_out" = "Wyloguj się";
@@ -89,21 +89,21 @@
 "report_a_problem" = "Zgłoś problem";
 
 /*Fuzzy*/
-"could_not_send_email" = "Could not send email";
+"could_not_send_email" = "Nie można wysłać email";
 
 /*Message in Alert*/
-"\"Your device could not send e-mail. Please check e-mail configuration and try again\"" = "Your device could not send e-mail. \nPlease check e-mail configuration and try again";
+"\"Your device could not send e-mail. Please check e-mail configuration and try again\"" = "Nie można wysłać email.\nSprawdź konfigurację email i spróbuj ponownie";
 
 /*Subject of an email message*/
 /*Fuzzy*/
-"report_a_problem_subject" = "Report a problem";
+"report_a_problem_subject" = "Zgłoś problem";
 
 /*Default text of an email message*/
 /*Fuzzy*/
-"report_a_problem_message" = "What problem do you have?";
+"report_a_problem_message" = "Jaki masz problem ?";
 
 /*Message in Alert*/
-"restore_password_alert_message" = "Write your Email to restore your password";
+"restore_password_alert_message" = "Wpisz adres e-mail do którego chcesz odzyskać dostęp";
 
 /*Title in cell*/
 "change_password" = "Zmień hasło";
@@ -115,7 +115,7 @@
 "company_address" = "Adres Firmy";
 
 /*TextField in Register*/
-"name" = "Name";
+"name" = "Imię";
 "balance_name_of_user" = "Nazwa podmiotu";
 "balance_my_tax_form" = "Moja forma opodatkowania";
 "balance_last_actual_time" = "Data ostatniej aktualizacji";
@@ -128,7 +128,7 @@
 "balance_cash" = "Gotówka";
 "balance_state_bank" = "Stan konta bankowego";
 "balance_debts" = "Należności";
-"balance_liability" = "Zobowiązania, podatki ";
+"balance_liability" = "Zobowiązania/podatki ";
 "balance_sell" = "Sprzedaż ";
 "balance_buy" = "Zakup";
 "balance_income" = "Zysk";
@@ -145,11 +145,11 @@
 "ok" = "Ok";
 
 /*title in alert*/
-"log_out_title" = "Log out";
+"log_out_title" = "Wyloguj się ";
 
 /*Message in Alert*/
 /*Fuzzy*/
-"log_out_message" = "Are you sure you want to log out";
+"log_out_message" = "Na pewno chchesz się wylogować ?";
 
 /*Fuzzy*/
 "balance_balance_section" = "Mój bilans";

@@ -19,12 +19,6 @@ class BalanceInfoCell: UITableViewCell {
     @IBOutlet weak var headerLabelForTaxForm: UILabel!
     @IBOutlet weak var valueLabelForTaxForm: UILabel!
     
-    @IBOutlet weak var headerLabelForActualization: UILabel!
-    @IBOutlet weak var valueLabelForActualization: UILabel!
-    
-    @IBOutlet weak var headerLabelForPeriod: UILabel!
-    @IBOutlet weak var datePickerButton: UIButton!
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -42,11 +36,6 @@ class BalanceInfoCell: UITableViewCell {
         
         headerLabelForTaxForm.text = "balance_my_tax_form".localized()
         valueLabelForTaxForm.text = CurrentCompany.taxService
-        
-        headerLabelForActualization.text = "balance_last_actual_time".localized()
-        valueLabelForActualization.text = CurrentCompany.actualization
-        
-        headerLabelForPeriod.text = "balance_period".localized()
 
     }
     

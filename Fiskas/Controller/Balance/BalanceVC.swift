@@ -97,6 +97,10 @@ class BalanceVC: UITableViewController {
         tableView.reloadData()
     }
     
+    @objc func showPeriodPicker(_ sender: UIButton) {
+        self.performSegue(withIdentifier: "ChangePeriod", sender: nil)
+    }
+    
     @IBAction func makePhotoButtonPressed(_ sender: UIButton) {
         performSegue(withIdentifier: "ShowMakePhoto", sender: nil)
     }
@@ -126,8 +130,8 @@ extension BalanceVC {
         case 0:
             return 1
         case 1:
-            let total = kjtreeInstance.tableView(tableView, numberOfRowsInSection: section)
-            return total
+            let numberOfRows = kjtreeInstance.tableView(tableView, numberOfRowsInSection: section)
+            return numberOfRows
         case 2:
             return 1
         default:
@@ -142,9 +146,23 @@ extension BalanceVC {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "InfoCell", for: indexPath) as? BalanceInfoCell
                 else { return UITableViewCell() }
             return cell
-        case (1,_): // SheetCell
-            return getBalanceCellForTable(tableView, withIndexPath: indexPath)
-        case (2,0): // InfoCell
+            
+        case (1,_):
+            switch indexPath.row {
+            case 0:
+                guard let cell = tableView.dequeueReusableCell(withIdentifier: "ActualCell", for: indexPath) as? BalanceActualCell
+                    else { return UITableViewCell() }
+                return cell
+            case (kjtreeInstance.tableView(tableView, numberOfRowsInSection: 1) - 1):
+                guard let cell = tableView.dequeueReusableCell(withIdentifier: "PeriodCell", for: indexPath) as? BalancePeriodCell
+                    else { return UITableViewCell() }
+                cell.datePickerButton.addTarget(self, action: #selector(self.showPeriodPicker(_:)), for: .touchUpInside)
+                return cell
+            default:
+                return getBalanceCellForTable(tableView, withIndexPath: indexPath)
+            }
+            
+        case (2,0): // TotalCell
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "BalanceTotal", for: indexPath) as? BalanceTotalCell
                 else { return UITableViewCell() }
             return cell
@@ -295,7 +313,8 @@ extension BalanceVC {
 
 extension BalanceVC: BalancePeriodVcDelegate {
     func userChosePeriod(_ period: Period) {
-        guard let cell = tableView.cellForRow(at: [0,0]) as? BalanceInfoCell else { return }
+        let lastRowNumber = kjtreeInstance.tableView(tableView, numberOfRowsInSection: 1) - 1
+        guard let cell = tableView.cellForRow(at: [1,lastRowNumber]) as? BalancePeriodCell else { return }
         cell.datePickerButton.setTitle(period.getPeriod(), for: .normal)
     }
 }
