@@ -7,6 +7,7 @@ target 'Fiskas' do
     pod 'Alamofire', '~> 4.5'
     pod ‘SWRevealViewController’
     pod 'KJExpandableTableTree'
+    pod 'SDWebImage', '~> 4.0'
     
 end
 
