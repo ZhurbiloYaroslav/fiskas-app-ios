@@ -18,6 +18,14 @@ class InvoiceVC: UITableViewController {
         
         updateUILabelsWithLocalizedText()
         setupLeftMenu()
+        setupTableView()
+    }
+    
+    func setupTableView() {
+        tableView.estimatedRowHeight = 120
+        tableView.rowHeight = UITableViewAutomaticDimension
+        
+        tableView.register(UINib(nibName: "InvoiceCell", bundle: nil), forCellReuseIdentifier: "InvoiceCell")
     }
     
     func updateUILabelsWithLocalizedText() {
@@ -33,4 +41,17 @@ class InvoiceVC: UITableViewController {
         }
     }
 
+}
+
+extension InvoiceVC {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 5
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "InvoiceCell", for: indexPath) as? InvoiceCell else {
+            return UITableViewCell()
+        }
+        return cell
+    }
 }

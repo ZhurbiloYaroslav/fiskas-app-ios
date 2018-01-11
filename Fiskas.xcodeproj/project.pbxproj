@@ -10,6 +10,9 @@
 		9E4AD41A35377C6F7C81F359 /* Pods_Fiskas.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5CA4D3B92FBCC4EBBCBB297 /* Pods_Fiskas.framework */; };
 		C40C849D20037B0A0011AF01 /* BalanceReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40C849C20037B0A0011AF01 /* BalanceReport.swift */; };
 		C40C849F200380340011AF01 /* ResponseExample.json in Resources */ = {isa = PBXBuildFile; fileRef = C40C849E200380340011AF01 /* ResponseExample.json */; };
+		C4109E40200775ED00A2BD56 /* Invoice.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4109E3F200775ED00A2BD56 /* Invoice.swift */; };
+		C4109E432007797300A2BD56 /* InvoiceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4109E412007797300A2BD56 /* InvoiceCell.swift */; };
+		C4109E442007797300A2BD56 /* InvoiceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4109E422007797300A2BD56 /* InvoiceCell.xib */; };
 		C42C1AA81FD1BC11005B7022 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C42C1AAA1FD1BC11005B7022 /* Localizable.strings */; };
 		C42C1AAD1FD1BE4B005B7022 /* String+localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42C1AAC1FD1BE4B005B7022 /* String+localized.swift */; };
 		C42C1AAF1FD1BE8F005B7022 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42C1AAE1FD1BE8F005B7022 /* UserDefaultsManager.swift */; };
@@ -77,6 +80,9 @@
 		A5CA4D3B92FBCC4EBBCBB297 /* Pods_Fiskas.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fiskas.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C40C849C20037B0A0011AF01 /* BalanceReport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceReport.swift; sourceTree = "<group>"; };
 		C40C849E200380340011AF01 /* ResponseExample.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ResponseExample.json; sourceTree = "<group>"; };
+		C4109E3F200775ED00A2BD56 /* Invoice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Invoice.swift; sourceTree = "<group>"; };
+		C4109E412007797300A2BD56 /* InvoiceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoiceCell.swift; sourceTree = "<group>"; };
+		C4109E422007797300A2BD56 /* InvoiceCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InvoiceCell.xib; sourceTree = "<group>"; };
 		C42C1AA41FD1BBC4005B7022 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/Menu.strings; sourceTree = "<group>"; };
 		C42C1AA51FD1BBC4005B7022 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		C42C1AA91FD1BC11005B7022 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -186,6 +192,23 @@
 				C4662AB41FE9B4B8001848C8 /* Balance.swift */,
 				C40C849C20037B0A0011AF01 /* BalanceReport.swift */,
 				C40C849E200380340011AF01 /* ResponseExample.json */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C4109E3D2007756800A2BD56 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C4109E412007797300A2BD56 /* InvoiceCell.swift */,
+				C4109E422007797300A2BD56 /* InvoiceCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C4109E3E2007757400A2BD56 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C4109E3F200775ED00A2BD56 /* Invoice.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -447,6 +470,8 @@
 			children = (
 				C4E561201FF15C4E00A90DED /* Invoice.storyboard */,
 				C4E561221FF15C6900A90DED /* InvoiceVC.swift */,
+				C4109E3D2007756800A2BD56 /* View */,
+				C4109E3E2007757400A2BD56 /* Model */,
 			);
 			path = Invoices;
 			sourceTree = "<group>";
@@ -528,6 +553,7 @@
 				C463F8641FF3AF5E001FBBC1 /* SwitchCell.xib in Resources */,
 				C463F8621FF3AC7D001FBBC1 /* TextFieldCell.xib in Resources */,
 				C463F85A1FF3A7C2001FBBC1 /* LabeledCell.xib in Resources */,
+				C4109E442007797300A2BD56 /* InvoiceCell.xib in Resources */,
 				C44A116B1FE5713F000384B8 /* Photo.storyboard in Resources */,
 				C49B5E241FC578BE00B9C1C7 /* Menu.storyboard in Resources */,
 				C48768371FFE2BFD006D1FE8 /* PrivacyPolicy.html in Resources */,
@@ -612,6 +638,7 @@
 				C4662AAC1FE96275001848C8 /* BalanceInfoCell.swift in Sources */,
 				C4B056FF1FC5998800699B6F /* RegisterVC.swift in Sources */,
 				C4B057051FC5A83600699B6F /* Browser.swift in Sources */,
+				C4109E432007797300A2BD56 /* InvoiceCell.swift in Sources */,
 				C42C1AB41FD2A135005B7022 /* NetworkManager.swift in Sources */,
 				C49B5E271FC578BE00B9C1C7 /* Fiskas.xcdatamodeld in Sources */,
 				C4662AB31FE989A2001848C8 /* BalancePeriodVC.swift in Sources */,
@@ -630,6 +657,7 @@
 				C487682F1FFE1C5B006D1FE8 /* PrivacyPolicyVC.swift in Sources */,
 				C4D4A24B1FE081C100523B30 /* MakePhotoVC.swift in Sources */,
 				C463F85F1FF3AB90001FBBC1 /* Profile.swift in Sources */,
+				C4109E40200775ED00A2BD56 /* Invoice.swift in Sources */,
 				C42C1AB21FD1BF73005B7022 /* Languages.swift in Sources */,
 				C42C1AB81FD2FC0E005B7022 /* BalanceVC.swift in Sources */,
 			);

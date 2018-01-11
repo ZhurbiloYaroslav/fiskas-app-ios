@@ -25,8 +25,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         self.window = UIWindow(frame: UIScreen.main.bounds)
         
-//        let overviewVC = UIStoryboard(name: "Menu", bundle: nil).instantiateViewController(withIdentifier: "SWRevealViewController") as! SWRevealViewController
-//        self.window?.rootViewController = overviewVC
         if CurrentUser.isLoggedIn {
             let overviewVC = UIStoryboard(name: "Menu", bundle: nil).instantiateViewController(withIdentifier: "SWRevealViewController") as! SWRevealViewController
             self.window?.rootViewController = overviewVC

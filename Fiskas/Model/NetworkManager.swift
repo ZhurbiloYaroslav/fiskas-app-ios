@@ -256,6 +256,81 @@ extension NetworkManager {
     
 }
 
+//MARK: Balance
+extension NetworkManager {
+    
+    func getInvoicesFor(_ invoiceData: RequestInvoiceData, completionHandler: @escaping (_ errorMessages: [String]?)->()) {
+        
+        guard let url = invoiceData.getURL() else { return }
+        
+        let parameters = invoiceData.getParams()
+        
+        Alamofire.request(url, method:.post, parameters:parameters, headers:headers).responseJSON { (response) in
+            print("---invoice response: ", response)
+            if let errorMessages = self.parseBalanceResultDataWith(response) {
+                completionHandler(errorMessages)
+            } else {
+                completionHandler(nil)
+            }
+        }
+        
+    }
+    
+    func parseInvoiceResultDataWith(_ response: DataResponse<Any>) -> [String]? {
+        
+        var errorMessages = [String]()
+        let dictWithLogResult = makeDictionaryFrom(response)
+        
+        guard let error = dictWithLogResult["res"] as? Int else {
+            errorMessages.append(AuthError().noConnection)
+            return errorMessages
+        }
+        
+        switch error {
+        case 0:
+            guard let userDataDict = dictWithLogResult["report"] as? Dictionary<String, String> else {
+                errorMessages.append(AuthError().invalidResultData)
+                return errorMessages
+            }
+            CurrentUser.id = userDataDict["id"] ?? ""
+            CurrentUser.getFirstAndLastNameFromString(userDataDict["name"] ?? "")
+            CurrentUser.phone = userDataDict["phone"] ?? ""
+            CurrentUser.email = userDataDict["email"] ?? ""
+            CurrentUser.authToken = userDataDict["pass"] ?? ""
+            CurrentUser.isUserActive = userDataDict["active"] == "1" ? true : false
+            CurrentUser.isLoggedIn = true
+            
+            return nil
+        case 1:
+            errorMessages.append(AuthError().wrongEmailOrPassword)
+            return errorMessages
+        default:
+            errorMessages.append(AuthError().undefined)
+            return errorMessages
+        }
+    }
+    
+    struct RequestInvoiceData {
+        let pageAddress: String = NetworkManager.baseURL + "factures"
+        let email: String
+        let password: String
+        
+        func getParams() -> Parameters {
+            return [
+                "email": email,
+                "pass": password
+            ]
+        }
+        
+        func getURL() -> URL? {
+            var result = "\(pageAddress)"
+            result = result.replacingOccurrences(of: " ", with: "%20")
+            return URL(string: result)
+        }
+    }
+    
+}
+
 //MARK: Photo
 extension NetworkManager {
     
