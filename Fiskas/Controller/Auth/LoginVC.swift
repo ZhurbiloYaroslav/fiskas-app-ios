@@ -94,69 +94,6 @@ class LoginVC: UIViewController {
         }
     }
     
-    @IBAction func forgotPasswordButtonPressed(_ sender: UIButton) {
-        showAlertToRestorePassword()
-    }
-    
-    func showAlertToRestorePassword() {
-        let alertTitle = "restore_password".localized()
-        // let alertMessage = "check_email_restore_password".localized()
-        let alertMessage = "restore_password_alert_message".localized()
-
-        let cancelButtonText = "cancel".localized()
-        let sendButtonText = "restore".localized()
-        
-        let alertController = UIAlertController(title: alertTitle, message: alertMessage, preferredStyle: .alert)
-        currentAlertVC = alertController
-        
-        let alertActionCancel = UIAlertAction(title: cancelButtonText, style: .cancel, handler: nil)
-        let alertActionOk = UIAlertAction(title: sendButtonText, style: .default) { [weak alertController] (_) in
-            self.saveUserInfoFromAlertTextField(alertController)
-        }
-        
-        alertController.addAction(alertActionCancel)
-        
-        makeTextFieldForAlertController(alertVC: alertController)
-        alertController.addAction(alertActionOk)
-        
-        present(alertController, animated: true)
-    }
-    
-    func makeTextFieldForAlertController(alertVC: UIAlertController) {
-        
-        alertVC.addTextField { (textField) in
-            textField.text = self.emailField.text
-            textField.placeholder = "Email"
-            textField.keyboardType = UIKeyboardType.emailAddress
-            textField.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for: .editingChanged)
-        }
-    }
-    
-    @objc func textFieldDidChange(_ textField: UITextField) {
-        
-        guard let fieldText = textField.text else { return }
-        var newMessage = ""
-        var attributes = [ NSAttributedStringKey.foregroundColor : UIColor.black ]
-        
-        if Validator.isEmailValid(fieldText) {
-            newMessage = "Your email is okay"
-            attributes = [ NSAttributedStringKey.foregroundColor : UIColor.green ]
-        } else {
-            newMessage = "Your email is invalid"
-            attributes = [ NSAttributedStringKey.foregroundColor : UIColor.red ]
-        }
-        
-        let attributedString = NSAttributedString(string: newMessage, attributes: attributes)
-        currentAlertVC.setValue(attributedString, forKey: "attributedMessage")
-        
-    }
-    
-    func saveUserInfoFromAlertTextField(_ alertController: UIAlertController?) {
-        if let alertFieldText = alertController?.textFields?[0].text {
-            print("Was sent...", alertFieldText)
-        }
-    }
-    
     @IBAction func registerButtonPressed(_ sender: UIButton) {
         performSegue(withIdentifier: "RegisterFromLogin", sender: nil)
     }
@@ -231,4 +168,75 @@ extension LoginVC: UITextFieldDelegate {
     }
 }
 
+//Recovery password
+extension LoginVC {
+    
+    @IBAction func forgotPasswordButtonPressed(_ sender: UIButton) {
+        showAlertToRestorePassword()
+    }
+    
+    func showAlertToRestorePassword() {
+        let alertTitle = "restore_password".localized()
+        // let alertMessage = "check_email_restore_password".localized()
+        let alertMessage = "restore_password_alert_message".localized()
+        
+        let cancelButtonText = "cancel".localized()
+        let sendButtonText = "restore".localized()
+        
+        let alertController = UIAlertController(title: alertTitle, message: alertMessage, preferredStyle: .alert)
+        currentAlertVC = alertController
+        
+        let alertActionCancel = UIAlertAction(title: cancelButtonText, style: .cancel, handler: nil)
+        let alertActionOk = UIAlertAction(title: sendButtonText, style: .default) { [weak alertController] (_) in
+            self.saveUserInfoFromAlertTextField(alertController)
+        }
+        
+        alertController.addAction(alertActionCancel)
+        
+        makeTextFieldForAlertController(alertVC: alertController)
+        alertController.addAction(alertActionOk)
+        
+        present(alertController, animated: true)
+    }
+    
+    func makeTextFieldForAlertController(alertVC: UIAlertController) {
+        
+        alertVC.addTextField { (textField) in
+            textField.text = self.emailField.text
+            textField.placeholder = "Email"
+            textField.keyboardType = UIKeyboardType.emailAddress
+            textField.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for: .editingChanged)
+        }
+    }
+    
+    @objc func textFieldDidChange(_ textField: UITextField) {
+        
+        guard let fieldText = textField.text else { return }
+        var newMessage = ""
+        var attributes = [ NSAttributedStringKey.foregroundColor : UIColor.black ]
+        
+        if Validator.isEmailValid(fieldText) {
+            newMessage = "Your email is okay"
+            attributes = [ NSAttributedStringKey.foregroundColor : UIColor.green ]
+        } else {
+            newMessage = "Your email is invalid"
+            attributes = [ NSAttributedStringKey.foregroundColor : UIColor.red ]
+        }
+        
+        let attributedString = NSAttributedString(string: newMessage, attributes: attributes)
+        currentAlertVC.setValue(attributedString, forKey: "attributedMessage")
+        
+    }
+    
+    func saveUserInfoFromAlertTextField(_ alertController: UIAlertController?) {
+        guard let alertFieldText = alertController?.textFields?[0].text else { return }
+        let recoveryData = NetworkManager.RecoveryUserData(email: alertFieldText)
+        NetworkManager().recoveryUserPassword(recoveryData) { (message) in
+            guard let alertMessage = message else { return }
+            Alert().presentAlertWith(title: "Recovery status", andMessages: alertMessage) { alertVC in
+                self.present(alertVC, animated: true, completion: nil)
+            }
+        }
+    }
+}
 

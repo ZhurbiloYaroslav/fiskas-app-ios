@@ -19,6 +19,7 @@ class NetworkManager {
         let invalidResultData = "Data Error, check your data"
         let undefined = "Undefined Error"
         let wrongEmailOrPassword = "Email or password are wrong"
+        let recoveryOK = "Password was sent to your Email"
     }
 }
 
@@ -307,6 +308,68 @@ extension NetworkManager {
                 "email": email,
                 "pass": password,
                 "name": photoTitle
+            ]
+        }
+        
+        func getURL() -> URL? {
+            var result = "\(pageAddress)"
+            result = result.replacingOccurrences(of: " ", with: "%20")
+            return URL(string: result)
+        }
+    }
+    
+}
+
+//MARK: Recover password
+extension NetworkManager {
+    
+    func recoveryUserPassword(_ userData: RecoveryUserData, completionHandler: @escaping (_ errorMessages: [String]?)->()) {
+        
+        guard let url = userData.getURL() else { return }
+        
+        let parameters = userData.getParams()
+        
+        Alamofire.request(url, method:.post, parameters:parameters, headers:headers).responseJSON { (response) in
+            
+            if let errorMessages = self.parseRecoveryUserPasswordResultDataWith(response) {
+                completionHandler(errorMessages)
+            } else {
+                completionHandler(nil)
+            }
+        }
+        
+    }
+    
+    func parseRecoveryUserPasswordResultDataWith(_ response: DataResponse<Any>) -> [String]? {
+        print("---response", response)
+        var errorMessages = [String]()
+        let dictWithLogResult = makeDictionaryFrom(response)
+        
+        guard let error = dictWithLogResult["res"] as? Int else {
+            errorMessages.append(AuthError().noConnection)
+            return errorMessages
+        }
+        
+        switch error {
+        case 0:
+            errorMessages.append(AuthError().recoveryOK)
+            return errorMessages
+        case 1:
+            errorMessages.append(AuthError().wrongEmailOrPassword)
+            return errorMessages
+        default:
+            errorMessages.append(AuthError().undefined)
+            return errorMessages
+        }
+    }
+    
+    struct RecoveryUserData {
+        let pageAddress: String = NetworkManager.baseURL + "recovery"
+        let email: String
+        
+        func getParams() -> Parameters {
+            return [
+                "email": email
             ]
         }
         
