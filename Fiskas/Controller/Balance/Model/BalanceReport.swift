@@ -10,15 +10,15 @@ import Foundation
 
 class BalanceReport {
     
-    var balance: Balance
-    var period: BalancePeriod
-    var arrayWithCategories: [BalanceCategory]
-    
-    init(period: BalancePeriod, balance: Balance, arrayWithCategories: [BalanceCategory]) {
-        self.period = period
-        self.balance = balance
-        self.arrayWithCategories = arrayWithCategories
-    }
+//    var balance: Balance
+//    var period: BalancePeriod
+//    var arrayWithCategories: [BalanceCategory]
+//
+//    init(period: BalancePeriod, balance: Balance, arrayWithCategories: [BalanceCategory]) {
+//        self.period = period
+//        self.balance = balance
+//        self.arrayWithCategories = arrayWithCategories
+//    }
     
 //    static func createArrayWithCategories(arrayWithValues: [String: String]) -> [BalanceCategory] {
 //        var tempArrayWithValues = [BalanceCategory]()
@@ -30,18 +30,6 @@ class BalanceReport {
 
 //MARK: Additional Structures
 extension BalanceReport {
-    
-    struct Balance {
-        var buy: Double
-        var sell: Double
-        var income: Double
-        
-        init(buy: String, sell: String, income: String) {
-            self.buy = Double(buy) ?? 0
-            self.sell = Double(sell) ?? 0
-            self.income = Double(income) ?? 0
-        }
-    }
     
     struct BalancePeriod {
         var startDate: String = "01.01.2017"

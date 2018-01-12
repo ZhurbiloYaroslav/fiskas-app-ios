@@ -42,7 +42,7 @@
 		C4662AAA1FE953ED001848C8 /* POEditorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4662AA91FE953ED001848C8 /* POEditorManager.swift */; };
 		C4662AAC1FE96275001848C8 /* BalanceInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4662AAB1FE96275001848C8 /* BalanceInfoCell.swift */; };
 		C4662AB31FE989A2001848C8 /* BalancePeriodVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4662AB21FE989A2001848C8 /* BalancePeriodVC.swift */; };
-		C4662AB51FE9B4B8001848C8 /* Balance.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4662AB41FE9B4B8001848C8 /* Balance.swift */; };
+		C4662AB51FE9B4B8001848C8 /* BalanceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4662AB41FE9B4B8001848C8 /* BalanceManager.swift */; };
 		C467C95D1FD5B4E20077A9FA /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C467C95C1FD5B4E20077A9FA /* MenuCell.swift */; };
 		C467C95F1FD5B97B0077A9FA /* MenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C467C95E1FD5B97B0077A9FA /* MenuVC.swift */; };
 		C47016DA1FF0EF4B00B3A3B3 /* BalanceQuarterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47016D41FF0EF4B00B3A3B3 /* BalanceQuarterCell.swift */; };
@@ -61,6 +61,7 @@
 		C49B5E271FC578BE00B9C1C7 /* Fiskas.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C49B5E251FC578BE00B9C1C7 /* Fiskas.xcdatamodeld */; };
 		C49B5E291FC578BE00B9C1C7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C49B5E281FC578BE00B9C1C7 /* Assets.xcassets */; };
 		C49B5E2C1FC578BE00B9C1C7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C49B5E2A1FC578BE00B9C1C7 /* LaunchScreen.storyboard */; };
+		C4A5CDAF20082BBA003BA240 /* InvoiceShowVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A5CDAE20082BBA003BA240 /* InvoiceShowVC.swift */; };
 		C4B056FF1FC5998800699B6F /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B056FE1FC5998800699B6F /* RegisterVC.swift */; };
 		C4B057031FC5A30100699B6F /* ContactsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B057021FC5A30100699B6F /* ContactsVC.swift */; };
 		C4B057051FC5A83600699B6F /* Browser.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B057041FC5A83600699B6F /* Browser.swift */; };
@@ -118,7 +119,7 @@
 		C4662AA91FE953ED001848C8 /* POEditorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = POEditorManager.swift; sourceTree = "<group>"; };
 		C4662AAB1FE96275001848C8 /* BalanceInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceInfoCell.swift; sourceTree = "<group>"; };
 		C4662AB21FE989A2001848C8 /* BalancePeriodVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalancePeriodVC.swift; sourceTree = "<group>"; };
-		C4662AB41FE9B4B8001848C8 /* Balance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Balance.swift; sourceTree = "<group>"; };
+		C4662AB41FE9B4B8001848C8 /* BalanceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceManager.swift; sourceTree = "<group>"; };
 		C467C95C1FD5B4E20077A9FA /* MenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
 		C467C95E1FD5B97B0077A9FA /* MenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuVC.swift; sourceTree = "<group>"; };
 		C47016D41FF0EF4B00B3A3B3 /* BalanceQuarterCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BalanceQuarterCell.swift; sourceTree = "<group>"; };
@@ -139,6 +140,7 @@
 		C49B5E281FC578BE00B9C1C7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C49B5E2B1FC578BE00B9C1C7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C49B5E2D1FC578BE00B9C1C7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C4A5CDAE20082BBA003BA240 /* InvoiceShowVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoiceShowVC.swift; sourceTree = "<group>"; };
 		C4B056FE1FC5998800699B6F /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
 		C4B057021FC5A30100699B6F /* ContactsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsVC.swift; sourceTree = "<group>"; };
 		C4B057041FC5A83600699B6F /* Browser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Browser.swift; sourceTree = "<group>"; };
@@ -195,7 +197,7 @@
 		C40C849B20037ADF0011AF01 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				C4662AB41FE9B4B8001848C8 /* Balance.swift */,
+				C4662AB41FE9B4B8001848C8 /* BalanceManager.swift */,
 				C40C849C20037B0A0011AF01 /* BalanceReport.swift */,
 				C40C849E200380340011AF01 /* ResponseExample.json */,
 			);
@@ -479,6 +481,7 @@
 			children = (
 				C4E561201FF15C4E00A90DED /* Invoice.storyboard */,
 				C4E561221FF15C6900A90DED /* InvoiceVC.swift */,
+				C4A5CDAE20082BBA003BA240 /* InvoiceShowVC.swift */,
 				C4109E3D2007756800A2BD56 /* View */,
 				C4109E3E2007757400A2BD56 /* Model */,
 			);
@@ -638,7 +641,7 @@
 				C42C1AC01FD3C8CC005B7022 /* CurrentCompany.swift in Sources */,
 				C4E5611E1FF15B7500A90DED /* BalanceTotalCell.swift in Sources */,
 				C4E310961FC5904300384B35 /* UIButton+IBInspectable.swift in Sources */,
-				C4662AB51FE9B4B8001848C8 /* Balance.swift in Sources */,
+				C4662AB51FE9B4B8001848C8 /* BalanceManager.swift in Sources */,
 				C49312FF1FDEA2D200FCF54F /* Validator.swift in Sources */,
 				C49313011FDEA30700FCF54F /* Alert.swift in Sources */,
 				C42C1ABC1FD3BE22005B7022 /* CurrentUser.swift in Sources */,
@@ -658,6 +661,7 @@
 				C40C849D20037B0A0011AF01 /* BalanceReport.swift in Sources */,
 				C42C1AAD1FD1BE4B005B7022 /* String+localized.swift in Sources */,
 				C47016DC1FF0EF4B00B3A3B3 /* BalanceMonthCell.swift in Sources */,
+				C4A5CDAF20082BBA003BA240 /* InvoiceShowVC.swift in Sources */,
 				C467C95F1FD5B97B0077A9FA /* MenuVC.swift in Sources */,
 				C4B057031FC5A30100699B6F /* ContactsVC.swift in Sources */,
 				C44A116F1FE58992000384B8 /* UIViewController+hideKeyboard.swift in Sources */,

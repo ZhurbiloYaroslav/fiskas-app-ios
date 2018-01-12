@@ -282,7 +282,7 @@ extension NetworkManager {
         let parameters = balanceData.getParams()
         
         Alamofire.request(url, method:.post, parameters:parameters, headers:headers).responseJSON { (response) in
-            print("---balance response: ", response)
+            
             if let errorMessages = self.parseBalanceResultDataWith(response) {
                 completionHandler(errorMessages)
             } else {
@@ -308,6 +308,25 @@ extension NetworkManager {
                 errorMessages.append(AuthError().invalidResultData)
                 return errorMessages
             }
+            
+            guard let actualization = userDataDict["date"] as? String else { return nil }
+            BalanceManager.shared.actualization = actualization
+            
+            guard let balance = userDataDict["balance"] as? Dictionary<String, Double> else { return nil }
+            BalanceManager.shared.total = BalanceManager.Total(
+                buy: balance["buy"] ?? 0,
+                sell: balance["sale"] ?? 0,
+                income: balance["income"] ?? 0
+            )
+            
+            guard let dictWithCategories = userDataDict["table"] as? Dictionary<String, [String: Double]> else { return nil }
+            
+            BalanceManager.shared.arrayWithCategories = [BalanceManager.Category]()
+            for category in dictWithCategories {
+                let newCategory = BalanceManager.Category(name: category.key, dictWithmonths:category.value)
+                BalanceManager.shared.arrayWithCategories.append(newCategory)
+            }
+            
             return nil
         case 1:
             return nil
@@ -350,7 +369,7 @@ extension NetworkManager {
         let parameters = invoiceData.getParams()
         
         Alamofire.request(url, method:.post, parameters:parameters, headers:headers).responseJSON { (response) in
-
+            
             if let errorMessages = self.parseInvoicesWith(response) {
                 completionHandler(errorMessages)
             } else {
@@ -382,7 +401,7 @@ extension NetworkManager {
                 let invoice = Invoice(withResult: dictWithResult)
                 arrayWithInvoices.append(invoice)
             }
-
+            
             delegate?.didLoad?(arrayWithInvoices: arrayWithInvoices)
             return nil
             
@@ -423,7 +442,7 @@ extension NetworkManager {
         
         let image = userData.photoBody
         guard let imgData = UIImageJPEGRepresentation(image, 1) else { return }
-
+        
         let parameters = userData.getParams()
         //let fileName = "\(userData.photoTitle).jpg"
         let fileName = "\(userData.photoTitle).jpg"

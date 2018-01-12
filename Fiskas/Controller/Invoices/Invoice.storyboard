@@ -1,13 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hE6-k6-8s8">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hE6-k6-8s8">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="AvenirNext.ttc">
+            <string>AvenirNext-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--InvoiceVC-->
         <scene sceneID="2Du-bw-o1U">
@@ -39,11 +45,69 @@
                     </navigationItem>
                     <connections>
                         <outlet property="menuButton" destination="zMF-yU-gRu" id="eJz-sI-br3"/>
+                        <segue destination="MJI-np-h6e" kind="show" identifier="ShowInvoice" id="bsR-Py-IHM"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VRH-gw-Zr2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="552.79999999999995" y="81.409295352323838"/>
+        </scene>
+        <!--Invoice ShowVC-->
+        <scene sceneID="Em3-2p-Dnb">
+            <objects>
+                <viewController storyboardIdentifier="InvoiceShowVC" id="MJI-np-h6e" customClass="InvoiceShowVC" customModule="Fiskas" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bQP-OZ-Zau">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pgB-yw-Twj">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                            </imageView>
+                            <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NPA-dM-WNi">
+                                <rect key="frame" x="275" y="567" width="70" height="70"/>
+                                <color key="backgroundColor" red="0.99610227346420288" green="0.99589234590530396" blue="0.99216681718826294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="GHB-kf-yLk"/>
+                                    <constraint firstAttribute="height" constant="70" id="WW3-7y-syO"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                                <state key="normal" title="Save">
+                                    <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="saveButtonPressed:" destination="MJI-np-h6e" eventType="touchUpInside" id="lHW-Jj-8BF"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="YaW-xH-9oB" firstAttribute="bottom" secondItem="NPA-dM-WNi" secondAttribute="bottom" constant="30" id="Gxu-YT-zaE"/>
+                            <constraint firstItem="YaW-xH-9oB" firstAttribute="trailing" secondItem="NPA-dM-WNi" secondAttribute="trailing" constant="30" id="U3e-y6-lgC"/>
+                            <constraint firstItem="pgB-yw-Twj" firstAttribute="bottom" secondItem="YaW-xH-9oB" secondAttribute="bottom" id="bmV-fz-YRq"/>
+                            <constraint firstItem="pgB-yw-Twj" firstAttribute="top" secondItem="YaW-xH-9oB" secondAttribute="top" id="lJV-lh-gDz"/>
+                            <constraint firstItem="pgB-yw-Twj" firstAttribute="trailing" secondItem="YaW-xH-9oB" secondAttribute="trailing" id="mKN-xp-W2d"/>
+                            <constraint firstItem="pgB-yw-Twj" firstAttribute="leading" secondItem="YaW-xH-9oB" secondAttribute="leading" id="mam-RF-g20"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="YaW-xH-9oB"/>
+                    </view>
+                    <connections>
+                        <outlet property="invoiceImageView" destination="pgB-yw-Twj" id="pZ4-6I-yCI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Vz2-1o-J01" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1520.8" y="80.50974512743629"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Otz-kp-Tpd">

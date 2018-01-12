@@ -12,6 +12,7 @@ class BalanceCategoryCell: UITableViewCell {
 
     @IBOutlet weak var imageviewBackground: UIImageView!
     @IBOutlet weak var labelParentCell: UILabel!
+    @IBOutlet weak var categoryValueLabel: UILabel!
     
     @IBOutlet weak var buttonState: UIButton!
     
@@ -22,7 +23,10 @@ class BalanceCategoryCell: UITableViewCell {
     }
     
     func cellFillUp(indexParam: String) {
-        labelParentCell.text = "BalanceCategoryCell"
+        let index = ((Int(indexParam) ) ?? 1) - 1
+        let currentCategory = BalanceManager.shared.arrayWithCategories[index]
+        labelParentCell.text = currentCategory.name.localized()
+        categoryValueLabel.text = currentCategory.getStringWithTotalValue()
         
     }
     

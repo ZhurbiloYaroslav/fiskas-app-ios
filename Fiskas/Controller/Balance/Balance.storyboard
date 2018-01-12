@@ -299,8 +299,8 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="buyValueLabel" destination="vK4-Zs-TTa" id="IzG-ut-4S2"/>
+                                    <outlet property="incomeValueLabel" destination="rp1-Py-tVC" id="4kY-dg-Thf"/>
                                     <outlet property="sellValueLabel" destination="v2P-eB-Bp2" id="Myo-6B-PfL"/>
-                                    <outlet property="thirdValueLabel" destination="rp1-Py-tVC" id="CSv-Zl-pBa"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

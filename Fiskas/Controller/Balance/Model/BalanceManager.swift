@@ -9,21 +9,43 @@
 import Foundation
 import KJExpandableTableTree
 
-struct Balance {
+struct BalanceManager {
     
-    let arrayWithCategories = ["Category 1", "Category 2", "Category 3", "Category 4"]
+    static var shared = BalanceManager(
+        total: Total(buy: 0, sell: 0, income: 0),
+        actualization: "Pending...",
+        arrayWithCategories: [Category]()
+    )
     
-    var items: [Category] = [
-        Balance.Category(name: "balance_cash".localized()),
-        Balance.Category(name: "balance_state_bank".localized()),
-        Balance.Category(name: "balance_debts".localized()),
-        Balance.Category(name: "balance_liability".localized())
-    ]
+    var total: Total
+    var actualization: String
+    var arrayWithCategories: [Category] = [Category]()
+    
+    struct Total {
+        var buy: Double
+        var sell: Double
+        var income: Double
+    }
     
     struct Category {
-        let name: String
+        let name: String!
+        var arrayWithmonths: [Double]!
+        
+        init(name: String, dictWithmonths: [String: Double]) {
+            self.name = name
+            
+            arrayWithmonths = [Double]()
+            for index in ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"] {
+                arrayWithmonths.append(dictWithmonths[index] ?? 0)
+            }
+        }
+        
         func getStringWithTotalValue() -> String {
-            return "0"
+            var total: Double = 0
+            for monthValue in arrayWithmonths {
+                total += monthValue
+            }
+            return String(total)
         }
     }
     

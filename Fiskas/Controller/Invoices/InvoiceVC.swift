@@ -73,6 +73,19 @@ class InvoiceVC: UITableViewController {
         }
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let segueID = segue.identifier else { return }
+        switch segueID {
+        case "ShowInvoice":
+            guard let destination = segue.destination as? InvoiceShowVC else { return }
+            guard let invoiceImage = (tableView.cellForRow(at: sender as! IndexPath) as? InvoiceCell)?.invoiceImageView.image else { return }
+            destination.invoiceImage = invoiceImage
+        default:
+            print("Was performed undefined segue")
+        }
+        
+    }
+    
 }
 
 extension InvoiceVC {
@@ -86,5 +99,9 @@ extension InvoiceVC {
         }
         cell.updateCell(withInvoice: arrayWithInvoices[indexPath.row])
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "ShowInvoice", sender: indexPath)
     }
 }

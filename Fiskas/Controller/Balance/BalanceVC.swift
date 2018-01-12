@@ -25,6 +25,7 @@ class BalanceVC: UITableViewController {
     var arrayTree:[Parent] = []
     var kjtreeInstance: KJTree = KJTree()
     var isKjTreeInitiallyExpanded = false
+    var balanceManager = BalanceManager.shared
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,7 +51,9 @@ class BalanceVC: UITableViewController {
                     self.present(alertController, animated: true, completion: nil)
                 })
             } else {
-                print("---received data!!!")
+                self.balanceManager = BalanceManager.shared
+                self.setupBalanceSheet()
+                self.tableView.reloadData()
             }
         }
     }
@@ -74,7 +77,7 @@ class BalanceVC: UITableViewController {
     
     func setupBalanceSheet() {
         
-        kjtreeInstance = Balance().getKJTree()
+        kjtreeInstance = balanceManager.getKJTree()
         
         kjtreeInstance.isInitiallyExpanded = isKjTreeInitiallyExpanded
         kjtreeInstance.animation = .fade
@@ -152,6 +155,7 @@ extension BalanceVC {
             case 0:
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: "ActualCell", for: indexPath) as? BalanceActualCell
                     else { return UITableViewCell() }
+                cell.updateCell()
                 return cell
             case (kjtreeInstance.tableView(tableView, numberOfRowsInSection: 1) - 1):
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: "PeriodCell", for: indexPath) as? BalancePeriodCell
@@ -165,6 +169,7 @@ extension BalanceVC {
         case (2,0): // TotalCell
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "BalanceTotal", for: indexPath) as? BalanceTotalCell
                 else { return UITableViewCell() }
+            cell.updateCell()
             return cell
         default:
             return UITableViewCell()

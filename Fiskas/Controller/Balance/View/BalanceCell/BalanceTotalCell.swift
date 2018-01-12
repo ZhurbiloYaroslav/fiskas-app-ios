@@ -12,18 +12,17 @@ class BalanceTotalCell: UITableViewCell {
     
     @IBOutlet weak var buyValueLabel: UILabel!
     @IBOutlet weak var sellValueLabel: UILabel!
-    @IBOutlet weak var thirdValueLabel: UILabel!
+    @IBOutlet weak var incomeValueLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
 
-        updateCell()
     }
     
     func updateCell() {
-        buyValueLabel.text = "0$"
-        sellValueLabel.text = "0$"
-        thirdValueLabel.text = "0$"
+        buyValueLabel.text = String(BalanceManager.shared.total.buy)
+        sellValueLabel.text = String(BalanceManager.shared.total.sell)
+        incomeValueLabel.text = String(BalanceManager.shared.total.income)
     }
     
 }

@@ -20,9 +20,9 @@ class BalanceMonthCell: UITableViewCell {
     }
 
     func cellFillUp(indexParam: String) {
-        labelTitle.textColor = UIColor.white
         
-        labelTitle.text = Balance.getQuarterOrMonthNameDependsOn(indexParam)
+        labelTitle.textColor = UIColor.white
+        labelTitle.text = BalanceManager.getQuarterOrMonthNameDependsOn(indexParam)
     }
     
 }

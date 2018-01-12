@@ -16,14 +16,11 @@ class BalanceActualCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        updateUILabelsWithLocalizedText()
     }
     
-    func updateUILabelsWithLocalizedText() {
-        
+    func updateCell() {
         headerLabelForActualization.text = "balance_last_actual_time".localized()
-        valueLabelForActualization.text = CurrentCompany.actualization
-
+        valueLabelForActualization.text = BalanceManager.shared.actualization
     }
     
 }
