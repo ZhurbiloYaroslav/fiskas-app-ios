@@ -174,19 +174,33 @@ extension NetworkManager {
     
     struct RegisterUserData {
         let pageAddress: String = baseURL + "register"
-        let name: String
-        let surname: String
-        let phone: String
         let email: String
         let password: String
+        let firstName: String
+        let lastName: String
+        let phone: String
+        let companyName: String
+        let companyAddress: String
+        let nip: String
+        let regon: String
+        let taxType: String
+        let companyEmail: String
+        let companyPhone: String
         
         func getParams() -> Parameters {
             return [
-                "name": name,
-                "surname": surname,
                 "email": email,
                 "pass": password,
-                "phone": phone
+                "name": firstName,
+                "surname": lastName,
+                "phone": phone,
+                "company_name": companyName,
+                "address": companyAddress,
+                "taxcode": nip,
+                "company_tax_code": regon,
+                "tax_type": taxType,
+                "company_email": companyEmail,
+                "company_phone": companyPhone
             ]
         }
         

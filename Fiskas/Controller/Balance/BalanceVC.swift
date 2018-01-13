@@ -13,6 +13,7 @@ import KJExpandableTableTree
 class BalanceVC: UITableViewController {
     
     @IBOutlet weak var menuButton: UIBarButtonItem!
+    @IBOutlet weak var expandButton: UIBarButtonItem!
     
     var arrayTree:[Parent] = []
     var kjtreeInstance: KJTree = KJTree()
@@ -30,7 +31,6 @@ class BalanceVC: UITableViewController {
     }
     
     func getBalanceData() {
-        var errorMessages = [String]()
         
         let requestBalanceData = NetworkManager.RequestBalanceData(
             email: CurrentUser.email,
@@ -64,6 +64,7 @@ class BalanceVC: UITableViewController {
     func updateUILabelsWithLocalizedText() {
         
         navigationItem.title = "balance".localized()
+        expandButton.title = "button_nav_expand".localized()
         
     }
     

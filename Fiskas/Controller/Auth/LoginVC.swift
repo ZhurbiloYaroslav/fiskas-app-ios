@@ -62,17 +62,18 @@ class LoginVC: UIViewController {
         if let unwrappedEmail = emailField.text, Validator.isEmailValid(unwrappedEmail) {
             email = unwrappedEmail
         } else {
-            errorMessages.append("Email is invalid")
+            errorMessages.append("email_is_not_valid".localized())
         }
         
         if let unwrappedPassword = passwordField.text, Validator.isPasswordValid(unwrappedPassword) {
             password = unwrappedPassword
         } else {
-            errorMessages.append("Password is invalid")
+            errorMessages.append("password_is_not_valid".localized())
         }
         
         if errorMessages.count > 0 {
-            Alert().presentAlertWith(title: "Login Error", andMessages: errorMessages, completionHandler: { (alertContoller) in
+            let alertTitle = "login_error".localized()
+            Alert().presentAlertWith(title: alertTitle, andMessages: errorMessages, completionHandler: { (alertContoller) in
                 self.present(alertContoller, animated: true, completion: nil)
             })
             return
@@ -203,7 +204,7 @@ extension LoginVC {
         
         alertVC.addTextField { (textField) in
             textField.text = self.emailField.text
-            textField.placeholder = "Email"
+            textField.placeholder = "email".localized()
             textField.keyboardType = UIKeyboardType.emailAddress
             textField.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for: .editingChanged)
         }
@@ -216,10 +217,10 @@ extension LoginVC {
         var attributes = [ NSAttributedStringKey.foregroundColor : UIColor.black ]
         
         if Validator.isEmailValid(fieldText) {
-            newMessage = "Your email is okay"
+            newMessage = "email_is_ok".localized()
             attributes = [ NSAttributedStringKey.foregroundColor : UIColor.green ]
         } else {
-            newMessage = "Your email is invalid"
+            newMessage = "email_is_not_valid".localized()
             attributes = [ NSAttributedStringKey.foregroundColor : UIColor.red ]
         }
         
@@ -233,7 +234,8 @@ extension LoginVC {
         let recoveryData = NetworkManager.RecoveryUserData(email: alertFieldText)
         NetworkManager().recoveryUserPassword(recoveryData) { (message) in
             guard let alertMessage = message else { return }
-            Alert().presentAlertWith(title: "Recovery status", andMessages: alertMessage) { alertVC in
+            let alertTitle = "recovery_status".localized()
+            Alert().presentAlertWith(title: alertTitle, andMessages: alertMessage) { alertVC in
                 self.present(alertVC, animated: true, completion: nil)
             }
         }

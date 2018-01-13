@@ -18,6 +18,8 @@ class BalanceTotalCell: UITableViewCell {
     @IBOutlet weak var buyValueLabel: UILabel!
     @IBOutlet weak var incomeValueLabel: UILabel!
     
+    @IBOutlet weak var makePhotoButton: UIButton!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
 
@@ -31,6 +33,8 @@ class BalanceTotalCell: UITableViewCell {
         sellValueLabel.text = String(BalanceManager.shared.total.sell)
         buyValueLabel.text = String(BalanceManager.shared.total.buy)
         incomeValueLabel.text = String(BalanceManager.shared.total.income)
+        
+        makePhotoButton.setTitle("make_photo".localized(), for: .normal)
     }
     
 }

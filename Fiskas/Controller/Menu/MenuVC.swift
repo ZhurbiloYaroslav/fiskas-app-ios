@@ -129,7 +129,7 @@ extension MenuVC: MFMailComposeViewControllerDelegate {
     func showSendMailErrorAlert() {
         
         let alertTitle = "could_not_send_email".localized()
-        let alertMessage = "Your device could not send e-mail. Please check e-mail configuration and try again".localized()
+        let alertMessage = "alert_email_send_fail_message".localized()
         let alertController = UIAlertController(title: alertTitle, message: alertMessage, preferredStyle: .alert)
         
         let okActionTitle = "OK".localized()

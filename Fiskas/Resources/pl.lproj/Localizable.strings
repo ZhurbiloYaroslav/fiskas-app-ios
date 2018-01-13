@@ -26,7 +26,6 @@
 
 /*Поменял с choose на choose_photo*/
 /*выбрать - Wybierz*/
-/*Fuzzy*/
 "choose_photo" = "Wybierz zdjęcie";
 
 /*Log in*/
@@ -36,7 +35,7 @@
 "email" = "Email";
 
 /*Have an account? Log in*/
-"have_an_account" = "Masz konto ? Zaloguj się \n";
+"have_an_account" = "Masz konto ? Zaloguj się";
 
 /*menu-item*/
 "balance" = "Bilans";
@@ -45,7 +44,6 @@
 "show_photo" = "Pokaż zdjęcie";
 
 /*Push Notifications*/
-/*Fuzzy*/
 "push_notifications" = "Powiadomienia";
 
 /*NIP*/
@@ -55,24 +53,18 @@
 "regon" = "REGON";
 
 /*Privacy Policy*/
-/*Fuzzy*/
 "privacy_policy" = "Polityka ochrony prywatności";
-
-/*Fuzzy*/
 "delete_account" = "Usuń konto";
 "full_address" = "Kancelaria Księgowa Fiskas Sp z o. o.\nNIP: 8943072632\nREGON: 363655234";
 "address" = "Adres:";
 
 /*Repeat password*/
-/*Fuzzy*/
 "repeat_password" = "Powtórz hasło";
 
 /*Message in Alert*/
-/*Fuzzy*/
 "check_email_restore_password" = "Sprawdź email, do którego chcesz odzyskać hasło";
 
 /*Title in Alert*/
-/*Fuzzy*/
 "restore_password" = "Odzyskaj hasło\n";
 
 /*Title in Alert*/
@@ -85,22 +77,16 @@
 "log_out" = "Wyloguj się";
 
 /*Title in menu: Zgłoś problem* - расскажи о проблеме приложения*/
-/*Fuzzy*/
 "report_a_problem" = "Zgłoś problem";
-
-/*Fuzzy*/
 "could_not_send_email" = "Nie można wysłać email";
 
 /*Message in Alert*/
-/*Fuzzy*/
 "alert_email_send_fail_message" = "Nie można wysłać email.\nSprawdź konfigurację email i spróbuj ponownie";
 
 /*Subject of an email message*/
-/*Fuzzy*/
 "report_a_problem_subject" = "Zgłoś problem";
 
 /*Default text of an email message*/
-/*Fuzzy*/
 "report_a_problem_message" = "Jaki masz problem ?";
 
 /*Message in Alert*/
@@ -146,13 +132,10 @@
 "ok" = "Ok";
 
 /*title in alert*/
-"log_out_title" = "Wyloguj się ";
+"log_out_title" = "Wyloguj się";
 
 /*Message in Alert*/
-/*Fuzzy*/
 "log_out_message" = "Na pewno chchesz się wylogować ?";
-
-/*Fuzzy*/
 "balance_balance_section" = "Mój bilans";
 "balance_info_section" = "Dane podmiotu";
 "balance_total_section" = "<Total>";
@@ -164,7 +147,7 @@
 "nal" = "Gotówka";
 
 /*balance category*/
-"tax" = "Zobowiązania/podatki ";
+"tax" = "Zobowiązania/podatki";
 
 /*balance category*/
 "ost" = "Stan konta bankowego";
@@ -173,3 +156,102 @@
 "tax_type_ryc" = "Ryczałt";
 "tax_type_kar" = "Karta";
 "tax_type_cit" = "CIT";
+
+/*field placeholder, registration*/
+/*Fuzzy*/
+"company_phone" = "Telefon Służbowy";
+
+/*field placeholder, registration*/
+/*Fuzzy*/
+"company_email" = "Firmowy E-mail";
+
+/*alert message*/
+/*Fuzzy*/
+"email_is_not_valid" = "Email is not valid";
+
+/*alert message*/
+/*Fuzzy*/
+"password_is_not_valid" = "Password is not valid";
+
+/*alert message*/
+/*Fuzzy*/
+"password_should_be" = "Password should be…";
+
+/*alert message*/
+/*Fuzzy*/
+"passwords_are_not_equal" = "Passwords are not equal";
+
+/*alert message*/
+/*Fuzzy*/
+"first_name_is_not_valid" = "First Name is not valid";
+
+/*alert message*/
+/*Fuzzy*/
+"first_name_should_not_be_empty" = "First Name shouldn't be empty";
+
+/*alert message*/
+/*Fuzzy*/
+"last_name_is_not_valid" = "Last Name is not valid";
+
+/*alert message*/
+/*Fuzzy*/
+"last_name_should_not_be_empty" = "Last Name shouldn't be empty";
+
+/*alert message*/
+/*Fuzzy*/
+"user_phone_is_not_valid" = "User Phone is not valid";
+
+/*alert message*/
+/*Fuzzy*/
+"phone_should_be" = "Phone should be…";
+
+/*alert message*/
+/*Fuzzy*/
+"company_name_is_not_valid" = "Company Name is not valid";
+
+/*alert message*/
+/*Fuzzy*/
+"company_name_should_not_be_empty" = "Company Name shouldn't be empty";
+
+/*alert message*/
+/*Fuzzy*/
+"company_address_should_not_be_empty" = "Company Address shouldn't be empty";
+
+/*alert message*/
+/*Fuzzy*/
+"nip_should_not_be_empty" = "NIP should not be empty";
+
+/*alert message*/
+/*Fuzzy*/
+"regon_should_not_be_empty" = "REGON should not be empty";
+
+/*alert message*/
+/*Fuzzy*/
+"company_email_is_not_valid" = "Company Name is not valid";
+
+/*alert message*/
+/*Fuzzy*/
+"company_phone_is_not_valid" = "Company Phone is not valid";
+
+/*alert title*/
+/*Fuzzy*/
+"registration_error" = "Registration Error";
+
+/*alert title*/
+/*Fuzzy*/
+"login_error" = "Login Error";
+
+/*alert message*/
+/*Fuzzy*/
+"email_is_ok" = "Your email is okay";
+
+/*alert title*/
+/*Fuzzy*/
+"recovery_status" = "Recovery status";
+"button_nav_expand" = "Expand";
+
+/*button title*/
+"make_photo" = "Make photo";
+
+/*button title*/
+"change_period" = "Change period";

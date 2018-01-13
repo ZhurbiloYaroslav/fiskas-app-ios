@@ -22,7 +22,7 @@ class BalancePeriodCell: UITableViewCell {
     func updateUILabelsWithLocalizedText() {
         
         headerLabelForPeriod.text = "balance_period".localized()
-
+        datePickerButton.setTitle("change_period".localized(), for: .normal)
     }
     
 }

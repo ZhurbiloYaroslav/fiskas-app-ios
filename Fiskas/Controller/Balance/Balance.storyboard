@@ -26,7 +26,7 @@
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="InfoCell" rowHeight="175" id="L8A-9n-ror" customClass="BalanceInfoCell" customModule="Fiskas" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="56" width="375" height="175"/>
+                                <rect key="frame" x="0.0" y="55.5" width="375" height="175"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="L8A-9n-ror" id="J8r-7n-5dc">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="175"/>
@@ -106,7 +106,7 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="ActualCell" rowHeight="60" id="oUL-hv-xSY" customClass="BalanceActualCell" customModule="Fiskas" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="231" width="375" height="60"/>
+                                <rect key="frame" x="0.0" y="230.5" width="375" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="oUL-hv-xSY" id="xXC-5z-tfD">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
@@ -171,7 +171,7 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="PeriodCell" rowHeight="60" id="lfJ-vR-ckj" customClass="BalancePeriodCell" customModule="Fiskas" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="291" width="375" height="60"/>
+                                <rect key="frame" x="0.0" y="290.5" width="375" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lfJ-vR-ckj" id="6hW-So-inI">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
@@ -217,7 +217,7 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="BalanceTotal" rowHeight="140" id="fX5-kZ-IlJ" customClass="BalanceTotalCell" customModule="Fiskas" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="351" width="375" height="140"/>
+                                <rect key="frame" x="0.0" y="350.5" width="375" height="140"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fX5-kZ-IlJ" id="MCC-bL-WnN">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="140"/>
@@ -325,6 +325,7 @@
                                     <outlet property="buyValueLabel" destination="v2P-eB-Bp2" id="QkH-Te-5pJ"/>
                                     <outlet property="incomeHeaderLabel" destination="aaU-Cw-ePz" id="lca-67-SgC"/>
                                     <outlet property="incomeValueLabel" destination="rp1-Py-tVC" id="hay-CQ-qpF"/>
+                                    <outlet property="makePhotoButton" destination="gUl-JY-ozK" id="NVD-kH-rJS"/>
                                     <outlet property="sellHeaderLabel" destination="V2U-LF-tvZ" id="3wz-Pz-kea"/>
                                     <outlet property="sellValueLabel" destination="vK4-Zs-TTa" id="nJ1-Az-Ug3"/>
                                 </connections>
@@ -348,6 +349,7 @@
                     </navigationItem>
                     <size key="freeformSize" width="375" height="1200"/>
                     <connections>
+                        <outlet property="expandButton" destination="SzU-wc-lde" id="hpf-Yh-FO3"/>
                         <outlet property="menuButton" destination="0Rn-mt-TV3" id="VLW-G2-jK5"/>
                         <segue destination="usP-s3-fRd" kind="show" identifier="ShowMakePhoto" id="PJw-eo-m0a"/>
                         <segue destination="epl-vw-Ari" kind="show" identifier="ChangePeriod" id="Lq9-Ek-yjW"/>
