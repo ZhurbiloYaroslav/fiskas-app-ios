@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (4.5.1)
+  - GKActionSheetPicker (0.4.1)
   - KJExpandableTableTree (1.1.2)
   - SDWebImage (4.1.2):
     - SDWebImage/Core (= 4.1.2)
@@ -8,16 +9,18 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire (~> 4.5)
+  - GKActionSheetPicker
   - KJExpandableTableTree
   - SDWebImage (~> 4.0)
   - SWRevealViewController
 
 SPEC CHECKSUMS:
   Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
+  GKActionSheetPicker: 70ecaa217c621e05dfa0ecbb78805c3a94a3cc08
   KJExpandableTableTree: b6b20b330e1067a63efec2d4eca69faba64676ca
   SDWebImage: cb6f9f266a9977741efcbc21e618e8be3734c774
   SWRevealViewController: 6d3fd97f70112fd7cef9de14df4260eacce4c63a
 
-PODFILE CHECKSUM: cf4ae2fe4d126bd2abfd150cd06a2acc68a32eee
+PODFILE CHECKSUM: fae0f6c1282765a4988f7096b3283bd1b328faae
 
 COCOAPODS: 1.2.1
