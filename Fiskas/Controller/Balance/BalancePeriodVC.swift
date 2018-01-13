@@ -10,7 +10,7 @@ import UIKit
 
 protocol BalancePeriodVcDelegate: class {
     
-    func userChosePeriod(_ period:Period)
+    func userChosePeriod(_ period:BalanceManager.BalancePeriod)
     
 }
 
@@ -32,13 +32,17 @@ class BalancePeriodVC: UIViewController {
         navigationController?.popViewController(animated: true)
     }
     
-    func getPeriod() -> Period {
+    func getPeriod() -> BalanceManager.BalancePeriod {
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = DateFormatter.Style.short
         
-        let dateFrom = dateFormatter.string(from: datePicker_From.date)
-        let dateTo = dateFormatter.string(from: datePicker_To.date)
-        return Period(fromDate: dateFrom, toDate: dateTo)
+        let startDate = Formatter.getFormatted(date: datePicker_From.date)
+        let endDate = Formatter.getFormatted(date: datePicker_To.date)
+        
+        CurrentUser.balancePeriod_StartDate = startDate
+        CurrentUser.balancePeriod_EndDate = endDate
+        
+        return BalanceManager.BalancePeriod(startDate: startDate, endDate: endDate)
     }
     
 }

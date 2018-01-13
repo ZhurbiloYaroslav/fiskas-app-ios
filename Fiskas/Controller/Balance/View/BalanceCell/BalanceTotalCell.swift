@@ -10,8 +10,12 @@ import UIKit
 
 class BalanceTotalCell: UITableViewCell {
     
-    @IBOutlet weak var buyValueLabel: UILabel!
+    @IBOutlet weak var sellHeaderLabel: UILabel!
+    @IBOutlet weak var buyHeaderLabel: UILabel!
+    @IBOutlet weak var incomeHeaderLabel: UILabel!
+    
     @IBOutlet weak var sellValueLabel: UILabel!
+    @IBOutlet weak var buyValueLabel: UILabel!
     @IBOutlet weak var incomeValueLabel: UILabel!
     
     override func awakeFromNib() {
@@ -20,8 +24,12 @@ class BalanceTotalCell: UITableViewCell {
     }
     
     func updateCell() {
-        buyValueLabel.text = String(BalanceManager.shared.total.buy)
+        sellHeaderLabel.text = "balance_sell".localized() // Sprzedaż
+        buyHeaderLabel.text = "balance_buy".localized() // Zakup
+        incomeValueLabel.text = "balance_income".localized() // Zysk
+        
         sellValueLabel.text = String(BalanceManager.shared.total.sell)
+        buyValueLabel.text = String(BalanceManager.shared.total.buy)
         incomeValueLabel.text = String(BalanceManager.shared.total.income)
     }
     

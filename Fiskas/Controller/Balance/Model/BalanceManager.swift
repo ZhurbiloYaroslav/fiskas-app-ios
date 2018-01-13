@@ -27,6 +27,24 @@ struct BalanceManager {
         var income: Double
     }
     
+    struct BalancePeriod {
+        var startDate: String
+        var endDate: String
+        
+        func getPeriod() -> String {
+            return startDate + " - " + endDate
+        }
+        
+        init(startDate: String, endDate: String) {
+            self.startDate = startDate
+            self.endDate = endDate
+        }
+        
+        init() {
+            self.init(startDate: "01.01.2018", endDate: "01.02.2018")
+        }
+    }
+    
     struct Category {
         let name: String!
         var arrayWithmonths: [Double]!
@@ -52,7 +70,7 @@ struct BalanceManager {
     static func getQuarterOrMonthNameDependsOn(_ index: String) -> String {
         
         let newIndex = String(index.dropFirst(2))
-
+        
         switch newIndex {
         case "0":
             return "Quarter 1"
@@ -91,6 +109,62 @@ struct BalanceManager {
         }
     }
     
+    static func getCellValueDependsOn(_ index: String) -> Double {
+        
+        // Get months of current category cell
+        let arrayWithIndices = index.components(separatedBy: ".")
+        let categoryIndex = (Int(arrayWithIndices[0]) ?? 1) - 1
+        guard let categoryMonths = BalanceManager.shared.arrayWithCategories[categoryIndex].arrayWithmonths
+            else { return 0 }
+        
+        // Get value of current cell
+        let newIndex = String(index.dropFirst(2))
+        switch newIndex {
+        // Quarter 1
+        case "0": // Total of quarter 1
+            return categoryMonths[0] + categoryMonths[1] + categoryMonths[2]
+        case "0.0":  // Value of month 1
+            return categoryMonths[0]
+        case "0.1":  // Value of month 2
+            return categoryMonths[1]
+        case "0.2":  // Value of month 3
+            return categoryMonths[2]
+            
+        // Quarter 2
+        case "1": // Total of quarter 2
+            return categoryMonths[3] + categoryMonths[4] + categoryMonths[5]
+        case "1.0":  // Value of month 4
+            return categoryMonths[3]
+        case "1.1":  // Value of month 5
+            return categoryMonths[4]
+        case "1.2":  // Value of month 6
+            return categoryMonths[5]
+            
+        // Quarter 3
+        case "2": // Total of quarter 3
+            return categoryMonths[6] + categoryMonths[7] + categoryMonths[8]
+        case "2.0":  // Value of month 7
+            return categoryMonths[6]
+        case "2.1":  // Value of month 8
+            return categoryMonths[7]
+        case "2.2":  // Value of month 9
+            return categoryMonths[8]
+            
+        // Quarter 4
+        case "3": // Total of quarter 4
+            return categoryMonths[9] + categoryMonths[10] + categoryMonths[11]
+        case "3.0":  // Value of month 10
+            return categoryMonths[9]
+        case "3.1":  // Value of month 11
+            return categoryMonths[10]
+        case "3.2":  // Value of month 12
+            return categoryMonths[11]
+            
+        default:
+            return 0
+        }
+    }
+    
     func getKJTree() -> KJTree {
         
         var arrayWithParents = [Parent]()
@@ -99,7 +173,7 @@ struct BalanceManager {
         
         for _ in arrayWithCategories {
             let parent = Parent() { () -> [Child] in
-                var arrayWithChildrens = [Child]()
+                //var arrayWithChildrens = [Child]()
                 let child1 = Child(subChilds: { () -> [Child] in
                     let subchild1 = Child()
                     let subchild2 = Child()

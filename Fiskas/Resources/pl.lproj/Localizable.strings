@@ -92,7 +92,8 @@
 "could_not_send_email" = "Nie można wysłać email";
 
 /*Message in Alert*/
-"\"Your device could not send e-mail. Please check e-mail configuration and try again\"" = "Nie można wysłać email.\nSprawdź konfigurację email i spróbuj ponownie";
+/*Fuzzy*/
+"alert_email_send_fail_message" = "Nie można wysłać email.\nSprawdź konfigurację email i spróbuj ponownie";
 
 /*Subject of an email message*/
 /*Fuzzy*/
@@ -128,8 +129,8 @@
 "balance_cash" = "Gotówka";
 "balance_state_bank" = "Stan konta bankowego";
 "balance_debts" = "Należności";
-"balance_liability" = "Zobowiązania/podatki ";
-"balance_sell" = "Sprzedaż ";
+"balance_liability" = "Zobowiązania/podatki";
+"balance_sell" = "Sprzedaż";
 "balance_buy" = "Zakup";
 "balance_income" = "Zysk";
 "balance_add_scan" = "PRZYCISK *DODAJ FAKTURĘ ZDJĘCIE/SKAN*";
@@ -155,3 +156,15 @@
 "balance_balance_section" = "Mój bilans";
 "balance_info_section" = "Dane podmiotu";
 "balance_total_section" = "<Total>";
+
+/*balance category*/
+"dolg" = "Należności";
+
+/*balance category*/
+"nal" = "Gotówka";
+
+/*balance category*/
+"tax" = "Zobowiązania/podatki ";
+
+/*balance category*/
+"ost" = "Stan konta bankowego";

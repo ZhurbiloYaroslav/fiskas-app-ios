@@ -177,8 +177,8 @@ extension LoginVC {
     
     func showAlertToRestorePassword() {
         let alertTitle = "restore_password".localized()
-        // let alertMessage = "check_email_restore_password".localized()
-        let alertMessage = "restore_password_alert_message".localized()
+        let alertMessage = "check_email_restore_password".localized()
+        //let alertMessage = "restore_password_alert_message".localized()
         
         let cancelButtonText = "cancel".localized()
         let sendButtonText = "restore".localized()

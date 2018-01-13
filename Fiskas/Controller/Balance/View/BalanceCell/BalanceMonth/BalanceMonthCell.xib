@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -65,7 +65,8 @@
             </tableViewCellContentView>
             <connections>
                 <outlet property="buttonState" destination="eiI-gd-obo" id="1dK-qf-l98"/>
-                <outlet property="labelTitle" destination="ztO-Rb-aL8" id="Gxn-I2-SA6"/>
+                <outlet property="titleLabel" destination="ztO-Rb-aL8" id="gKz-MA-9eS"/>
+                <outlet property="valueLabel" destination="neU-i0-5M0" id="ofh-dS-qUL"/>
             </connections>
             <point key="canvasLocation" x="-239" y="44"/>
         </tableViewCell>

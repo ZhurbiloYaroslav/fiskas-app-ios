@@ -52,9 +52,7 @@ class ProfileVC: UITableViewController {
     
     // Settings
     @IBOutlet weak var passwordTextLabel: UILabel!
-    
     @IBOutlet weak var privacyPolicyHeaderLabel: UILabel!
-    @IBOutlet weak var deleteAccountLabel: UILabel!
     
     var emailForLoginVC: String?
     
@@ -92,7 +90,6 @@ class ProfileVC: UITableViewController {
         // Settings
         passwordTextLabel.text = "change_password".localized()
         privacyPolicyHeaderLabel.text = "privacy_policy".localized()
-        deleteAccountLabel.text = "delete_account".localized()
         
     }
     
@@ -131,7 +128,7 @@ class ProfileVC: UITableViewController {
         case 1:
             return 7
         case 2:
-            return 3
+            return 2
         default:
             return 0
         }
@@ -196,8 +193,6 @@ class ProfileVC: UITableViewController {
             showAlertToChange(field: .Password)
         case [2,1]:
             performSegue(withIdentifier: "ShowPrivacyPolicyVC", sender: nil)
-        case [2,2]:
-            showAlertToChange(field: .LogOut)
         default:
             break
         }
@@ -238,7 +233,6 @@ class ProfileVC: UITableViewController {
         case CompanyPhone
         case TaxService
         case Password
-        case LogOut
     }
 
 }
@@ -296,14 +290,6 @@ extension ProfileVC {
         case .Password:
             alertController.title = "Change Password"
             alertController.message = "\(alertMessage): Password"
-        case .LogOut:
-            alertController.title = "Log out"
-            alertController.message = "Do you really want log out?"
-            alertController.addAction(UIAlertAction(title: "Log out", style: .destructive, handler: { (alertAction) in
-                self.logOutFromAccount()
-            }))
-            present(alertController, animated: true)
-            return
         }
         
         makeTextFieldsForAlertController(alertVC: alertController, field: field)
@@ -340,8 +326,6 @@ extension ProfileVC {
             case .Password:
                 guard let newUserPassword = currentAlertVC?.textFields?[1].text else { return }
                 CurrentUser.password = newUserPassword
-            case .LogOut:
-                return
             }
         }
         NetworkManager().updateValues { (arrayWithMessages) in
@@ -411,8 +395,6 @@ extension ProfileVC {
                 textField.text = ""
                 textField.placeholder = "Current password"
                 textField.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for: .editingChanged)
-            case .LogOut:
-                return
             }
         }
         if field == .Password {

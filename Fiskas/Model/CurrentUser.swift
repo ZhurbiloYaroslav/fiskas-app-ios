@@ -152,4 +152,24 @@ extension CurrentUser {
             defaults.synchronize()
         }
     }
+    
+    static var balancePeriod_StartDate: String {
+        get {
+            return defaults.object(forKey: "currentUserBalancePeriod_StartDate") as? String ?? "01.01.2018"
+        }
+        set {
+            defaults.set(newValue, forKey: "currentUserBalancePeriod_StartDate")
+            defaults.synchronize()
+        }
+    }
+    
+    static var balancePeriod_EndDate: String {
+        get {
+            return defaults.object(forKey: "currentUserBalancePeriod_EndDate") as? String ?? "01.02.2018"
+        }
+        set {
+            defaults.set(newValue, forKey: "currentUserBalancePeriod_EndDate")
+            defaults.synchronize()
+        }
+    }
 }

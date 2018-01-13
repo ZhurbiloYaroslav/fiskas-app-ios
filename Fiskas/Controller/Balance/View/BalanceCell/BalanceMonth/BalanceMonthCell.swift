@@ -10,19 +10,21 @@ import UIKit
 
 class BalanceMonthCell: UITableViewCell {
 
-    @IBOutlet weak var labelTitle: UILabel!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var valueLabel: UILabel!
     
     @IBOutlet weak var buttonState: UIButton!
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        labelTitle.font = UIFont(name: "HelveticaNeue-Bold", size: 15)
+        titleLabel.font = UIFont(name: "HelveticaNeue-Bold", size: 15)
     }
 
     func cellFillUp(indexParam: String) {
         
-        labelTitle.textColor = UIColor.white
-        labelTitle.text = BalanceManager.getQuarterOrMonthNameDependsOn(indexParam)
+        titleLabel.textColor = UIColor.white
+        titleLabel.text = BalanceManager.getQuarterOrMonthNameDependsOn(indexParam)
+        valueLabel.text = String(BalanceManager.getCellValueDependsOn(indexParam))
     }
     
 }

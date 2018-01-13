@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		9E4AD41A35377C6F7C81F359 /* Pods_Fiskas.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5CA4D3B92FBCC4EBBCBB297 /* Pods_Fiskas.framework */; };
-		C40C849D20037B0A0011AF01 /* BalanceReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40C849C20037B0A0011AF01 /* BalanceReport.swift */; };
 		C40C849F200380340011AF01 /* ResponseExample.json in Resources */ = {isa = PBXBuildFile; fileRef = C40C849E200380340011AF01 /* ResponseExample.json */; };
 		C4109E40200775ED00A2BD56 /* Invoice.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4109E3F200775ED00A2BD56 /* Invoice.swift */; };
 		C4109E432007797300A2BD56 /* InvoiceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4109E412007797300A2BD56 /* InvoiceCell.swift */; };
@@ -76,13 +75,13 @@
 		C4E5611E1FF15B7500A90DED /* BalanceTotalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E5611D1FF15B7500A90DED /* BalanceTotalCell.swift */; };
 		C4E561211FF15C4E00A90DED /* Invoice.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4E561201FF15C4E00A90DED /* Invoice.storyboard */; };
 		C4E561231FF15C6900A90DED /* InvoiceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E561221FF15C6900A90DED /* InvoiceVC.swift */; };
+		C4F02C2C200A3F9D00911343 /* Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F02C2B200A3F9D00911343 /* Formatter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		3711743386CFB2BF65ABC58C /* Pods-Fiskas.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fiskas.release.xcconfig"; path = "Pods/Target Support Files/Pods-Fiskas/Pods-Fiskas.release.xcconfig"; sourceTree = "<group>"; };
 		73479D34CDF7C55D9A14C5C3 /* Pods-Fiskas.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fiskas.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Fiskas/Pods-Fiskas.debug.xcconfig"; sourceTree = "<group>"; };
 		A5CA4D3B92FBCC4EBBCBB297 /* Pods_Fiskas.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fiskas.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C40C849C20037B0A0011AF01 /* BalanceReport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceReport.swift; sourceTree = "<group>"; };
 		C40C849E200380340011AF01 /* ResponseExample.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ResponseExample.json; sourceTree = "<group>"; };
 		C4109E3F200775ED00A2BD56 /* Invoice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Invoice.swift; sourceTree = "<group>"; };
 		C4109E412007797300A2BD56 /* InvoiceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoiceCell.swift; sourceTree = "<group>"; };
@@ -155,6 +154,7 @@
 		C4E5611D1FF15B7500A90DED /* BalanceTotalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceTotalCell.swift; sourceTree = "<group>"; };
 		C4E561201FF15C4E00A90DED /* Invoice.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Invoice.storyboard; sourceTree = "<group>"; };
 		C4E561221FF15C6900A90DED /* InvoiceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoiceVC.swift; sourceTree = "<group>"; };
+		C4F02C2B200A3F9D00911343 /* Formatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -198,7 +198,6 @@
 			isa = PBXGroup;
 			children = (
 				C4662AB41FE9B4B8001848C8 /* BalanceManager.swift */,
-				C40C849C20037B0A0011AF01 /* BalanceReport.swift */,
 				C40C849E200380340011AF01 /* ResponseExample.json */,
 			);
 			path = Model;
@@ -388,6 +387,7 @@
 				C49312FE1FDEA2D200FCF54F /* Validator.swift */,
 				C49313001FDEA30700FCF54F /* Alert.swift */,
 				C4662AA91FE953ED001848C8 /* POEditorManager.swift */,
+				C4F02C2B200A3F9D00911343 /* Formatter.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -643,6 +643,7 @@
 				C4E310961FC5904300384B35 /* UIButton+IBInspectable.swift in Sources */,
 				C4662AB51FE9B4B8001848C8 /* BalanceManager.swift in Sources */,
 				C49312FF1FDEA2D200FCF54F /* Validator.swift in Sources */,
+				C4F02C2C200A3F9D00911343 /* Formatter.swift in Sources */,
 				C49313011FDEA30700FCF54F /* Alert.swift in Sources */,
 				C42C1ABC1FD3BE22005B7022 /* CurrentUser.swift in Sources */,
 				C4E310981FC5906700384B35 /* UIView+IBInspectable.swift in Sources */,
@@ -658,7 +659,6 @@
 				C42C1ABE1FD3C16B005B7022 /* Typealiases.swift in Sources */,
 				C467C95D1FD5B4E20077A9FA /* MenuCell.swift in Sources */,
 				C42C1AAF1FD1BE8F005B7022 /* UserDefaultsManager.swift in Sources */,
-				C40C849D20037B0A0011AF01 /* BalanceReport.swift in Sources */,
 				C42C1AAD1FD1BE4B005B7022 /* String+localized.swift in Sources */,
 				C47016DC1FF0EF4B00B3A3B3 /* BalanceMonthCell.swift in Sources */,
 				C4A5CDAF20082BBA003BA240 /* InvoiceShowVC.swift in Sources */,

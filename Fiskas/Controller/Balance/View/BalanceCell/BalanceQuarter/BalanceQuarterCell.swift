@@ -12,6 +12,7 @@ class BalanceQuarterCell: UITableViewCell {
 
     @IBOutlet weak var imageviewBackground: UIImageView!
     @IBOutlet weak var labelChildAtIndex: UILabel!
+    @IBOutlet weak var valueLabel: UILabel!
     
     @IBOutlet weak var buttonState: UIButton!
     override func awakeFromNib() {
@@ -21,9 +22,9 @@ class BalanceQuarterCell: UITableViewCell {
     }
     
     func cellFillUp(indexParam: String) {
-        
         labelChildAtIndex.textColor = UIColor.white
         labelChildAtIndex.text = BalanceManager.getQuarterOrMonthNameDependsOn(indexParam)
+        valueLabel.text = String(BalanceManager.getCellValueDependsOn(indexParam))
     }
     
 }

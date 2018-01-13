@@ -319,17 +319,22 @@ extension NetworkManager {
                 income: balance["income"] ?? 0
             )
             
+            BalanceManager.shared.arrayWithCategories = [BalanceManager.Category]()
             guard let dictWithCategories = userDataDict["table"] as? Dictionary<String, [String: Double]> else { return nil }
             
-            BalanceManager.shared.arrayWithCategories = [BalanceManager.Category]()
-            for category in dictWithCategories {
-                let newCategory = BalanceManager.Category(name: category.key, dictWithmonths:category.value)
+            let arrayOfCategoryNamesWithProperOrder = ["nal", "ost", "dolg", "tax"]
+            for categoryName in arrayOfCategoryNamesWithProperOrder {
+                let newCategory = BalanceManager.Category(
+                    name: categoryName,
+                    dictWithmonths: dictWithCategories[categoryName] ?? [String: Double]()
+                )
                 BalanceManager.shared.arrayWithCategories.append(newCategory)
             }
             
             return nil
         case 1:
-            return nil
+            errorMessages.append(AuthError().wrongEmailOrPassword)
+            return errorMessages
         default:
             errorMessages.append(AuthError().undefined)
             return errorMessages
@@ -345,8 +350,8 @@ extension NetworkManager {
             return [
                 "email": email,
                 "pass": password,
-                "startDate": "01.01.2018",
-                "endDate": "01.01.2018"
+                "startDate": CurrentUser.balancePeriod_StartDate,
+                "endDate": CurrentUser.balancePeriod_EndDate
             ]
         }
         
@@ -522,7 +527,7 @@ extension NetworkManager {
     }
     
     func parseRecoveryUserPasswordResultDataWith(_ response: DataResponse<Any>) -> [String]? {
-        print("---response", response)
+
         var errorMessages = [String]()
         let dictWithLogResult = makeDictionaryFrom(response)
         

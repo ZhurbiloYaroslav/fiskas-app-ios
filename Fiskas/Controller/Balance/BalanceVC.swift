@@ -10,14 +10,6 @@ import UIKit
 import SWRevealViewController
 import KJExpandableTableTree
 
-struct Period {
-    var fromDate: String
-    var toDate: String
-    func getPeriod() -> String {
-        return fromDate + " - " + toDate
-    }
-}
-
 class BalanceVC: UITableViewController {
     
     @IBOutlet weak var menuButton: UIBarButtonItem!
@@ -98,6 +90,10 @@ class BalanceVC: UITableViewController {
         }
         setupBalanceSheet()
         tableView.reloadData()
+    }
+    
+    @IBAction func refreshDataButtonPressed(_ sender: UIButton) {
+        getBalanceData()
     }
     
     @objc func showPeriodPicker(_ sender: UIButton) {
@@ -317,7 +313,7 @@ extension BalanceVC {
 }
 
 extension BalanceVC: BalancePeriodVcDelegate {
-    func userChosePeriod(_ period: Period) {
+    func userChosePeriod(_ period: BalanceManager.BalancePeriod) {
         let lastRowNumber = kjtreeInstance.tableView(tableView, numberOfRowsInSection: 1) - 1
         guard let cell = tableView.cellForRow(at: [1,lastRowNumber]) as? BalancePeriodCell else { return }
         cell.datePickerButton.setTitle(period.getPeriod(), for: .normal)
