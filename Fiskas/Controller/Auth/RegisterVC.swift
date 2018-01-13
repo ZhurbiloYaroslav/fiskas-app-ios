@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import GKActionSheetPicker
 
 class RegisterVC: UIViewController {
     
@@ -14,10 +15,19 @@ class RegisterVC: UIViewController {
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var repeatPasswordField: UITextField!
-    @IBOutlet weak var nameField: UITextField!
+    @IBOutlet weak var firstNameField: UITextField!
+    @IBOutlet weak var lastNameField: UITextField!
     @IBOutlet weak var phoneField: UITextField!
+    //User company fields
+    @IBOutlet weak var companyNameField: UITextField!
+    @IBOutlet weak var companyAddressField: UITextField!
+    @IBOutlet weak var nipField: UITextField!
+    @IBOutlet weak var regonField: UITextField!
+    @IBOutlet weak var companyEmailField: UITextField!
+    @IBOutlet weak var companyPhoneField: UITextField!
     
     //Buttons
+    @IBOutlet weak var taxServiceButton: UIButton!
     @IBOutlet weak var registerButton: UIButton!
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var callUsButton: UIButton!
@@ -37,7 +47,7 @@ class RegisterVC: UIViewController {
         emailField.delegate = self
         passwordField.delegate = self
         repeatPasswordField.delegate = self
-        nameField.delegate = self
+        firstNameField.delegate = self
         phoneField.delegate = self
     }
     
@@ -46,12 +56,16 @@ class RegisterVC: UIViewController {
         emailField.placeholder = "email".localized()
         passwordField.placeholder = "password".localized()
         repeatPasswordField.placeholder = "repeat_password".localized()
-        nameField.placeholder = "name".localized()
+        firstNameField.placeholder = "name".localized()
         phoneField.placeholder = "phone".localized()
         
         registerButton.setTitle("register".localized(), for: .normal)
         loginButton.setTitle("have_an_account".localized(), for: .normal)
         callUsButton.setTitle("call_us".localized(), for: .normal)
+    }
+    
+    @IBAction func taxServiceButtonPressed(_ sender: UIButton) {
+        
     }
     
     @IBAction func registerButtonPressed(_ sender: UIButton) {
@@ -78,12 +92,12 @@ class RegisterVC: UIViewController {
             errorMessages.append("Passwords are not equal")
         }
         
-        if let unwrappedName = nameField.text, Validator.isEmpty(unwrappedName) == false {
+        if let unwrappedName = firstNameField.text, Validator.isEmpty(unwrappedName) == false {
             name = unwrappedName
         } else {
-            if Validator.isEmpty(nameField.text!) {
+            if Validator.isEmpty(firstNameField.text!) {
                 errorMessages.append("Name shouldn't be empty")
-            } else if Validator.isNameValid(nameField.text!) {
+            } else if Validator.isNameValid(firstNameField.text!) {
                 errorMessages.append("Name is not valid")
             }
             errorMessages.append("Name should be...")
@@ -152,7 +166,7 @@ extension RegisterVC: UITextFieldDelegate {
         emailField.resignFirstResponder()
         passwordField.resignFirstResponder()
         repeatPasswordField.resignFirstResponder()
-        nameField.resignFirstResponder()
+        firstNameField.resignFirstResponder()
         phoneField.resignFirstResponder()
         return true
     }
