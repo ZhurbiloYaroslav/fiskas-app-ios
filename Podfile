@@ -8,6 +8,7 @@ target 'Fiskas' do
     pod ‘SWRevealViewController’
     pod 'KJExpandableTableTree'
     pod 'SDWebImage', '~> 4.0'
+    pod 'GKActionSheetPicker'
     
 end
 
