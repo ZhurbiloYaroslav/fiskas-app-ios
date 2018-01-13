@@ -168,3 +168,8 @@
 
 /*balance category*/
 "ost" = "Stan konta bankowego";
+"tax_type_vat" = "VAT";
+"tax_type_pit" = "PIT";
+"tax_type_ryc" = "Ryczałt";
+"tax_type_kar" = "Karta";
+"tax_type_cit" = "CIT";

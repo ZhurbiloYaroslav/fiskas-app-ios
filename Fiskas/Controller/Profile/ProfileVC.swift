@@ -8,6 +8,7 @@
 
 import UIKit
 import SWRevealViewController
+import GKActionSheetPicker
 
 class ProfileVC: UITableViewController {
 
@@ -58,6 +59,7 @@ class ProfileVC: UITableViewController {
     
     var currentAlertVC: UIAlertController!
     var textFieldTypeInCurrentAlertVC: ProfileField!
+    var actionSheetPicker: GKActionSheetPicker!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -188,7 +190,7 @@ class ProfileVC: UITableViewController {
         case [1,5]:
             showAlertToChange(field: .CompanyPhone)
         case [1,6]:
-            break
+            showPickerToChangeTax()
         case [2,0]:
             showAlertToChange(field: .Password)
         case [2,1]:
@@ -235,6 +237,30 @@ class ProfileVC: UITableViewController {
         case Password
     }
 
+}
+
+// Action Sheet 
+extension ProfileVC { // extension ProfileVC: GKActionSheetPickerDelegate
+    
+    func showPickerToChangeTax() {
+        let pickerItems = [
+            "tax_type_vat".localized(),
+            "tax_type_pit".localized(),
+            "tax_type_ryc".localized(),
+            "tax_type_kar".localized(),
+            "tax_type_cit".localized()
+        ]
+        actionSheetPicker = GKActionSheetPicker.stringPicker(
+            withItems: pickerItems,
+            selectCallback: { (selected) in
+                guard let selectedValue = selected as? String else { return }
+                self.taxService_ValueLabel.text = selectedValue
+                CurrentCompany.taxService = selectedValue
+                self.updateValuesOnServer()
+        },
+            cancelCallback: nil)
+        actionSheetPicker.present(on: self.view)
+    }
 }
 
 extension ProfileVC {
@@ -328,14 +354,18 @@ extension ProfileVC {
                 CurrentUser.password = newUserPassword
             }
         }
+        self.updateValuesOnServer()
+        self.updateLabelsWithUserInfo()
+        self.tableView.reloadData()
+    }
+    
+    func updateValuesOnServer() {
         NetworkManager().updateValues { (arrayWithMessages) in
             guard let unwrappedArrayWithMessages = arrayWithMessages else { return }
             Alert().presentAlertWith(title: "Update server data", andMessages: unwrappedArrayWithMessages) { alertVC in
                 self.present(alertVC, animated: true, completion: nil)
             }
         }
-        self.updateLabelsWithUserInfo()
-        self.tableView.reloadData()
     }
     
     func makeTextFieldsForAlertController(alertVC: UIAlertController, field: ProfileField) {
