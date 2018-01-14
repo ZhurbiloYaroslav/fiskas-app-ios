@@ -176,7 +176,7 @@ class RegisterVC: UIViewController {
             errorMessages.append("nip_should_not_be_empty".localized())
         }
         
-        if let unwrappedRegon = nipField.text, Validator.isEmpty(unwrappedRegon) == false {
+        if let unwrappedRegon = regonField.text, Validator.isEmpty(unwrappedRegon) == false {
             regon = unwrappedRegon
         } else {
             errorMessages.append("regon_should_not_be_empty".localized())
