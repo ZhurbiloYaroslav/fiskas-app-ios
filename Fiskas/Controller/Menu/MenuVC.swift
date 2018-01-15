@@ -113,7 +113,7 @@ extension MenuVC: MFMailComposeViewControllerDelegate {
         let mailComposerVC = MFMailComposeViewController()
         mailComposerVC.mailComposeDelegate = self
         
-        let recipients = ["kancelaria.fiskas@gmail.com"]
+        let recipients = ["email_for_notifications".localized()]
         mailComposerVC.setToRecipients(recipients)
         let emailSubject = "report_a_problem_subject".localized()
         mailComposerVC.setSubject(emailSubject)

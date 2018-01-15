@@ -452,8 +452,11 @@
                         <viewLayoutGuide key="safeArea" id="uBi-ap-pes"/>
                     </view>
                     <connections>
+                        <outlet property="chooseButton" destination="kDL-Ls-ANF" id="keb-h3-ePG"/>
+                        <outlet property="dateFromLabel" destination="qfJ-Ep-oSP" id="6OA-QW-aS3"/>
                         <outlet property="datePicker_From" destination="UKw-49-Aoy" id="Re3-J4-jB6"/>
                         <outlet property="datePicker_To" destination="wT3-DB-u2C" id="A4r-UT-CPm"/>
+                        <outlet property="dateToLabel" destination="Bau-mU-uh7" id="25z-kS-ZEZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="41d-Lk-o0a" userLabel="First Responder" sceneMemberID="firstResponder"/>

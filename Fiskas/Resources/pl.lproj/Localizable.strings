@@ -12,7 +12,7 @@
 /*forgot your password?*/
 "forgot_your_password" = "Zapomniałeś hasło?";
 "register" = "Zarejestruj się";
-"call_us" = "Chcesz być naszym klientem? \nZadzwoń do nas \n(warunek do pełnego dostępu do aplikacji i wszystkich danych)";
+"call_us" = "Chcesz być naszym klientem? \nZadzwoń do nas \n";
 "personal_info" = "Dane osobowe";
 "first_name" = "Imię";
 "last_name" = "Nazwisko";
@@ -21,7 +21,7 @@
 "bank_name" = "Nazwa banka";
 "account_number" = "Numer konta bankowego";
 "phone" = "Telefon";
-"tax_service" = "Urząd skarbowy";
+"tax_service" = "Forma opodatkowania";
 "options" = "Ustawienia";
 
 /*Поменял с choose на choose_photo*/
@@ -138,7 +138,7 @@
 "log_out_message" = "Na pewno chchesz się wylogować ?";
 "balance_balance_section" = "Mój bilans";
 "balance_info_section" = "Dane podmiotu";
-"balance_total_section" = "<Total>";
+"balance_total_section" = "Suma ";
 
 /*balance category*/
 "dolg" = "Należności";
@@ -163,39 +163,39 @@
 
 /*field placeholder, registration*/
 /*Fuzzy*/
-"company_email" = "Firmowy E-mail";
+"company_email" = "Firmowy Email";
 
 /*alert message*/
 /*Fuzzy*/
-"email_is_not_valid" = "Email is not valid";
+"email_is_not_valid" = "Adres email jest niepoprawny";
 
 /*alert message*/
 /*Fuzzy*/
-"password_is_not_valid" = "Password is not valid";
+"password_is_not_valid" = "Hasło jest niepoprawne";
 
 /*alert message*/
 /*Fuzzy*/
-"password_should_be" = "Password should be…";
+"password_should_be" = "Hasło musi mieć co najmniej 6 znaków ";
 
 /*alert message*/
 /*Fuzzy*/
-"passwords_are_not_equal" = "Passwords are not equal";
+"passwords_are_not_equal" = "Hasło jest niepoprawne ";
 
 /*alert message*/
 /*Fuzzy*/
-"first_name_is_not_valid" = "First Name is not valid";
+"first_name_is_not_valid" = "Pole jest niepoprawne ";
 
 /*alert message*/
 /*Fuzzy*/
-"first_name_should_not_be_empty" = "First Name shouldn't be empty";
+"first_name_should_not_be_empty" = "Pole nie może być puste ";
 
 /*alert message*/
 /*Fuzzy*/
-"last_name_is_not_valid" = "Last Name is not valid";
+"last_name_is_not_valid" = "Pole jest niepoprawne";
 
 /*alert message*/
 /*Fuzzy*/
-"last_name_should_not_be_empty" = "Last Name shouldn't be empty";
+"last_name_should_not_be_empty" = "Pole nie może być puste";
 
 /*alert message*/
 /*Fuzzy*/
@@ -203,55 +203,64 @@
 
 /*alert message*/
 /*Fuzzy*/
-"phone_should_be" = "Phone should be…";
+"phone_should_be" = "Przykład: +48 123 456 789";
 
 /*alert message*/
 /*Fuzzy*/
-"company_name_is_not_valid" = "Company Name is not valid";
+"company_name_is_not_valid" = "Nazwa firmy jest niepoprawna";
 
 /*alert message*/
 /*Fuzzy*/
-"company_name_should_not_be_empty" = "Company Name shouldn't be empty";
+"company_name_should_not_be_empty" = "Pole nie może być puste";
+
+/*alert message*/
+"company_address_should_not_be_empty" = "Pole nie może być puste ";
 
 /*alert message*/
 /*Fuzzy*/
-"company_address_should_not_be_empty" = "Company Address shouldn't be empty";
+"nip_should_not_be_empty" = "Pole nie może być puste";
 
 /*alert message*/
 /*Fuzzy*/
-"nip_should_not_be_empty" = "NIP should not be empty";
+"regon_should_not_be_empty" = "Pole nie może być puste";
 
 /*alert message*/
 /*Fuzzy*/
-"regon_should_not_be_empty" = "REGON should not be empty";
+"company_email_is_not_valid" = "Email firmy jest niepoprawny";
 
 /*alert message*/
-/*Fuzzy*/
-"company_email_is_not_valid" = "Company Name is not valid";
-
-/*alert message*/
-/*Fuzzy*/
-"company_phone_is_not_valid" = "Company Phone is not valid";
+"company_phone_is_not_valid" = "numer służbowy";
 
 /*alert title*/
 /*Fuzzy*/
-"registration_error" = "Registration Error";
+"registration_error" = "Błąd przy rejestracji \n";
 
 /*alert title*/
 /*Fuzzy*/
-"login_error" = "Login Error";
+"login_error" = "Niepoprawny email";
 
 /*alert message*/
 /*Fuzzy*/
-"email_is_ok" = "Your email is okay";
+"email_is_ok" = "Twój email został wysłany";
 
 /*alert title*/
 /*Fuzzy*/
 "recovery_status" = "Recovery status";
-"button_nav_expand" = "Expand";
+
+/*Fuzzy*/
+"button_nav_expand" = "Rozwinąć ";
 
 /*button title*/
-"make_photo" = "Make photo";
+/*Fuzzy*/
+"make_photo" = "Zrób zdjęcie";
 
 /*button title*/
-"change_period" = "Change period";
+/*Fuzzy*/
+"change_period" = "Wybierz okres \n";
+"email_for_notifications" = "fiskasapp@gmail.com";
+
+/*label*/
+"period_date_from" = "Okres od";
+
+/*label*/
+"period_date_to" = "Okres do";

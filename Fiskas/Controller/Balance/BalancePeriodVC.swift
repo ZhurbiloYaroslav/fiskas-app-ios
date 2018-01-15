@@ -16,6 +16,10 @@ protocol BalancePeriodVcDelegate: class {
 
 class BalancePeriodVC: UIViewController {
     
+    @IBOutlet weak var dateFromLabel: UILabel!
+    @IBOutlet weak var dateToLabel: UILabel!
+    @IBOutlet weak var chooseButton: UIButton!
+    
     weak var delegate: BalancePeriodVcDelegate?
 
     @IBOutlet weak var datePicker_From: UIDatePicker!
@@ -24,6 +28,13 @@ class BalancePeriodVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        updateUILabelsWithLocalizedText()
+    }
+    
+    func updateUILabelsWithLocalizedText() {
+        dateFromLabel.text = "period_date_from".localized()
+        dateToLabel.text = "period_date_to".localized()
+        chooseButton.setTitle("change_period".localized(), for: .normal)
     }
     
     @IBAction func chooseButtonPressed(_ sender: UIButton) {
