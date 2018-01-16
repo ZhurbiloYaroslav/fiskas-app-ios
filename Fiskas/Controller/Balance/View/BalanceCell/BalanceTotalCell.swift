@@ -28,7 +28,7 @@ class BalanceTotalCell: UITableViewCell {
     func updateCell() {
         sellHeaderLabel.text = "balance_sell".localized() // Sprzedaż
         buyHeaderLabel.text = "balance_buy".localized() // Zakup
-        incomeValueLabel.text = "balance_income".localized() // Zysk
+        incomeHeaderLabel.text = "balance_income".localized() // Zysk
         
         sellValueLabel.text = String(BalanceManager.shared.total.sell)
         buyValueLabel.text = String(BalanceManager.shared.total.buy)

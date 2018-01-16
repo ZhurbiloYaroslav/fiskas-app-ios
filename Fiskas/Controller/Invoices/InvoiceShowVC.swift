@@ -11,12 +11,23 @@ import UIKit
 class InvoiceShowVC: UIViewController {
     
     @IBOutlet weak var invoiceImageView: UIImageView!
+    @IBOutlet weak var saveButton: UIButton!
     var invoiceImage: UIImage?
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        updateUILabelsWithLocalizedText()
+    }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
         invoiceImageView.image = invoiceImage
+    }
+    
+    func updateUILabelsWithLocalizedText() {
+        saveButton.setTitle("invoice_button_save".localized(), for: .normal)
     }
     
     @IBAction func saveButtonPressed(_ sender: UIButton) {
@@ -25,12 +36,19 @@ class InvoiceShowVC: UIViewController {
     
     @objc func image(_ image: UIImage, didFinishSavingWithError error: Error?, contextInfo: UnsafeRawPointer) {
         if let error = error {
-            let alertController = UIAlertController(title: "Save error", message: error.localizedDescription, preferredStyle: .alert)
-            alertController.addAction(UIAlertAction(title: "OK", style: .default))
+            let alertTitle = "invoice_saved_error_title".localized()
+            let alertController = UIAlertController(title: alertTitle, message: error.localizedDescription, preferredStyle: .alert)
+            
+            let okActionTitle = "OK".localized()
+            alertController.addAction(UIAlertAction(title: okActionTitle, style: .default))
             present(alertController, animated: true)
         } else {
-            let alertController = UIAlertController(title: "Saved!", message: "Your invoice has been saved to your photos", preferredStyle: .alert)
-            alertController.addAction(UIAlertAction(title: "OK", style: .default))
+            let alertTitle = "invoice_saved_ok_title".localized()
+            let alertMessage = "invoice_saved_ok_message".localized()
+            let alertController = UIAlertController(title: alertTitle, message: alertMessage, preferredStyle: .alert)
+            
+            let okActionTitle = "OK".localized()
+            alertController.addAction(UIAlertAction(title: okActionTitle, style: .default))
             present(alertController, animated: true)
         }
     }

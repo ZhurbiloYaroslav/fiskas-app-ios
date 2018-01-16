@@ -35,7 +35,9 @@ class Invoice: NSObject {
         let id = resultDictionary["id"] as? String ?? ""
         let name = resultDictionary["name"] as? String ?? ""
         let date = resultDictionary["date"] as? String ?? ""
-        let imageAddress = resultDictionary["image"] as? String ?? ""
+        var imageAddress = resultDictionary["image"] as? String ?? ""
+        
+        imageAddress = imageAddress.replacingOccurrences(of: " ", with: "%20")
         
         self.init(id: id, name: name, date: date, imageAddress: imageAddress)
     }

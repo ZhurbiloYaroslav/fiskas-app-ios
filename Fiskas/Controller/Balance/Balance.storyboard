@@ -166,7 +166,7 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="headerLabelForActualization" destination="STC-3m-GsQ" id="83j-ha-wjq"/>
+                                    <outlet property="headerLabelForActualization" destination="50Z-GR-Hdf" id="RoU-PP-tI8"/>
                                     <outlet property="valueLabelForActualization" destination="STC-3m-GsQ" id="m5X-Qh-I5c"/>
                                 </connections>
                             </tableViewCell>

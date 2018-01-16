@@ -266,56 +266,59 @@ extension ProfileVC { // extension ProfileVC: GKActionSheetPickerDelegate
 extension ProfileVC {
     
     func showAlertToChange(field: ProfileField) {
-        print("it should show alert!!!")
-        let alertTitle = "Change profile"
-        let alertMessage = "Change field"
+
+        let alertTitle = "profile_change_field_title".localized()
+        let alertMessage = "profile_change_field_message".localized()
         
         let alertController = UIAlertController(title: alertTitle, message: alertMessage, preferredStyle: .alert)
         
-        let alertActionCancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
-        let alertActionOk = UIAlertAction(title: "OK", style: .default) { [weak alertController] (_) in
+        let cancelActionTitle = "cancel".localized()
+        let alertActionCancel = UIAlertAction(title: cancelActionTitle, style: .cancel, handler: nil)
+        let okActionTitle = "OK".localized()
+        let alertActionOk = UIAlertAction(title: okActionTitle, style: .default) { [weak alertController] (_) in
             self.saveUserInfoFromAlertTextField(alertController, field: field)
         }
         
         alertController.addAction(alertActionCancel)
         
+        let changeWord = "profile_change_word".localized() + " "
         switch field {
         case .FirstName:
-            alertController.title = "Change First name"
-            alertController.message = "\(alertMessage): First name"
+            alertController.title = changeWord + "first_name".localized()
+            alertController.message = "\(alertMessage): " + "first_name".localized()
         case .LastName:
-            alertController.title = "Change Last name"
-            alertController.message = "\(alertMessage): Last name"
+            alertController.title = changeWord + "last_name".localized()
+            alertController.message = "\(alertMessage): " + "last_name".localized()
         case .Email:
-            alertController.title = "Change Email"
-            alertController.message = "\(alertMessage): Email"
+            alertController.title = changeWord + "email".localized()
+            alertController.message = "\(alertMessage): " + "email".localized()
         case .Phone:
-            alertController.title = "Change Phone"
-            alertController.message = "\(alertMessage): Phone"
+            alertController.title = changeWord + "phone".localized()
+            alertController.message = "\(alertMessage): " + "phone".localized()
         case .CompanyName:
-            alertController.title = "Change Company name"
-            alertController.message = "\(alertMessage): Company name"
+            alertController.title = changeWord + "company_name".localized()
+            alertController.message = "\(alertMessage): " + "company_name".localized()
         case .CompanyAddress:
-            alertController.title = "Change Company address"
-            alertController.message = "\(alertMessage): Company address"
+            alertController.title = changeWord + "company_address".localized()
+            alertController.message = "\(alertMessage): " + "company_address".localized()
         case .NIP:
-            alertController.title = "Change Company NIP"
-            alertController.message = "\(alertMessage): Company NIP"
+            alertController.title = changeWord + "nip".localized()
+            alertController.message = "\(alertMessage): " + "nip".localized()
         case .REGON:
-            alertController.title = "Change Company REGON"
-            alertController.message = "\(alertMessage): Company REGON"
+            alertController.title = changeWord + "regon".localized()
+            alertController.message = "\(alertMessage): " + "regon".localized()
         case .CompanyEmail:
-            alertController.title = "Change Company email"
-            alertController.message = "\(alertMessage): Company email"
+            alertController.title = changeWord + "company_email".localized()
+            alertController.message = "\(alertMessage): " + "company_email".localized()
         case .CompanyPhone:
-            alertController.title = "Change Company phone"
-            alertController.message = "\(alertMessage): Company phone"
+            alertController.title = changeWord + "company_phone".localized()
+            alertController.message = "\(alertMessage): " + "company_phone".localized()
         case .TaxService:
-            alertController.title = "Change Company tax service"
-            alertController.message = "\(alertMessage): Company tax service"
+            alertController.title = changeWord + "tax_service".localized()
+            alertController.message = "\(alertMessage): " + "company_phone".localized()
         case .Password:
-            alertController.title = "Change Password"
-            alertController.message = "\(alertMessage): Password"
+            alertController.title = changeWord + "password".localized()
+            alertController.message = "\(alertMessage): " + "password".localized()
         }
         
         makeTextFieldsForAlertController(alertVC: alertController, field: field)
@@ -362,7 +365,8 @@ extension ProfileVC {
     func updateValuesOnServer() {
         NetworkManager().updateValues { (arrayWithMessages) in
             guard let unwrappedArrayWithMessages = arrayWithMessages else { return }
-            Alert().presentAlertWith(title: "Update server data", andMessages: unwrappedArrayWithMessages) { alertVC in
+            let alertTitle = "profile_update_values".localized()
+            Alert().presentAlertWith(title: alertTitle, andMessages: unwrappedArrayWithMessages) { alertVC in
                 self.present(alertVC, animated: true, completion: nil)
             }
         }
@@ -377,53 +381,53 @@ extension ProfileVC {
             switch field {
             case .FirstName:
                 textField.text = CurrentUser.firstName
-                textField.placeholder = "First name"
+                textField.placeholder = "first_name".localized()
                 textField.autocapitalizationType = UITextAutocapitalizationType.sentences
             case .LastName:
                 textField.text = CurrentUser.lastName
-                textField.placeholder = "Last name"
+                textField.placeholder = "last_name".localized()
                 textField.autocapitalizationType = UITextAutocapitalizationType.sentences
             case .Email:
                 textField.text = CurrentUser.email
-                textField.placeholder = "Email"
+                textField.placeholder = "email".localized()
                 textField.keyboardType = UIKeyboardType.emailAddress
                 textField.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for: .editingChanged)
             case .Phone:
-                textField.placeholder = "Phone"
+                textField.placeholder = "phone".localized()
                 textField.text = CurrentUser.phone
                 textField.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for: .editingChanged)
             case .CompanyName:
-                textField.placeholder = "Company name"
+                textField.placeholder = "company_name".localized()
                 textField.text = CurrentCompany.name
                 textField.autocapitalizationType = UITextAutocapitalizationType.sentences
             case .CompanyAddress:
-                textField.placeholder = "Company address"
+                textField.placeholder = "company_address".localized()
                 textField.text = CurrentCompany.address
                 textField.autocapitalizationType = UITextAutocapitalizationType.sentences
             case .NIP:
-                textField.placeholder = "Company NIP"
+                textField.placeholder = "nip".localized()
                 textField.text = CurrentCompany.nip
                 textField.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for: .editingChanged)
             case .REGON:
-                textField.placeholder = "Company REGON"
+                textField.placeholder = "regon".localized()
                 textField.text = CurrentCompany.regon
                 textField.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for: .editingChanged)
             case .CompanyEmail:
-                textField.placeholder = "Company Email"
+                textField.placeholder = "company_email".localized()
                 textField.text = CurrentCompany.email
                 textField.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for: .editingChanged)
             case .CompanyPhone:
-                textField.placeholder = "Company Phone"
+                textField.placeholder = "company_phone".localized()
                 textField.text = CurrentCompany.phone
                 textField.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for: .editingChanged)
             case .TaxService:
-                textField.placeholder = "Company Tax service"
+                textField.placeholder = "tax_service".localized()
                 textField.text = CurrentCompany.taxService
                 textField.autocapitalizationType = UITextAutocapitalizationType.sentences
             case .Password:
                 textField.tag = 0
                 textField.text = ""
-                textField.placeholder = "Current password"
+                textField.placeholder = "password_current".localized()
                 textField.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for: .editingChanged)
             }
         }
@@ -431,13 +435,13 @@ extension ProfileVC {
             alertVC.addTextField(configurationHandler: { textField in
                 textField.tag = 1
                 textField.text = ""
-                textField.placeholder = "New password"
+                textField.placeholder = "password_new".localized()
                 textField.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for: .editingChanged)
             })
             alertVC.addTextField(configurationHandler: { textField in
                 textField.tag = 2
                 textField.text = ""
-                textField.placeholder = "Repeat new password"
+                textField.placeholder = "password_new_repeat".localized()
                 textField.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for: .editingChanged)
             })
         }
@@ -453,21 +457,21 @@ extension ProfileVC {
         case .Email, .CompanyEmail:
             if Validator.isEmailValid(fieldText) {
                 currentAlertVC.actions[1].isEnabled = true
-                newMessage = "Your email is okay"
+                newMessage = "email_is_valid".localized()
                 attributes = [ NSAttributedStringKey.foregroundColor : UIColor.green ]
             } else {
                 currentAlertVC.actions[1].isEnabled = false
-                newMessage = "Your email is invalid"
+                newMessage = "email_is_not_valid".localized()
                 attributes = [ NSAttributedStringKey.foregroundColor : UIColor.red ]
             }
         case .Phone, .CompanyPhone:
             if Validator.isPhoneValid(fieldText) {
                 currentAlertVC.actions[1].isEnabled = true
-                newMessage = "Your phone is okay"
+                newMessage = "phone_is_valid".localized()
                 attributes = [ NSAttributedStringKey.foregroundColor : UIColor.green ]
             } else {
                 currentAlertVC.actions[1].isEnabled = false
-                newMessage = "Your phone is invalid"
+                newMessage = "phone_is_not_valid".localized()
                 attributes = [ NSAttributedStringKey.foregroundColor : UIColor.red ]
             }
         case .Password:
@@ -479,33 +483,33 @@ extension ProfileVC {
             // Chenk whetger passwords are valid
             if Validator.isPasswordValid(passwordFieldCurrent.text) == false {
                 currentAlertVC.actions[1].isEnabled = false
-                newMessage += "Your current password is invalid \n"
+                newMessage += "password_current_is_not_valid".localized() + " \n"
                 attributes = [ NSAttributedStringKey.foregroundColor : UIColor.red ]
             }
             if passwordFieldCurrent.text != CurrentUser.password {
                 currentAlertVC.actions[1].isEnabled = false
-                newMessage += "Your current password is not match to your password \n"
+                newMessage += "password_current_is_not_match".localized() + " \n"
                 attributes = [ NSAttributedStringKey.foregroundColor : UIColor.red ]
             }
             
             if Validator.isPasswordValid(passwordFieldNew.text) == false
                 && passwordFieldNew.text != "" {
                 currentAlertVC.actions[1].isEnabled = false
-                newMessage += "Your new password is invalid \n"
+                newMessage += "password_new_is_not_valid".localized() + " \n"
                 attributes = [ NSAttributedStringKey.foregroundColor : UIColor.red ]
             }
             
             if Validator.isPasswordValid(passwordFieldRepeat.text) == false
                 && passwordFieldRepeat.text != "" {
                 currentAlertVC.actions[1].isEnabled = false
-                newMessage += "Your repeated password is invalid \n"
+                newMessage += "password_repeated_is_not_valid".localized() + " \n"
                 attributes = [ NSAttributedStringKey.foregroundColor : UIColor.red ]
             }
             
             if passwordFieldNew.text != passwordFieldRepeat.text
                 && passwordFieldRepeat.text != "" {
                 currentAlertVC.actions[1].isEnabled = false
-                newMessage += "Your passwords are not equal \n"
+                newMessage += "passwords_are_not_equal" + " \n"
                 attributes = [ NSAttributedStringKey.foregroundColor : UIColor.red ]
             }
             
@@ -516,7 +520,7 @@ extension ProfileVC {
                 && passwordFieldNew.text == passwordFieldRepeat.text {
                 
                 currentAlertVC.actions[1].isEnabled = true
-                newMessage += "Your passwords are validated"
+                newMessage += "passwords_are_validated".localized()
                 attributes = [ NSAttributedStringKey.foregroundColor : UIColor.green ]
             }
             

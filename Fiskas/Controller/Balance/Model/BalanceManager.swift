@@ -13,7 +13,7 @@ struct BalanceManager {
     
     static var shared = BalanceManager(
         total: Total(buy: 0, sell: 0, income: 0),
-        actualization: "Pending...",
+        actualization: "balance_actualization_pending".localized(),
         arrayWithCategories: [Category]()
     )
     
@@ -73,39 +73,39 @@ struct BalanceManager {
         
         switch newIndex {
         case "0":
-            return "Quarter 1"
+            return "balance_table_quarter_1".localized()
         case "0.0":
-            return "Month 1"
+            return "balance_table_month_1".localized()
         case "0.1":
-            return "Month 2"
+            return "balance_table_month_2".localized()
         case "0.2":
-            return "Month 3"
+            return "balance_table_month_3".localized()
         case "1":
-            return "Quarter 2"
+            return "balance_table_quarter_2".localized()
         case "1.0":
-            return "Month 4"
+            return "balance_table_month_4".localized()
         case "1.1":
-            return "Month 5"
+            return "balance_table_month_5".localized()
         case "1.2":
-            return "Month 6"
+            return "balance_table_month_6".localized()
         case "2":
-            return "Quarter 3"
+            return "balance_table_quarter_3".localized()
         case "2.0":
-            return "Month 7"
+            return "balance_table_month_7".localized()
         case "2.1":
-            return "Month 8"
+            return "balance_table_month_8".localized()
         case "2.2":
-            return "Month 9"
+            return "balance_table_month_9".localized()
         case "3":
-            return "Quarter 4"
+            return "balance_table_quarter_4".localized()
         case "3.0":
-            return "Month 10"
+            return "balance_table_month_10".localized()
         case "3.1":
-            return "Month 11"
+            return "balance_table_month_11".localized()
         case "3.2":
-            return "Month 12"
+            return "balance_table_month_12".localized()
         default:
-            return "Undefined cell"
+            return "balance_table_undefined_cell".localized()
         }
     }
     

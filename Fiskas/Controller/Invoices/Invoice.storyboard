@@ -103,6 +103,7 @@
                     </view>
                     <connections>
                         <outlet property="invoiceImageView" destination="pgB-yw-Twj" id="pZ4-6I-yCI"/>
+                        <outlet property="saveButton" destination="NPA-dM-WNi" id="WVu-JB-b9i"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vz2-1o-J01" userLabel="First Responder" sceneMemberID="firstResponder"/>

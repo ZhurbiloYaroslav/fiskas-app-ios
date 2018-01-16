@@ -200,6 +200,8 @@
                     </view>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="acceptButton" destination="7GZ-8E-31A" id="sUf-Jm-18a"/>
+                        <outlet property="cancelButton" destination="d7t-LY-MXx" id="USQ-xv-OZC"/>
                         <outlet property="imageView" destination="gox-3P-DIW" id="p0b-jj-gIt"/>
                     </connections>
                 </viewController>
