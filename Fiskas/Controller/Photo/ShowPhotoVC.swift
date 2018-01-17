@@ -100,7 +100,7 @@ class ShowPhotoVC: UIViewController {
         let alertMessage = "photo_send_status_ok_title".localized()
         let alertController = UIAlertController(title: alertTitle, message: alertMessage, preferredStyle: .alert)
         
-        let okActionTitle = "OK".localized()
+        let okActionTitle = "ok".localized()
         let okAction = UIAlertAction(title: okActionTitle, style: .default) { (action) in
             self.goBackToPhotoVC()
         }

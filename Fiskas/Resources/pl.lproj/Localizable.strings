@@ -12,7 +12,7 @@
 /*forgot your password?*/
 "forgot_your_password" = "Zapomniałeś hasło?";
 "register" = "Zarejestruj się";
-"call_us" = "Chcesz być naszym klientem? \nZadzwoń do nas \n";
+"call_us" = "Chcesz być naszym klientem? \nZadzwoń do nas\n";
 "personal_info" = "Dane osobowe";
 "first_name" = "Imię";
 "last_name" = "Nazwisko";
@@ -68,7 +68,7 @@
 "restore_password" = "Odzyskaj hasło\n";
 
 /*Title in Alert*/
-"cancel" = "Wyjdź";
+"cancel" = "Anuluj";
 
 /*Title in Button*/
 "restore" = "Odzyskaj\n";
@@ -138,7 +138,7 @@
 "log_out_message" = "Na pewno chchesz się wylogować ?";
 "balance_balance_section" = "Mój bilans";
 "balance_info_section" = "Dane podmiotu";
-"balance_total_section" = "Suma ";
+"balance_total_section" = "Suma";
 
 /*balance category*/
 "dolg" = "Należności";
@@ -175,65 +175,65 @@
 
 /*alert message*/
 /*Fuzzy*/
-"password_should_be" = "Hasło musi mieć co najmniej 6 znaków ";
+"password_should_be" = "Hasło musi mieć co najmniej 6 znaków";
 
 /*alert message*/
 /*Fuzzy*/
-"passwords_are_not_equal" = "Hasło jest niepoprawne ";
+"passwords_are_not_equal" = "Hasło jest niepoprawne";
 
 /*alert message*/
 /*Fuzzy*/
-"first_name_is_not_valid" = "Pole jest niepoprawne ";
+"first_name_is_not_valid" = "Pole \"Imię\" jest niepoprawne";
 
 /*alert message*/
 /*Fuzzy*/
-"first_name_should_not_be_empty" = "Pole nie może być puste ";
+"first_name_should_not_be_empty" = "Pole \"Imię\" nie może być puste";
 
 /*alert message*/
 /*Fuzzy*/
-"last_name_is_not_valid" = "Pole jest niepoprawne";
+"last_name_is_not_valid" = "Pole \"Nazwisko\" jest niepoprawne";
 
 /*alert message*/
 /*Fuzzy*/
-"last_name_should_not_be_empty" = "Pole nie może być puste";
+"last_name_should_not_be_empty" = "Pole \"Nazwisko\" nie może być puste";
 
 /*alert message*/
 /*Fuzzy*/
-"user_phone_is_not_valid" = "User Phone is not valid";
+"user_phone_is_not_valid" = "Pole \"Telefon\" jest niepoprawne";
 
 /*alert message*/
 /*Fuzzy*/
-"phone_should_be" = "Przykład: +48 123 456 789";
+"phone_should_be" = "Telefon np: +48 123 456 789";
 
 /*alert message*/
 /*Fuzzy*/
-"company_name_is_not_valid" = "Nazwa firmy jest niepoprawna";
+"company_name_is_not_valid" = "Pole \"Nazwa firmy\" jest niepoprawne";
 
 /*alert message*/
 /*Fuzzy*/
-"company_name_should_not_be_empty" = "Pole nie może być puste";
+"company_name_should_not_be_empty" = "Pole \"Nazwa firmy\" nie może być puste";
 
 /*alert message*/
-"company_address_should_not_be_empty" = "Pole nie może być puste ";
-
-/*alert message*/
-/*Fuzzy*/
-"nip_should_not_be_empty" = "Pole nie może być puste";
+"company_address_should_not_be_empty" = "Pole \"Adres firmy\" nie może być puste";
 
 /*alert message*/
 /*Fuzzy*/
-"regon_should_not_be_empty" = "Pole nie może być puste";
+"nip_should_not_be_empty" = "Pole \"NIP\" nie może być puste";
+
+/*alert message*/
+/*Fuzzy*/
+"regon_should_not_be_empty" = "Pole \"REGON\" nie może być puste";
 
 /*alert message*/
 /*Fuzzy*/
 "company_email_is_not_valid" = "Email firmy jest niepoprawny";
 
 /*alert message*/
-"company_phone_is_not_valid" = "numer służbowy";
+"company_phone_is_not_valid" = "Numer służbowy jest niepoprawny";
 
 /*alert title*/
 /*Fuzzy*/
-"registration_error" = "Błąd przy rejestracji \n";
+"registration_error" = "Błąd przy rejestracji\n";
 
 /*alert title*/
 /*Fuzzy*/
@@ -245,10 +245,10 @@
 
 /*alert title*/
 /*Fuzzy*/
-"recovery_status" = "Recovery status";
+"recovery_status" = "Status wznowienia";
 
 /*Fuzzy*/
-"button_nav_expand" = "Rozwinąć ";
+"button_nav_expand" = "Rozwinąć";
 
 /*button title*/
 /*Fuzzy*/
@@ -260,54 +260,54 @@
 "email_for_notifications" = "fiskasapp@gmail.com";
 
 /*label*/
-"period_date_from" = "Okres od";
+"period_date_from" = "od";
 
 /*label*/
-"period_date_to" = "Okres do";
-"balance_table_quarter_1" = "Quarter 1";
-"balance_table_quarter_2" = "Quarter 2";
-"balance_table_quarter_3" = "Quarter 3";
-"balance_table_quarter_4" = "Quarter 4";
-"balance_table_month_1" = "Month 1";
-"balance_table_month_2" = "Month 2";
-"balance_table_month_3" = "Month 3";
-"balance_table_month_4" = "Month 4";
-"balance_table_month_5" = "Month 5";
-"balance_table_month_6" = "Month 6";
-"balance_table_month_7" = "Month 7";
-"balance_table_month_8" = "Month 8";
-"balance_table_month_9" = "Month 9";
-"balance_table_month_10" = "Month 10";
-"balance_table_month_11" = "Month 11";
-"balance_table_month_12" = "Month 12";
-"balance_table_undefined_cell" = "Undefined cell";
-"balance_actualization_pending" = "Pending…";
-"invoice_saved_ok_title" = "Saved!";
-"invoice_saved_ok_message" = "Your invoice has been saved to your photos";
-"invoice_saved_error_title" = "Save error";
-"invoice_button_save" = "Save";
-"profile_change_field_title" = "Change profile";
-"profile_change_field_message" = "Change field";
-"profile_change_word" = "Zmiana";
-"profile_update_values" = "Update server data";
-"password_current" = "Current password";
-"password_new" = "New password";
-"password_new_repeat" = "Repeat new password";
-"email_is_valid" = "Your email is okay";
-"phone_is_valid" = "Your phone is okay";
-"phone_is_not_valid" = "Your phone is invalid";
-"password_current_is_not_valid" = "Your current password is invalid";
-"password_current_is_not_match" = "Your current password is not match to your password";
-"password_new_is_not_valid" = "Your new password is invalid";
-"password_repeated_is_not_valid" = "Your repeated password is invalid";
-"passwords_are_not_equal" = "Your passwords are not equal";
+"period_date_to" = "do";
+"balance_table_quarter_1" = "Kwartał 1";
+"balance_table_quarter_2" = "Kwartał 2";
+"balance_table_quarter_3" = "Kwartał 3";
+"balance_table_quarter_4" = "Kwartał 4";
+"balance_table_month_1" = "Styczeń";
+"balance_table_month_2" = "Luty";
+"balance_table_month_3" = "Marzec";
+"balance_table_month_4" = "Kwiecień";
+"balance_table_month_5" = "Maj";
+"balance_table_month_6" = "Czerwiec";
+"balance_table_month_7" = "Lipiec";
+"balance_table_month_8" = "Sierpień";
+"balance_table_month_9" = "Wrzesień";
+"balance_table_month_10" = "Pażdziernik";
+"balance_table_month_11" = "Listopad";
+"balance_table_month_12" = "Grudzień";
+"balance_table_undefined_cell" = "Nieokreślone pole";
+"balance_actualization_pending" = "Ładuje się";
+"invoice_saved_ok_title" = "Zapisane";
+"invoice_saved_ok_message" = "Twoja faktura została zapisana do galerii";
+"invoice_saved_error_title" = "Błąd. Spróbuj ponownie";
+"invoice_button_save" = "Zapisz";
+"profile_change_field_title" = "Zmeń";
+"profile_change_field_message" = "Wpisz nowe dane";
+"profile_change_word" = "Zmień";
+"profile_update_values" = "Twoje dane zostały zapisane";
+"password_current" = "Wpisz obecne hasło ";
+"password_new" = "Nowe hasło";
+"password_new_repeat" = "Powtórz hasło";
+"email_is_valid" = "Twój email jest poprawny";
+"phone_is_valid" = "Twój telefon jest poprawny";
+"phone_is_not_valid" = "Twój telefon jest niepoprawny";
+"password_current_is_not_valid" = "Twoje obecne hasło jest niepoprawne";
+"password_current_is_not_match" = "Jeśli nie pamiętasz hasła wyjdż z aplikacji i wcisnij \"Przypomnij hasło\"";
+"password_new_is_not_valid" = "Twoje nowe hasło jest niepoprawne";
+"password_repeated_is_not_valid" = "Powtórz nowe hasło";
+"passwords_are_not_equal" = "Twoje hasła nie są podobne";
 "passwords_are_validated" = "Your passwords are validated";
-"photo_button_accept" = "Accept";
-"photo_button_cancel" = "Cancel";
-"photo_send_alert_title" = "Image status";
-"photo_send_alert_message" = "Current Image accepted";
-"photo_send_alert_image_name" = "Image name";
-"photo_send_button_send" = "Send";
-"photo_send_button_delete" = "Delete";
-"photo_send_status_ok_title" = "Image sent status";
-"photo_send_status_ok_message" = "The image has been sent to the server";
+"photo_button_accept" = "Ok";
+"photo_button_cancel" = "Anuluj";
+"photo_send_alert_title" = "Status zdjęcia";
+"photo_send_alert_message" = "Zdjęcie jest zatwierdzone";
+"photo_send_alert_image_name" = "Wpisz nazwę";
+"photo_send_button_send" = "Wysłać";
+"photo_send_button_delete" = "Usunąć";
+"photo_send_status_ok_title" = "Dziękujemy!";
+"photo_send_status_ok_message" = "Zdjęcie zostało wysłane";

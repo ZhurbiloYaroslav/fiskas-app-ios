@@ -174,7 +174,9 @@ class ProfileVC: UITableViewController {
         case [0,1]:
             showAlertToChange(field: .LastName)
         case [0,2]:
-            showAlertToChange(field: .Email)
+            //showAlertToChange(field: .Email)
+            // Inactive because server can not allow change user's email
+            break
         case [0,3]:
             showAlertToChange(field: .Phone)
         case [1,0]:
@@ -274,7 +276,7 @@ extension ProfileVC {
         
         let cancelActionTitle = "cancel".localized()
         let alertActionCancel = UIAlertAction(title: cancelActionTitle, style: .cancel, handler: nil)
-        let okActionTitle = "OK".localized()
+        let okActionTitle = "ok".localized()
         let alertActionOk = UIAlertAction(title: okActionTitle, style: .default) { [weak alertController] (_) in
             self.saveUserInfoFromAlertTextField(alertController, field: field)
         }

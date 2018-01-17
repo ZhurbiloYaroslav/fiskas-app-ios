@@ -463,8 +463,8 @@ extension NetworkManager {
         guard let imgData = UIImageJPEGRepresentation(image, 1) else { return }
         
         let parameters = userData.getParams()
-        //let fileName = "\(userData.photoTitle).jpg"
-        let fileName = "\(userData.photoTitle).jpg"
+        let uuid = UUID().uuidString.replacingOccurrences(of: "-", with: "")
+        let fileName = "\(uuid).jpg"
         
         Alamofire.upload(multipartFormData: { multipartFormData in
             multipartFormData.append(imgData, withName: "image",fileName: fileName, mimeType: "image/jpg")

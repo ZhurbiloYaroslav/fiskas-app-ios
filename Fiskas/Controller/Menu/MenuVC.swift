@@ -132,7 +132,7 @@ extension MenuVC: MFMailComposeViewControllerDelegate {
         let alertMessage = "alert_email_send_fail_message".localized()
         let alertController = UIAlertController(title: alertTitle, message: alertMessage, preferredStyle: .alert)
         
-        let okActionTitle = "OK".localized()
+        let okActionTitle = "ok".localized()
         let okAction = UIAlertAction(title: okActionTitle, style: .default, handler: nil)
         alertController.addAction(okAction)
         

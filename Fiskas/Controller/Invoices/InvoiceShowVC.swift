@@ -35,11 +35,13 @@ class InvoiceShowVC: UIViewController {
     }
     
     @objc func image(_ image: UIImage, didFinishSavingWithError error: Error?, contextInfo: UnsafeRawPointer) {
+        
+        let okActionTitle = "ok".localized()
+        
         if let error = error {
             let alertTitle = "invoice_saved_error_title".localized()
             let alertController = UIAlertController(title: alertTitle, message: error.localizedDescription, preferredStyle: .alert)
             
-            let okActionTitle = "OK".localized()
             alertController.addAction(UIAlertAction(title: okActionTitle, style: .default))
             present(alertController, animated: true)
         } else {
@@ -47,7 +49,6 @@ class InvoiceShowVC: UIViewController {
             let alertMessage = "invoice_saved_ok_message".localized()
             let alertController = UIAlertController(title: alertTitle, message: alertMessage, preferredStyle: .alert)
             
-            let okActionTitle = "OK".localized()
             alertController.addAction(UIAlertAction(title: okActionTitle, style: .default))
             present(alertController, animated: true)
         }
