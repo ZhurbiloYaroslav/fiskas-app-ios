@@ -30,9 +30,9 @@ class BalanceTotalCell: UITableViewCell {
         buyHeaderLabel.text = "balance_buy".localized() // Zakup
         incomeHeaderLabel.text = "balance_income".localized() // Zysk
         
-        sellValueLabel.text = String(BalanceManager.shared.total.sell)
-        buyValueLabel.text = String(BalanceManager.shared.total.buy)
-        incomeValueLabel.text = String(BalanceManager.shared.total.income)
+        sellValueLabel.text = String(BalanceManager.shared.total.sell)  + " " + Constants.currency
+        buyValueLabel.text = String(BalanceManager.shared.total.buy)  + " " + Constants.currency
+        incomeValueLabel.text = String(BalanceManager.shared.total.income)  + " " + Constants.currency
         
         makePhotoButton.setTitle("make_photo".localized(), for: .normal)
     }

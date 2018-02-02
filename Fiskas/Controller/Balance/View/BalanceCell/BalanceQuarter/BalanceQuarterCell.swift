@@ -24,7 +24,7 @@ class BalanceQuarterCell: UITableViewCell {
     func cellFillUp(indexParam: String) {
         labelChildAtIndex.textColor = UIColor.white
         labelChildAtIndex.text = BalanceManager.getQuarterOrMonthNameDependsOn(indexParam)
-        valueLabel.text = String(BalanceManager.getCellValueDependsOn(indexParam))
+        valueLabel.text = String(BalanceManager.getCellValueDependsOn(indexParam)) + " " + Constants.currency
     }
     
 }

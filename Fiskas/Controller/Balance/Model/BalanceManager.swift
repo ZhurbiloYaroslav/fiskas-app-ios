@@ -63,7 +63,7 @@ struct BalanceManager {
             for monthValue in arrayWithmonths {
                 total += monthValue
             }
-            return String(total)
+            return String(total) + " " + Constants.currency
         }
     }
     

@@ -23,12 +23,12 @@ class NetworkManager: NSObject {
     static let baseURL = "https://serwer1651270.home.pl/admin/api/"
     
     struct AuthError {
-        let noConnection = "Network Error, check your connection"
-        let invalidResultData = "Data Error, check your data"
-        let undefined = "Undefined Error"
-        let wrongEmailOrPassword = "Email or password are wrong"
-        let recoveryOK = "Password was sent to your Email"
-        let updateOK = "Values have been updated on server"
+        let noConnection = "network_error_check_your_connection".localized()
+        let invalidResultData = "data_error_check_your_data".localized()
+        let undefined = "undefined_error".localized()
+        let wrongEmailOrPassword = "email_or_password_wrong".localized()
+        let recoveryOK = "password_was_sent_to_email".localized()
+        let updateOK = "values_have_been_updated".localized()
     }
 }
 

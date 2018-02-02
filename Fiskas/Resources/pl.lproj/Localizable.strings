@@ -114,8 +114,8 @@
 "balance_total" = "Razem";
 "balance_cash" = "Gotówka";
 "balance_state_bank" = "Stan konta bankowego";
-"balance_debts" = "Należności";
-"balance_liability" = "Zobowiązania/podatki";
+"balance_debts" = "Podatek VAT";
+"balance_liability" = "Podatek dochodowy";
 "balance_sell" = "Sprzedaż";
 "balance_buy" = "Zakup";
 "balance_income" = "Zysk";
@@ -135,19 +135,19 @@
 "log_out_title" = "Wyloguj się";
 
 /*Message in Alert*/
-"log_out_message" = "Na pewno chchesz się wylogować ?";
+"log_out_message" = "Na pewno chcesz się wylogować ?";
 "balance_balance_section" = "Mój bilans";
 "balance_info_section" = "Dane podmiotu";
 "balance_total_section" = "Suma";
 
 /*balance category*/
-"dolg" = "Należności";
+"dolg" = "Podatek VAT";
 
 /*balance category*/
 "nal" = "Gotówka";
 
 /*balance category*/
-"tax" = "Zobowiązania/podatki";
+"tax" = "Podatek dochodowy";
 
 /*balance category*/
 "ost" = "Stan konta bankowego";
@@ -256,7 +256,7 @@
 
 /*button title*/
 /*Fuzzy*/
-"change_period" = "Wybierz okres \n";
+"change_period" = "Wybierz okres\n";
 "email_for_notifications" = "fiskasapp@gmail.com";
 
 /*label*/
@@ -301,7 +301,7 @@
 "password_new_is_not_valid" = "Twoje nowe hasło jest niepoprawne";
 "password_repeated_is_not_valid" = "Powtórz nowe hasło";
 "passwords_are_not_equal" = "Twoje hasła nie są podobne";
-"passwords_are_validated" = "Your passwords are validated";
+"passwords_are_validated" = "Naciśnij OK, aby zmienić hasło";
 "photo_button_accept" = "Ok";
 "photo_button_cancel" = "Anuluj";
 "photo_send_alert_title" = "Status zdjęcia";
@@ -311,3 +311,10 @@
 "photo_send_button_delete" = "Usunąć";
 "photo_send_status_ok_title" = "Dziękujemy!";
 "photo_send_status_ok_message" = "Zdjęcie zostało wysłane";
+"values_have_been_updated" = "Values have been updated on server";
+"password_was_sent_to_email" = "Password was sent to your Email";
+"email_or_password_wrong" = "Email lub hasło są niepoprawne";
+"undefined_error" = "Undefined Error";
+"data_error_check_your_data" = "";
+"network_error_check_your_connection" = "";
+"alert_user_login" = "Login";

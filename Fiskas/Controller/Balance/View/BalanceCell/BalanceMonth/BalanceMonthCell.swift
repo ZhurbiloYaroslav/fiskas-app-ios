@@ -24,7 +24,7 @@ class BalanceMonthCell: UITableViewCell {
         
         titleLabel.textColor = UIColor.white
         titleLabel.text = BalanceManager.getQuarterOrMonthNameDependsOn(indexParam)
-        valueLabel.text = String(BalanceManager.getCellValueDependsOn(indexParam))
+        valueLabel.text = String(BalanceManager.getCellValueDependsOn(indexParam)) + " " + Constants.currency
     }
     
 }

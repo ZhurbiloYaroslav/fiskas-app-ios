@@ -23,7 +23,8 @@ class Alert {
     }
     
     func presentAlertWith(messages arrayWithMessages: [String], completionHandler: @escaping (UIAlertController)->()) {
-        presentAlertWith(title: "User login", andMessages: arrayWithMessages) { (alertController) in
+        let alertTitle = "alert_user_login".localized()
+        presentAlertWith(title: alertTitle, andMessages: arrayWithMessages) { (alertController) in
             completionHandler(alertController)
         }
     }

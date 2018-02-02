@@ -366,9 +366,9 @@ extension ProfileVC {
     
     func updateValuesOnServer() {
         NetworkManager().updateValues { (arrayWithMessages) in
-            guard let unwrappedArrayWithMessages = arrayWithMessages else { return }
-            let alertTitle = "profile_update_values".localized()
-            Alert().presentAlertWith(title: alertTitle, andMessages: unwrappedArrayWithMessages) { alertVC in
+            let alertTitle = "photo_send_status_ok_title".localized()
+            let alertMessage = "profile_update_values".localized()
+            Alert().presentAlertWith(title: alertTitle, andMessages: [alertMessage]) { alertVC in
                 self.present(alertVC, animated: true, completion: nil)
             }
         }
@@ -511,7 +511,7 @@ extension ProfileVC {
             if passwordFieldNew.text != passwordFieldRepeat.text
                 && passwordFieldRepeat.text != "" {
                 currentAlertVC.actions[1].isEnabled = false
-                newMessage += "passwords_are_not_equal" + " \n"
+                newMessage += "passwords_are_not_equal".localized() + " \n"
                 attributes = [ NSAttributedStringKey.foregroundColor : UIColor.red ]
             }
             

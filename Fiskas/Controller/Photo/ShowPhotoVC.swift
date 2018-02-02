@@ -97,7 +97,7 @@ class ShowPhotoVC: UIViewController {
     
     func showAlertThatImageWasSent() {
         let alertTitle = "photo_send_status_ok_title".localized()
-        let alertMessage = "photo_send_status_ok_title".localized()
+        let alertMessage = "photo_send_status_ok_message".localized()
         let alertController = UIAlertController(title: alertTitle, message: alertMessage, preferredStyle: .alert)
         
         let okActionTitle = "ok".localized()
