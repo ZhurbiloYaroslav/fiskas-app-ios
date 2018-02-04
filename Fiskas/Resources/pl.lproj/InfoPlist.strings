@@ -1,0 +1,12 @@
+/* 
+  InfoPlist.strings
+  Fiskas
+
+  Created by Yaroslav Zhurbilo on 04.02.18.
+  Copyright © 2018 Yaroslav Zhurbilo. All rights reserved.
+*/
+
+
+"NSCameraUsageDescription" = "Jest niezbędne do zrobienia zdjęcia faktury";
+"NSPhotoLibraryAddUsageDescription" = "Jest niezbędne do zapisywania zdjęć do galerii";
+"NSPhotoLibraryUsageDescription" = "Potrzebne jest pozwolenie na zapisanie obrazu do galerii";

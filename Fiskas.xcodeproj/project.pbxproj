@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		9E4AD41A35377C6F7C81F359 /* Pods_Fiskas.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5CA4D3B92FBCC4EBBCBB297 /* Pods_Fiskas.framework */; };
 		C40C849F200380340011AF01 /* ResponseExample.json in Resources */ = {isa = PBXBuildFile; fileRef = C40C849E200380340011AF01 /* ResponseExample.json */; };
+		C40DBD9C202777A200D3E348 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C40DBD9E202777A200D3E348 /* InfoPlist.strings */; };
 		C4109E40200775ED00A2BD56 /* Invoice.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4109E3F200775ED00A2BD56 /* Invoice.swift */; };
 		C4109E432007797300A2BD56 /* InvoiceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4109E412007797300A2BD56 /* InvoiceCell.swift */; };
 		C4109E442007797300A2BD56 /* InvoiceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4109E422007797300A2BD56 /* InvoiceCell.xib */; };
@@ -83,6 +84,8 @@
 		73479D34CDF7C55D9A14C5C3 /* Pods-Fiskas.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fiskas.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Fiskas/Pods-Fiskas.debug.xcconfig"; sourceTree = "<group>"; };
 		A5CA4D3B92FBCC4EBBCBB297 /* Pods_Fiskas.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fiskas.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C40C849E200380340011AF01 /* ResponseExample.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ResponseExample.json; sourceTree = "<group>"; };
+		C40DBD9D202777A200D3E348 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		C40DBD9F202777B000D3E348 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C4109E3F200775ED00A2BD56 /* Invoice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Invoice.swift; sourceTree = "<group>"; };
 		C4109E412007797300A2BD56 /* InvoiceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoiceCell.swift; sourceTree = "<group>"; };
 		C4109E422007797300A2BD56 /* InvoiceCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InvoiceCell.xib; sourceTree = "<group>"; };
@@ -425,6 +428,7 @@
 				C42C1AAA1FD1BC11005B7022 /* Localizable.strings */,
 				C42F0B741FDDD2BB00C3D619 /* Links.rtf */,
 				C48768361FFE2BFD006D1FE8 /* PrivacyPolicy.html */,
+				C40DBD9E202777A200D3E348 /* InfoPlist.strings */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -551,6 +555,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C463F8581FF3A78A001FBBC1 /* ButtonCell.xib in Resources */,
+				C40DBD9C202777A200D3E348 /* InfoPlist.strings in Resources */,
 				C44A11681FE57041000384B8 /* Contacts.storyboard in Resources */,
 				C40C849F200380340011AF01 /* ResponseExample.json in Resources */,
 				C47016DF1FF0EF4B00B3A3B3 /* BalanceCategoryCell.xib in Resources */,
@@ -682,6 +687,15 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		C40DBD9E202777A200D3E348 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C40DBD9D202777A200D3E348 /* pl */,
+				C40DBD9F202777B000D3E348 /* Base */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
 		C42C1AAA1FD1BC11005B7022 /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (

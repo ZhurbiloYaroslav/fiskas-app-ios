@@ -1,0 +1,11 @@
+/* 
+  InfoPlist.strings
+  Fiskas
+
+  Created by Yaroslav Zhurbilo on 04.02.18.
+  Copyright © 2018 Yaroslav Zhurbilo. All rights reserved.
+*/
+
+"NSCameraUsageDescription" = "";
+"NSPhotoLibraryAddUsageDescription" = "";
+"NSPhotoLibraryUsageDescription" = "";
