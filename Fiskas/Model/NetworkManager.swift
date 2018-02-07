@@ -20,7 +20,8 @@ class NetworkManager: NSObject {
     private var arrayWithInvoices: [Invoice]!
     
     let headers: HTTPHeaders = HTTPHeaders()
-    static let baseURL = "https://serwer1651270.home.pl/admin/api/"
+    // static let baseURL = "https://serwer1651270.home.pl/admin/api/" // development
+    static let baseURL = "http://fiskasapp.unixstorm.org/admin/api/" // production
     
     struct AuthError {
         let noConnection = "network_error_check_your_connection".localized()
