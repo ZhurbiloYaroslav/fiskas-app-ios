@@ -12,7 +12,7 @@ import Alamofire
 
 class Invoice: NSObject {
     
-    let baseURL = "https://serwer1651270.home.pl"
+    let baseURL = NetworkManager.baseURL
     
     var id: String!
     var name: String!

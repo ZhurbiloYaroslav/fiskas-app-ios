@@ -20,8 +20,9 @@ class NetworkManager: NSObject {
     private var arrayWithInvoices: [Invoice]!
     
     let headers: HTTPHeaders = HTTPHeaders()
-    // static let baseURL = "https://serwer1651270.home.pl/admin/api/" // development
-    static let baseURL = "http://fiskasapp.unixstorm.org/admin/api/" // production
+    
+    static let baseURL = "http://fiskasapp.unixstorm.org"
+    static let apiURL = baseURL + "/admin/api/"
     
     struct AuthError {
         let noConnection = "network_error_check_your_connection".localized()
@@ -97,7 +98,7 @@ extension NetworkManager {
     }
     
     struct LoginUserData {
-        let pageAddress: String = NetworkManager.baseURL + "login"
+        let pageAddress: String = NetworkManager.apiURL + "login"
         let email: String
         let password: String
         
@@ -174,7 +175,7 @@ extension NetworkManager {
     }
     
     struct RegisterUserData {
-        let pageAddress: String = baseURL + "register"
+        let pageAddress: String = apiURL + "register"
         let email: String
         let password: String
         let firstName: String
@@ -258,7 +259,7 @@ extension NetworkManager {
     }
     
     struct UpdateUserData {
-        let pageAddress: String = NetworkManager.baseURL + "update"
+        let pageAddress: String = NetworkManager.apiURL + "update"
         
         func getParams() -> Parameters {
             return [
@@ -357,7 +358,7 @@ extension NetworkManager {
     }
     
     struct RequestBalanceData {
-        let pageAddress: String = NetworkManager.baseURL + "report"
+        let pageAddress: String = NetworkManager.apiURL + "report"
         let email: String
         let password: String
         
@@ -435,7 +436,7 @@ extension NetworkManager {
     }
     
     struct RequestInvoiceData {
-        let pageAddress: String = NetworkManager.baseURL + "factures"
+        let pageAddress: String = NetworkManager.apiURL + "factures"
         let email: String
         let password: String
         
@@ -498,7 +499,7 @@ extension NetworkManager {
     }
     
     struct UploadPhotoData {
-        let pageAddress: String = NetworkManager.baseURL + "upload"
+        let pageAddress: String = NetworkManager.apiURL + "upload"
         let email: String
         let password: String
         let photoTitle: String
@@ -565,7 +566,7 @@ extension NetworkManager {
     }
     
     struct RecoveryUserData {
-        let pageAddress: String = NetworkManager.baseURL + "recovery"
+        let pageAddress: String = NetworkManager.apiURL + "recovery"
         let email: String
         
         func getParams() -> Parameters {
