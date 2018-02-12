@@ -6,6 +6,6 @@
   Copyright © 2018 Yaroslav Zhurbilo. All rights reserved.
 */
 
-"NSCameraUsageDescription" = "";
-"NSPhotoLibraryAddUsageDescription" = "";
-"NSPhotoLibraryUsageDescription" = "";
+"NSCameraUsageDescription" = "Permission needed for taking pictures of the Bills";
+"NSPhotoLibraryAddUsageDescription" = "Permission needed for saving invoices to Library";
+"NSPhotoLibraryUsageDescription" = "Permission needed for saving picture to Camera roll";
